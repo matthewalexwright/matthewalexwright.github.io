@@ -1,22 +1,25 @@
 ---
 layout: page
 ---
+
 {{ content }}
 
 {% if page.collection and page.collection.size > 0 %}
   {% assign collection = site[page.collection] %}
   {% if collection and collection.size > 0 %}
     {% for item in collection reversed %}
-      {% assign current_year = item.started | date: '%Y' %}
-      {% if current_year != year %}
-        {% unless forloop.first %}
-          </ul>
-        {% endunless %}
-        <h1 id="y{{item.started | date: "%Y"}}">
-          <a href="{{ current_year | prepend: '/books/' | relative_url }}">{{ current_year }}</a>
-        </h1>
-        <ul>
+      {% comment %}
+        Year heading. Only rendered for books that actually have a `started` date,
+        so books without one no longer fall under a blank heading.
+      {% endcomment %}
+      {% if item.started %}
+        {% assign current_year = item.started | date: '%Y' %}
+        {% if current_year != year %}
+          <h1 id="y{{ current_year }}">
+            <a href="{{ current_year | prepend: '/books/' | relative_url }}">{{ current_year }}</a>
+          </h1>
           {% assign year = current_year %}
+        {% endif %}
       {% endif %}
 
       <figure class="cover">
@@ -28,22 +31,34 @@ layout: page
           {% elsif item.isbn %}
             <img alt="{{ item.title }} cover" src="https://covers.openlibrary.org/b/isbn/{{ item.isbn }}-L.jpg?default=false" style="height:200px">
           {% endif %}
+
+          {% comment %}
+            Free-text label. Whatever you put in `status:` is printed as written.
+            The CSS class is the slugified version, so "Battery science" becomes
+            class="battery-science". Books with no `status:` get no label at all.
+          {% endcomment %}
           {% if item.status %}
-            {% assign statuses = 'abandoned,finished,interested,paused,queued,reading,reread' | split: ',' %}
-            {% assign status = item.status | downcase | strip %}
-            {% if statuses contains status %}
-              <figcaption class="{{ status | downcase }}">{{ status | upcase }}</figcaption>
-            {% else %}
-              <figcaption class="uncategorized">UNCATEGORIZED</figcaption>
-            {% endif %}
-          {% else %}
-            <figcaption class="uncategorized">UNCATEGORIZED</figcaption>
+            <figcaption class="{{ item.status | slugify }}">{{ item.status }}</figcaption>
           {% endif %}
         </a>
       </figure>
-      {% if forloop.last %}
-        </ul>
-      {% endif %}
     {% endfor %}
   {% endif %}
 {% endif %}
+
+<style>
+  /*
+    Fallback styling so a status word that isn't one of the theme's built-in
+    ones (finished, reading, queued, ...) still looks deliberate rather than
+    unstyled. Adjust colours to taste.
+  */
+  figure.cover figcaption {
+    display: block;
+    margin-top: 0.4rem;
+    text-align: center;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--global-text-color-light);
+  }
+</style>
