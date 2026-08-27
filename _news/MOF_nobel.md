@@ -1,6 +1,7 @@
 ---
 layout: post
-date: 2016-01-15 07:59:00-0400
+title: UC Santa Barbara physicists Win 2025 Nobel Prize in Physics
+date: 2025-10-08
 inline: true
 related_posts: false
 ---
