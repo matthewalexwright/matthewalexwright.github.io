@@ -4,7 +4,7 @@ title: "Space Groups for Solid State Scientists"
 author: Gerald Burns and A. M. Glazer
 cover: assets/img/book_covers/spacegroups.jpg
 isbn: "978-0080964126"
-categories: [crystallography]
+categories: [crystallography, diffraction, x-rays]
 released: 2013
 status: Crystallography
 buy_link: https://www.amazon.co.uk/dp/B01H5GQJIS
