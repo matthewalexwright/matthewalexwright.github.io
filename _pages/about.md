@@ -27,4 +27,5 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I received my PhD from the University of Liverpool in the United Kingdom, supervised by [Professor Matthew J Rosseinsky OBE FRS](https://www.liverpool.ac.uk/chemistry/research/rosseinsky-group/) and [Professor Laurence Hardwick](https://www.liverpool.ac.uk/chemistry/research/hardwick-group/about/), where I focused on the design and mechanistic study of next-generation electrode materials. In 2024 I joined the Materials Department at the University of California Santa Barbara where I work with [Professor Ram Seshadri](https://seshadri-group.materials.ucsb.edu/) in the Materials Research Laboratory linking battery electrode science with correlated and quantum materials. 
+I am a solid-state materials chemist interested in energy materials and quantum materials. I am currently a Quantum Foundry Postdoc with Professor Ram Seshadri](https://seshadri-group.materials.ucsb.edu/) in the Materials Research Laboratory at UC Santa Barbara. I received my PhD from the University of Liverpool in the United Kingdom, supervised by [Professor Matthew J Rosseinsky OBE FRS](https://www.liverpool.ac.uk/chemistry/research/rosseinsky-group/) and [Professor Laurence Hardwick](https://www.liverpool.ac.uk/chemistry/research/hardwick-group/about/).
+
