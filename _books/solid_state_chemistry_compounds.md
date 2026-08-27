@@ -1,6 +1,6 @@
 ---
 layout: book-review
-title: Solid State Chemistry Compounds
+title: "Solid State Chemistry Compounds"
 author: A. K. Cheetham and Peter Day
 cover: assets/img/book_covers/compounds.jpg
 isbn: 0198551665 # use ISBN to fetch cover (if no `olid` is provided, dashes are optional)
