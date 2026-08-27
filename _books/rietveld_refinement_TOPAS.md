@@ -4,7 +4,7 @@ title: "Rietveld Refinement: Practical Powder Diffraction Pattern Analysis using
 author: Robert E. Dinnebier, Andreas Leineweber and John S. O. Evans
 cover: assets/img/book_covers/rietveldrefinement.jpg
 isbn: "3110456214"
-categories: [diffraction, xrd]
+categories: [crystallography, diffraction, software]
 released: 2018
 status: Diffraction
 buy_link: https://www.amazon.co.uk/dp/3110456214
