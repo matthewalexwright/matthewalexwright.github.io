@@ -4,7 +4,7 @@ title: "Basic Solid State Chemistry"
 author: Anthony R. West
 cover: assets/img/book_covers/basicsolidstatechemistry.jpg
 isbn: 0471987565
-categories: [materials-science]
+categories: materials solid-state chemistry
 released: 1999
 status: Solid state chemistry
 buy_link: https://www.amazon.co.uk/dp/0471987565
