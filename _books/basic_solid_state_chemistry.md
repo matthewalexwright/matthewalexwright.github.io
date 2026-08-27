@@ -1,6 +1,6 @@
 ---
 layout: book-review
-title: Basic Solid State Chemistry
+title: "Basic Solid State Chemistry"
 author: Anthony R. West
 cover: assets/img/book_covers/basicsolidstatechemistry.jpg
 isbn: 0471987565 # use ISBN to fetch cover (if no `olid` is provided, dashes are optional)
