@@ -1,0 +1,8 @@
+---
+layout: post
+date: 2016-01-15 07:59:00-0400
+inline: true
+related_posts: false
+---
+
+Omar Yaghi (UC Berkeley), Susumu Kitagawa (Kyoto), and Richard Robson (Melbourne) have been awarded the 2025 Nobel Prize in Chemistry for developing metal-organic frameworks (MOFs)—porous molecular architectures with vast internal surface areas. These structures can absorb, store, and release gases, enabling breakthroughs in water harvesting, carbon capture, hydrogen storage, and pollutant removal.
