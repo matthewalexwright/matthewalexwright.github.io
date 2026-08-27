@@ -4,7 +4,7 @@ title: "Solid State Materials Chemistry"
 author: Patrick M. Woodward, Pavel Karen, John S. O. Evans and Thomas Vogt
 cover: assets/img/book_covers/solidstatematerialschemistry.jpg
 isbn: "9781107133181"
-categories: [solid-state]
+categories: [materials, solid-state, chemistry, inorganic]
 released: 2021
 status: Solid state chemistry
 buy_link: https://www.amazon.co.uk/dp/1107133181
