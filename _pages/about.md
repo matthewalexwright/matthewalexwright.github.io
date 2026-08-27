@@ -9,7 +9,7 @@ profile:
   image: prof_pic.jpg
   image_circular: true # crops the image to make it circular
   more_info: >
-    <p>CNSI & MRL</p>
+    <p>Materials Research Lab</p>
     <p>Materials Department</p>
     <p>UC Santa Barbara</p>
 
