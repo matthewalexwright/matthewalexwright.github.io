@@ -10,7 +10,7 @@ profile:
   image_circular: true # crops the image to make it circular
   more_info: >
     <p>Materials Research Lab</p>
-    <p>Materials Department</p>
+    <p>Materials Department & CNSI</p>
     <p>UC Santa Barbara</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
