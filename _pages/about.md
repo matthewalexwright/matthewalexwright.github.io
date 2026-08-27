@@ -12,7 +12,7 @@ profile:
     <p>Materials Department & CNSI</p>
     <p>UC Santa Barbara</p>
 selected_papers: true # includes a list of papers marked as "selected={true}"
-social: false # rendered manually in the body instead, see below
+social: true # includes social icons at the bottom of the page
 announcements:
   enabled: true # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
@@ -32,8 +32,3 @@ My work aims to connect the chemistry of energy materials with the physics of co
 Outside the lab I rock climb, swim, surf and ride (or, more often, repair) motorcycles.
 
 You can find my publications, blog, code, and CV in the menu above.
-
-<div class="social">
-  <div class="contact-icons">{% include social.liquid %}</div>
-  <div class="contact-note">{{ site.contact_note }}</div>
-</div>
