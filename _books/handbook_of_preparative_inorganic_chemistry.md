@@ -4,7 +4,7 @@ title: "Handbook of Preparative Inorganic Chemistry"
 author: Georg Brauer
 cover: assets/img/book_covers/handbookofpreparativeinorganicchemistry.jpg
 isbn: "978-0323161299"
-categories: [materials, chemistry, inorganic, synthesis]
+categories: [materials, solid-state, chemistry, inorganic, synthesis]
 released: 1965
 status: Synthesis reference
 buy_link: https://www.amazon.co.uk/dp/B01D4OEN92
