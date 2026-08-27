@@ -4,7 +4,7 @@ title: "Solid State Chemistry: Compounds"
 author: A. K. Cheetham and Peter Day
 cover: assets/img/book_covers/compounds.jpg
 isbn: "0198551665"
-categories: [solid-state]
+categories: [materials, solid-state, chemistry, inorganic]
 released: 1992
 status: Solid state chemistry
 buy_link: https://www.amazon.co.uk/dp/0198551665
