@@ -112,7 +112,7 @@ max_width: 930px
 # see https://schema.org/docs/faq.html for more information
 serve_og_meta: true # Include Open Graph meta tags in the HTML head
 serve_schema_org: true # Include Schema.org in the HTML head
-og_image: /assets/img/prof_pic_cropped.png The site-wide (default for all links) Open Graph preview image. Crop to 1200 x 630 pixels!
+og_image:https://matthewalexwright.github.io/assets/img/prof_pic_cropped.png The site-wide (default for all links) Open Graph preview image. Crop to 1200 x 630 pixels!
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
