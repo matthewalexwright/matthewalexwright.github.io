@@ -2,14 +2,14 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: <a href='#'>Quantum Foundry Postdoctoral Associate</a>. Materials Department. University of California Santa Barbara.
 
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
+  image_circular: true # crops the image to make it circular
   more_info: >
-    <p>Quantum Foundry Postdoctoral Associate</p>
+    <p>California NanoSystems Institute</p>
     <p>Materials Department, College of Engineering</p>
     <p>University of California Santa Barbara</p>
 
