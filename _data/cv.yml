@@ -31,13 +31,13 @@ cv:
     - network: Google Scholar
       username: 4d5Rx_4AAAAJ
     - network: LinkedIn
-      username: FILL-ME-IN-OR-DELETE-THIS-ENTRY
+      username: mattalexwright
 
   address:
     street: Materials Research Laboratory, University of California Santa Barbara
     city: Santa Barbara
     region: California
-    postalCode: CA 93106-5121
+    postalCode: CA 93106
     countryCode: US
 
   sections:
