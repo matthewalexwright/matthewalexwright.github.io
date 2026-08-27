@@ -4,7 +4,7 @@ title: "Powder Diffraction: Theory and Practice"
 author: R. E. Dinnebier and S. J. L. Billinge
 cover: assets/img/book_covers/powderdiffractiontheoryandpractice.jpg
 isbn: "9780521873253"
-categories: [diffraction, x-rays]
+categories: [crystallography, diffraction, x-rays]
 released: 2008
 status: Diffraction
 buy_link: https://www.amazon.co.uk/dp/0854042318
