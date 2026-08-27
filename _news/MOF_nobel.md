@@ -1,6 +1,6 @@
 ---
 layout: post
-title: UC Santa Barbara physicists Win 2025 Nobel Prize in Physics
+title: 2025 Nobel Prize in Chemistry to Honor MOF Pioneers
 date: 2025-10-08
 inline: False
 related_posts: false
