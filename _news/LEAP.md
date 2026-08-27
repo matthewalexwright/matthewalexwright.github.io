@@ -1,4 +1,5 @@
 ---
+title: UC awards $18 million to scale up the ambition and impact of AI in science 
 layout: post
 date: 2025-05-15 
 inline: true
