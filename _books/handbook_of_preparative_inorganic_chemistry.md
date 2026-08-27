@@ -1,6 +1,6 @@
 ---
 layout: book-review
-title: Handbook of Preparative Inorganic Chemistry
+title: "Handbook of Preparative Inorganic Chemistry"
 author: Georg Brauer
 cover: assets/img/book_covers/handbookofpreparativeinorganicchemistry.jpg
 isbn: 978-0323161299 # use ISBN to fetch cover (if no `olid` is provided, dashes are optional)
