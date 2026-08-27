@@ -6,3 +6,5 @@ inline: False
 related_posts: false
 ---
 Matt received a $1,500 Heeger Fellowship from the California NanoSystems Institute (CNSI) and Materials Research Laboratory (MRL) at UC Santa Barbara. Established in recognition of Nobel Laureate Professor Alan J. Heeger’s pioneering contributions to polymer and materials research, the fellowship supports graduate students and postdoctoral researchers in presenting their work at conferences and building their professional networks.
+
+[You can read more about the Dr. Alan J. Heeger Fellowships here.](https://www.mrl.ucsb.edu/heeger-fellowships)
