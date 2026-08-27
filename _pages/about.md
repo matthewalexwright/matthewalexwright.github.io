@@ -9,9 +9,9 @@ profile:
   image: prof_pic.jpg
   image_circular: true # crops the image to make it circular
   more_info: >
-    <p>California NanoSystems Institute</p>
-    <p>Materials Department, College of Engineering</p>
-    <p>University of California Santa Barbara</p>
+    <p>CNSI & MRL</p>
+    <p>Materials Department</p>
+    <p>UC Santa Barbara</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -27,5 +27,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a solid-state materials chemist interested in energy materials and quantum materials. I am currently a Quantum Foundry Postdoc with Professor Ram Seshadri](https://seshadri-group.materials.ucsb.edu/) in the Materials Research Laboratory at UC Santa Barbara. I received my PhD from the University of Liverpool in the United Kingdom, supervised by [Professor Matthew J Rosseinsky OBE FRS](https://www.liverpool.ac.uk/chemistry/research/rosseinsky-group/) and [Professor Laurence Hardwick](https://www.liverpool.ac.uk/chemistry/research/hardwick-group/about/).
+I am a solid-state materials chemist interested in energy materials and quantum materials. 
+
+I am currently a Quantum Foundry Postdoc with Professor Ram Seshadri](https://seshadri-group.materials.ucsb.edu/) in the Materials Research Laboratory at UC Santa Barbara. I received my PhD from the University of Liverpool in the United Kingdom, supervised by [Professor Matthew J Rosseinsky OBE FRS](https://www.liverpool.ac.uk/chemistry/research/rosseinsky-group/) and [Professor Laurence Hardwick](https://www.liverpool.ac.uk/chemistry/research/hardwick-group/about/).
 
