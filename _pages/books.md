@@ -1,7 +1,6 @@
 ---
-published: false
 layout: book-shelf
-title: bookshelf
+title: textbooks
 permalink: /books/
 nav: false
 collection: books
