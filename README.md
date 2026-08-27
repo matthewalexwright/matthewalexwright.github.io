@@ -1,4 +1,4 @@
-Personal Website of Dr Matthew A. Wright
+## Personal Website of Dr Matthew A. Wright
 
 ## License
 
