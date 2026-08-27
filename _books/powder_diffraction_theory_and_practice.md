@@ -4,7 +4,7 @@ title: Powder Diffraction: Theory and Practice
 author: R. E. Dinnebier and S. J. L. Bilinge
 cover: assets/img/book_covers/powderdiffractiontheoryandpractice.jpg
 isbn: 9780521873253 # use ISBN to fetch cover (if no `olid` is provided, dashes are optional)
-categories: materials science
+categories: diffraction
 #tags: top-100
 buy_link: https://www.amazon.co.uk/Powder-Diffraction-Theory-Practice-Dinnebier/dp/0854042318
 date: 2008
