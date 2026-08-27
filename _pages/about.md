@@ -3,7 +3,7 @@ layout: about
 title: about
 permalink: /
 subtitle: <a href='#'>Quantum Foundry Postdoctoral Associate</a>. Materials Department. University of California Santa Barbara.
-
+subtitle: <a href='https://quantumfoundry.ucsb.edu/'>Quantum Foundry Postdoctoral Associate</a> Materials Department. University of California Santa Barbara.University of California Santa Barbara.
 profile:
   align: right
   image: prof_pic.jpg
