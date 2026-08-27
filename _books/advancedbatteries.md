@@ -1,6 +1,6 @@
 ---
 layout: book-review
-title: Advanced Batteries
+title: "Advanced Batteries"
 author: Robert A. Huggins
 cover: assets/img/book_covers/advancedbatteries.jpg
 isbn: 9780387764238 # use ISBN to fetch cover (if no `olid` is provided, dashes are optional)
