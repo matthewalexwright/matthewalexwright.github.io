@@ -4,7 +4,7 @@ title: "Fundamentals of Powder Diffraction and Structural Characterization of Ma
 author: Vitalij Pecharsky and Peter Zavalij
 cover: assets/img/book_covers/fundamentalsofpowderdiffraction.jpg
 isbn: 978-0387095790 # use ISBN to fetch cover (if no `olid` is provided, dashes are optional)
-categories: diffraction
+categories: diffraction XRD
 buy_link: https://www.amazon.co.uk/Fundamentals-Diffraction-Structural-Characterization-Materials-ebook/dp/B00FB0B710/ref=sr_1_2?crid=117BNTHKANA4Z&dib=eyJ2IjoiMSJ9.QDPjzbI6SbZBYeZw3BZ92C2ZiQ30gR35VA1oHwYNk9LGjHj071QN20LucGBJIEps.NQ7jBzW0eWjiQFRT-iYvi4jx8Euf-WKegyTQCKKRXAI&dib_tag=se&keywords=Fundamentals+of+Powder+Diffraction+-+Pecharsky+and+Zavalij&qid=1787799660&s=books&sprefix=f%2Cstripbooks%2C727&sr=1-2
 ---
 
