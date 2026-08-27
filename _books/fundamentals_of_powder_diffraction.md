@@ -1,6 +1,6 @@
 ---
 layout: book-review
-title: Fundamentals of Powder Diffraction and Structural Characterization of Materials
+title: "Fundamentals of Powder Diffraction and Structural Characterization of Materials"
 author: Vitalij Pecharsky and Peter Zavalij
 cover: assets/img/book_covers/fundamentalsofpowderdiffraction.jpg
 isbn: 978-0387095790 # use ISBN to fetch cover (if no `olid` is provided, dashes are optional)
