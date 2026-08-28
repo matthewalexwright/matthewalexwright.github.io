@@ -7,7 +7,7 @@ related_posts: false
 ---
 <figure style="margin:1.5rem 0">
   <img src="{{ '/assets/img/2025_LEAP_kickoff.jpg' | relative_url }}"
-       alt="Describe what the photo shows"
+       alt="UC-LEAP Team"
        style="width:100%;height:auto;border-radius:6px">
   <figcaption style="font-size:0.85rem;margin-top:0.5rem">
     LEAP kickoff meeting, Eddleman Quantum Institute, UC Santa Barbara, August 2025.
