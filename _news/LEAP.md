@@ -5,8 +5,6 @@ date: 2025-05-15
 inline: False
 related_posts: false
 ---
-Out of a total $18 million pledged towards AI Science at Scale, $6 million has been awarded to our LEAP (Low-Energy AI-Informed Phase Transitions) project which will be led by Professor Ram Seshadri at UC Santa Barbara, which aims to use specialized large language models in tandem with experimental researchers, to discover low-energy switching materials for more energy-efficient computing. 
+The University of California recently awarded $6 million to a multicampus research grant, in partnership with UC-managed national laboratories, to advance Low-Energy, AI-Informed Phase Transitions (LEAP). The goals of LEAP are to accelerate research into more efficient AI — with help from AI. Using a mix of theory, real-world data and simulations, we will train a large language model AI designed to simulate the effectiveness of topological materials for computing. By narrowing the field of materials that will be tested in the lab, this AI could speed up the discovery of new chip materials that switch faster and use less energy. The kickoff meeting for this research grant was held on August 6th 2025 and was hosted by the Eddleman Quantum Institute at UC Santa Barbara.
 
 [You can read more about this story here.](https://www.universityofcalifornia.edu/news/uc-awards-18-million-scale-ambition-and-impact-ai-science)
-
-
