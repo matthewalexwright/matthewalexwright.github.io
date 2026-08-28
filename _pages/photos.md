@@ -192,7 +192,7 @@ nav: false
 
 </div>
 
-## 2021
+## 2019–2021
 
 <div class="photo-grid">
 
@@ -202,8 +202,6 @@ nav: false
   </figure>
 
 </div>
-
-## 2020
 
 <div class="photo-grid">
 
