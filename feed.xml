@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://matthewalexwright.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://matthewalexwright.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2026-09-02T22:30:57+00:00</updated><id>https://matthewalexwright.github.io/feed.xml</id><title type="html">blank</title><subtitle>Dr Matthew A. Wright. A Quantum Foundry Postdoctoral Associate at the University of California Santa Barbara. </subtitle><entry><title type="html">Linking battery electrode science with correlated and quantum materials</title><link href="https://matthewalexwright.github.io/blog/2025/battery-electrodes-as-quantum-materials/" rel="alternate" type="text/html" title="Linking battery electrode science with correlated and quantum materials"/><published>2025-11-26T00:00:00+00:00</published><updated>2025-11-26T00:00:00+00:00</updated><id>https://matthewalexwright.github.io/blog/2025/battery-electrodes-as-quantum-materials</id><content type="html" xml:base="https://matthewalexwright.github.io/blog/2025/battery-electrodes-as-quantum-materials/"><![CDATA[<h2 id="introduction">Introduction</h2> <p>Quantum materials, including superconductors and quantum spin liquids, as well as correlated oxides displaying coupled charge, spin, and magnetic order, possess properties that are exquisitely controlled by the electron count <d-cite key="dagotto2005"></d-cite>. The ability to control the properties of such a material is therefore directly related to the ability to control its electronic structure. Conventionally this is dictated at the point of synthesis, through elemental composition, synthetic conditions, and stoichiometry. A number of options are nevertheless available to researchers who wish to modify the properties of quantum materials postsynthesis <d-cite key="basov2017"></d-cite>, including the application of high pressures, high magnetic fields, high electric fields, or electrostatic gating.</p> <p>One method that remains underutilized, despite being well understood, is electrochemistry. In a transition metal oxide the position and quantity of metal and oxide ions is determined by high-temperature thermodynamics and is almost impossible to change at room temperature. In contrast, the relative amounts of electrochemically transportable ions such as lithium or sodium are readily controllable, provided the structure supplies diffusion paths for ion transport and the chemistry supplies transition metals capable of serving as electron reservoirs. Under these conditions the electron count of the bulk material may be varied continuously, reversibly, and at ambient temperature.</p> <p>This post summarizes a recent perspective in <em>Physical Review Materials</em> <d-cite key="wright2025"></d-cite> in which we review how alkali-ion (de)insertion has been used to alter spin states, induce charge ordering, and drive transitions between insulating, metallic, and magnetically frustrated phases across a range of battery electrode materials.</p> <p>The connection is not merely conceptual. First-principles calculations have shown that electronic correlations significantly impact the redox behavior of electrode materials, owing to the localized nature of the relevant states and to strong on-site Coulomb interactions <d-cite key="zhou2004"></d-cite>. In the absence of such correlations, the calculated voltage of an LiFePO<sub>4</sub> cathode is diminished by at least 0.5 V. Battery electrodes may therefore reasonably be described as one of the most useful real-world manifestations of electronic correlations of the Hubbard-<em>U</em> variety <d-cite key="hubbard1963"></d-cite>.</p> <div class="l-body"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/2025-11-26-battery-quantum/fig1-hubbard-u-voltage-480.webp 480w,/assets/img/2025-11-26-battery-quantum/fig1-hubbard-u-voltage-800.webp 800w,/assets/img/2025-11-26-battery-quantum/fig1-hubbard-u-voltage-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/2025-11-26-battery-quantum/fig1-hubbard-u-voltage.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" data-zoomable="" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"/> </picture> </figure> </div> <div class="caption"> Electrochemical potential as a function of the on-site Coulomb interaction, modeled by the Hubbard <em>U</em>, in olivine-structured LiMPO<sub>4</sub> (M = Fe, Mn, Co, Ni). The experimental potential is given by the short black dashes. The average potential (star) is derived from the calculated potential for the material in an oxidized and reduced state (triangles). Adapted with permission from F. Zhou, M. Cococcioni, C. A. Marianetti, D. Morgan and G. Ceder, <em>Phys. Rev. B</em> <b>70</b>, 235121 (2004). Copyright 2004 American Physical Society. </div> <h2 id="crystal-field-theory-and-jahn-teller-distortions">Crystal field theory and Jahn-Teller distortions</h2> <p>The majority of the <em>d</em> electrons residing on a transition metal do not partake in bond formation, but do influence the coordination environment of the metal atom and are responsible for properties such as electronic structure and magnetism. In an octahedral environment the <em>d</em> orbitals split into the lower-lying $t_{2g}$ set, which lies between the ligands, and the higher-lying $e_g$ set, which points directly towards them. The energy difference between the two is the crystal field splitting energy, $\Delta_\mathrm{oct}$. Since O<sup>2−</sup> is a weak field ligand, high-spin configurations are common for 3<em>d</em> metal oxides.</p> <p>Significant Jahn-Teller distortions occur when electrons are unevenly distributed within the $e_g$ set, as is the case for high-spin $d^4$, low-spin $d^7$, and $d^9$ configurations, which results in an unstable electronic configuration. The instability is relieved by altering the energies of the orbitals so as to remove the orbital degeneracy, typically by lengthening the metal-oxygen bonds along one axis and compressing those perpendicular to it. Such distortions can have a profound effect on physical properties, and can give rise to cooperative distortion, orbital ordering, and modification of magnetic superexchange pathways.</p> <p>Electrochemical (de)insertion therefore does not simply modulate the formal charge state of the transition metal. It also alters spin configuration and orbital occupancy, influencing electron localization and spin-state energetics. Readers seeking a more comprehensive treatment of magnetism in solids are directed to articles discussing the measurement <d-cite key="mozur2023"></d-cite> and interpretation <d-cite key="mugiraneza2022"></d-cite> of magnetic data.</p> <h2 id="layered-oxides---lixcoo2">Layered oxides - LixCoO2</h2> <div class="l-page"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/2025-11-26-battery-quantum/licoo2-electrochemical-states-480.webp 480w,/assets/img/2025-11-26-battery-quantum/licoo2-electrochemical-states-800.webp 800w,/assets/img/2025-11-26-battery-quantum/licoo2-electrochemical-states-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/2025-11-26-battery-quantum/licoo2-electrochemical-states.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" data-zoomable="" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"/> </picture> </figure> </div> <div class="caption"> Crystal structures of O3-LiCoO<sub>2</sub>, vacancy-ordered O3-Li<sub>0.55</sub>CoO<sub>2</sub> (shown schematically), and O1-CoO<sub>2</sub>, viewed along the [100] direction. Charging and discharging carry the material between a diamagnetic insulator, a charge-ordered antiferromagnet, and a paramagnetic metal. Reproduced from M. A. Wright and R. Seshadri, <em>Phys. Rev. Materials</em> <b>9</b>, 110302 (2025). </div> <p>Given the commercial and technological relevance of Li<sub>x</sub>CoO<sub>2</sub> <d-cite key="mizushima1980"></d-cite>, the mechanism of Li<sup>+</sup> (de)insertion across the whole range of <em>x</em> has been thoroughly investigated by detailed structural and spectroscopic studies. Fully lithiated O3-LiCoO<sub>2</sub> is an insulator with a band gap of 2.7 eV, containing Co<sup>3+</sup> in a low-spin $d^6$ configuration with a filled $t_{2g}$ manifold and no unpaired spins. Despite this diamagnetic ground state, the material displays a small temperature-independent susceptibility attributed to Van Vleck paramagnetism.</p> <p>A significant increase in magnetic susceptibility is observed immediately upon Li<sup>+</sup> deinsertion. The temperature-independent part of the susceptibility rises from $1.4 \times 10^{-4}$ emu mol<sup>−1</sup> Oe<sup>−1</sup> for LiCoO<sub>2</sub> to $2.5 \times 10^{-4}$ emu mol<sup>−1</sup> Oe<sup>−1</sup> for Li<sub>0.98</sub>CoO<sub>2</sub>, corresponding to the removal of only 0.02 Li<sup>+</sup> per formula unit, and continues to increase thereafter <d-cite key="hertz2008"></d-cite>.</p> <p>Lithium and vacancy ordering phenomena emerge at the commensurate compositions $x = 0.67$ and $x = 0.5$ near 175 K, evidenced by latent heat in differential scanning calorimetry and by sharp anomalies in the magnetic susceptibility. These are first-order transitions and are believed to originate from partial charge ordering of Co<sup>3+</sup> and Co<sup>4+</sup>, since the observed transition entropies are smaller than the mixing entropy expected for full charge separation. At $x = 0.5$, 1:1 lithium and vacancy ordering causes a hexagonal to monoclinic distortion that lowers the symmetry to $P2/m$, although O3-type layering is maintained <d-cite key="motohashi2009"></d-cite>.</p> <p>The end member CoO<sub>2</sub> can be synthesized by complete electrochemical Li<sup>+</sup> deinsertion, yielding a phase-pure, oxygen-stoichiometric compound with an O1-stacking sequence <d-cite key="devaulx2007"></d-cite>. Magnetic susceptibility measurements reveal a large temperature-independent susceptibility of $5.7 \times 10^{-4}$ emu mol<sup>−1</sup> Oe<sup>−1</sup> characteristic of Pauli paramagnetism. The effective moment of 0.18 $\mu_\mathrm{B}$ per Co is far lower than expected for localized low-spin Co<sup>4+</sup>, confirming that the system does not support localized spin moments and is best described as a Pauli paramagnetic metal <d-cite key="motohashi2007"></d-cite>. This contrasts sharply with the diamagnetic insulating behavior of LiCoO<sub>2</sub>, and demonstrates an evolution from an orbitally filled, insulating $S = 0$ configuration with localized electrons to a metallic quantum paramagnetic state with delocalized electrons.</p> <div class="l-body"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/2025-11-26-battery-quantum/fig4d-lixcoo2-phase-diagram-480.webp 480w,/assets/img/2025-11-26-battery-quantum/fig4d-lixcoo2-phase-diagram-800.webp 800w,/assets/img/2025-11-26-battery-quantum/fig4d-lixcoo2-phase-diagram-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/2025-11-26-battery-quantum/fig4d-lixcoo2-phase-diagram.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" data-zoomable="" loading="lazy" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"/> </picture> </figure> </div> <div class="caption"> The electronic phase diagram of Li<sub>x</sub>CoO<sub>2</sub>, derived from dc magnetic susceptibility and <sup>59</sup>Co NMR data. Adapted with permission from T. Motohashi, T. Ono, Y. Sugimoto, Y. Masubuchi, S. Kikkawa, R. Kanno, M. Karppinen and H. Yamauchi, <em>Phys. Rev. B</em> <b>80</b>, 165114 (2009). Copyright 2009 American Physical Society. </div> <p>Electron correlation in Li<sub>x</sub>CoO<sub>2</sub> also highlights the limitations of static DFT+<em>U</em> calculations, which artificially stabilize charge-ordered solutions, and instead require DMFT to correctly capture phase stability and suppress spurious charge order <d-cite key="isaacs2020"></d-cite>.</p> <h2 id="lixcoo2-versus-naxcoo2">LixCoO2 versus NaxCoO2</h2> <p>NaCoO<sub>2</sub> is isostructural with LiCoO<sub>2</sub>, and Na<sup>+</sup> can likewise be chemically and electrochemically (de)inserted. Changes in quantum properties as a function of alkali metal content nevertheless differ significantly between the two materials. The larger ionic radius of Na<sup>+</sup> compared with Li<sup>+</sup> (1.02 against 0.76 Å) results in more dynamic changes to the CoO<sub>2</sub> layers, with significant octahedral distortion and expanded interlayer spacing observed during (de)insertion <d-cite key="hertz2008"></d-cite>.</p> <p>At $x = 0.5$ a well-defined Co<sup>3+</sup>/Co<sup>4+</sup> charge-ordering and Na<sup>+</sup>/vacancy site-ordering transition occurs. This phase displays insulating behavior and a sharp decrease in Pauli susceptibility <d-cite key="foo2004"></d-cite>. An increased Pauli susceptibility is observed for $x = 0.3$, consistent with a correlated paramagnetic metal.</p> <p>This latter composition also forms the basis for the hydrated superconductor Na<sub>0.35</sub>CoO<sub>2</sub>·1.3H<sub>2</sub>O, with a critical temperature of approximately 4.5 K <d-cite key="schaak2003"></d-cite>. Partial deinsertion of Na<sup>+</sup> in aqueous environments is accompanied by insertion of guest H<sub>2</sub>O molecules, which occupy either side of the sodium and spatially separate it from the CoO<sub>2</sub> layer. The resulting <em>c</em>-axis expansion gives rise to a strong two-dimensional character similar to that observed between CuO<sub>2</sub> planes in layered cuprates, which is understood to be important for superconductivity <d-cite key="takada2003"></d-cite>. The critical temperature traces a domed profile against sodium content, mirroring the behavior of high-<em>T</em><sub>C</sub> cuprates. The hydrated phase is chemically fragile and is not a practical electrode, but it serves as an instructive example of how ion and water content can be used to tune carrier concentration and emergent phases.</p> <h2 id="lixnio2-and-the-role-of-antisite-disorder">LixNiO2 and the role of antisite disorder</h2> <p>Prior to his work on Li<sup>+</sup> (de)insertion in LiCoO<sub>2</sub>, Goodenough investigated the magnetic properties of disordered layered oxides for memory storage applications <d-cite key="goodenough1958"></d-cite>, a point that underscores how closely the two fields were once connected.</p> <p>NiO is an antiferromagnetic charge-transfer insulator with a Néel temperature of 525 K and a room temperature resistivity of order $10^8$ Ω cm. Insertion of Li<sup>+</sup> leads to a rapid decrease in electrical resistivity to approximately 1 Ω cm by $x = 0.2$. As more lithium is introduced, nanoscale domains of layered Li and Ni ordering begin to form, leading to chemical inhomogeneity and the emergence of complex magnetic phenomena <d-cite key="barton2013"></d-cite>. In this regime, Ni<sup>2+</sup> defects residing in the lithium layer mediate interlayer magnetic coupling and give rise to uncompensated ferrimagnetism, magnetic exchange bias, and Griffiths-phase-like behavior. At the end-member composition, chemical disorder caused by mixing of Ni<sup>2+</sup> and Li<sup>+</sup> sites disrupts long-range ordering, and LiNiO<sub>2</sub> exhibits a low-temperature glassy antiferromagnetic state with no magnetic Bragg peaks observed in neutron diffraction down to 1.4 K <d-cite key="reimers1993"></d-cite>.</p> <p>In contrast to the well-understood transitions of LiCoO<sub>2</sub>, there remains no consensus on the exact nature of the Ni<sup>3+</sup> electronic state in LiNiO<sub>2</sub>. Recent theoretical work employing advanced GW approximations as well as DMFT suggests the existence of Ni<sup>2+</sup> together with a negative charge-transfer ligand hole on oxygen, with theory matching experimental spectra <d-cite key="genreith2023,banerjee2024"></d-cite>. Much of the historical ambiguity appears attributable to defects. Highly ordered LiNiO<sub>2</sub> can be obtained by low-temperature ion exchange from defect-free NaNiO<sub>2</sub>, revealing a monoclinic, collinear Jahn-Teller ordered ground state that is otherwise hidden by defects in conventionally prepared samples <d-cite key="phillips2025"></d-cite>. Exchanging Li<sup>+</sup> for larger Na<sup>+</sup> reduces antisite inversion by expanding the interlayer distance beyond the size that Ni<sup>2+</sup> can readily occupy.</p> <p>The sodium analog is instructive in its own right. NaNiO<sub>2</sub> adopts a defect-free O’3-layered structure, and neutron pair distribution function analysis, EXAFS, and variable temperature NMR point to a predominantly displacive Jahn-Teller transition with vanishing local static distortions above the transition temperature <d-cite key="naglecocco2024"></d-cite>. Electrochemical desodiation produces the commensurate vacancy-ordered phase Na<sub>0.67</sub>NiO<sub>2</sub>, which possesses in-plane honeycomb Ni charge ordering and zigzag Na/vacancy motifs <d-cite key="steele2025"></d-cite>.</p> <h2 id="amno2-and-mixed-metal-layered-oxides">AMnO2 and mixed metal layered oxides</h2> <p>Manganese-based layered oxides are theoretically desirable owing to the low cost and low toxicity of Mn, but in practice LiMnO<sub>2</sub> and NaMnO<sub>2</sub> have not proved successful as electrode materials. This is because of the orbital degeneracy associated with the high-spin Mn<sup>3+</sup> $d^4$ configuration, which leads to significant Jahn-Teller distortions and drives an irreversible transition to the spinel structure during oxidation.</p> <p>The magnetism is correspondingly rich. In O3-NaMnO<sub>2</sub>, magnetic order is quasi-one-dimensional at high temperatures; at low temperatures, short-range incommensurate correlations give way to collinear antiferromagnetic order below 22 K, driven by strong in-plane exchange, structural anisotropy, and orbital ordering <d-cite key="dally2018"></d-cite>. The introduction of Na<sup>+</sup> vacancies at $x = 0.8$ induces an antiferromagnetic to ferromagnetic transition, together with a metal-to-semiconductor transition, arising from double-exchange interactions between Mn<sup>3+</sup> and Mn<sup>4+</sup>.</p> <p>For the mixed-metal materials that dominate commercial cells, the magnetic response of LiNi<sub>x</sub>Mn<sub>y</sub>Co<sub>z</sub>O<sub>2</sub> varies greatly with transition metal composition and lithium content. At high nickel content these materials exhibit complex ferrimagnetic-like behavior, since nickel ions in the lithium layer introduce strong antiferromagnetic coupling via 180° Ni-O-Ni bonds and weaker ferromagnetic coupling via 90° bonds, producing small ferromagnetic clusters embedded in a larger antiferromagnetic framework. The evolution of magnetic response across this compositional range is discussed in detail by Chernova and coworkers <d-cite key="chernova2007"></d-cite>.</p> <h2 id="a-site-control-of-properties-in-layered-oxides">A-site control of properties in layered oxides</h2> <p>The alkali cation modulates the behavior of layered oxide electrodes through three linked effects: interlayer spacing and steric constraints, site-preference and defect energetics, and ionic mobility.</p> <p>Larger A-site cations such as Na<sup>+</sup> and K<sup>+</sup> expand the interlayer gap and suppress antisite disorder, favoring long-range cooperative Jahn-Teller and vacancy-ordering motifs that are often frustrated or nanoscale in the lithium-rich analogs. Smaller Li<sup>+</sup> favors closer-packed stacking, resulting in increased metal-oxygen covalency that raises working potentials, but also lowering the energetic cost of antisite defects that fragment cooperative ordering. Consequently, sodium-rich phases tend to show pronounced, commensurate vacancy and charge ordering together with sharp voltage plateaus, while lithium-rich phases more commonly exhibit disorder-smeared transitions, higher voltages, frustrated or glassy magnetic states, and a stronger sensitivity to synthesis route and defect concentration.</p> <h2 id="olivine-phosphates">Olivine phosphates</h2> <p>LiFePO<sub>4</sub> <d-cite key="padhi1997"></d-cite> is a Curie-Weiss paramagnet at room temperature but undergoes a transition below a Néel temperature of 50 K, becoming an antiferromagnetic Mott insulator in which the moments of high-spin Fe<sup>2+</sup> order collinearly along the <em>b</em> axis <d-cite key="santoro1967"></d-cite>. Upon Li<sup>+</sup> deinsertion the system exhibits a first-order phase separation between LiFePO<sub>4</sub> and FePO<sub>4</sub> rather than forming mixed-valence intermediate compositions. This arises from strong electron correlation effects which stabilize the two end members and inhibit the coexistence of Fe<sup>2+</sup> and Fe<sup>3+</sup>. The transition to high-spin Fe<sup>3+</sup> modifies the superexchange and crystal field environments, resulting in an increased Néel temperature of 125 K and a realignment of spins at a slight angle to the <em>a</em> axis <d-cite key="rousse2003"></d-cite>.</p> <p>While first-principles calculations confirm that intermediate compositions are energetically unstable as homogeneous phases, nanoscale particles below 100 nm or elevated temperatures can suppress this behavior, stabilizing a metastable single-phase state through surface energy and elastic strain effects. Operando studies have captured such metastable structures during high-rate cycling and mapped the compositional spatiodynamics within individual primary particles <d-cite key="liu2014,lim2016"></d-cite>.</p> <p>Recent theoretical work has shown that extended Hubbard treatments including both onsite <em>U</em> and intersite <em>V</em> parameters provide the most accurate description of the electronic structure of LiFePO<sub>4</sub>, correcting for the nonlocal charge screening and ligand-metal hybridization that static DFT+<em>U</em> can miss <d-cite key="timrov2022"></d-cite>.</p> <h2 id="spinel-oxides">Spinel oxides</h2> <p>At high temperatures, stoichiometric LiMn<sub>2</sub>O<sub>4</sub> <d-cite key="thackeray1983"></d-cite> adopts cubic symmetry and behaves as a Curie-Weiss paramagnet, with Mn fluctuating between 3+ and 4+ valence. Upon cooling, a first-order structural transition is observed near 290 K in which the material undergoes symmetry lowering to an orthorhombic $Fddd$ phase due to partial charge ordering of Jahn-Teller active Mn<sup>3+</sup> and Mn<sup>4+</sup> cations <d-cite key="rodriguez1998"></d-cite>. This electronic crystallization localizes electrons at the ordered sites, disrupting carrier mobility and producing a metal-to-insulator-like transition, in direct analogy with charge-ordering manganites such as La<sub>0.5</sub>Ca<sub>0.5</sub>MnO<sub>3</sub>. Despite strong antiferromagnetic exchange, the geometrically frustrated pyrochlore-like Mn sublattice suppresses long-range magnetic ordering down to 5 K <d-cite key="wills1999"></d-cite>.</p> <p>A particularly direct demonstration of electrochemical control over magnetism is provided by the spinel ferrites. Dasgupta and coworkers demonstrated control over the bulk magnetic properties of CuFe<sub>2</sub>O<sub>4</sub> and ZnFe<sub>2</sub>O<sub>4</sub> via reversible electrochemical (de)insertion of Li<sup>+</sup> <d-cite key="dasgupta2016"></d-cite>. In inverse-spinel CuFe<sub>2</sub>O<sub>4</sub>, lithium insertion partially reduces octahedral Cu<sup>2+</sup> to nonmagnetic Cu<sup>+</sup>, disrupting the Cu-O-Fe superexchange interactions and decreasing the room temperature magnetization by approximately 50%, with the Néel temperature falling from 610 to 530 K. In ZnFe<sub>2</sub>O<sub>4</sub>, insertion produces a significant broadening in the onset of magnetic ordering and an even larger decrease in room temperature magnetization of approximately 70%.</p> <p>In both cases the modulation of magnetization is fully reversible. Conventional magnetoelectric approaches rely primarily on voltage-induced polarization at interfaces, limiting effective control to surface atoms or thin films. The magnetic states achieved through Li<sup>+</sup> insertion are representative of the bulk material and are nonvolatile, removing the necessity for continuous application of an electric field.</p> <h2 id="wadsley-roth-oxide-anodes">Wadsley-Roth oxide anodes</h2> <p>Wadsley-Roth structures, derived from the crystallographic shear phases of ReO<sub>3</sub>, have garnered interest for their record-breaking rate capabilities <d-cite key="griffith2018"></d-cite>. PNb<sub>9</sub>O<sub>25</sub> achieves 85% of its theoretical charge capacity in 30 minutes, enabled by a multielectron redox mechanism involving stepwise reduction of niobium from Nb<sup>5+</sup> to Nb<sup>4+</sup> and finally to Nb<sup>3+</sup> <d-cite key="preefer2020"></d-cite>.</p> <p>One of the most striking observations is an insulator-to-metal transition upon lithium insertion. At low lithium content, magnetic susceptibility measurements show behavior consistent with localized, paramagnetic Nb <em>d</em> electrons. As more lithium is inserted the system undergoes a delocalization of <em>d</em> electrons, and beyond $x = 5$ it transitions to a band-like metallic regime, evidenced by a suppression of Curie-Weiss behavior and the onset of Pauli paramagnetism. This is observed experimentally as a large Knight shift in the <sup>31</sup>P solid-state NMR spectra, as conduction electrons induce a strong hyperfine field at the phosphorus nuclei. The emergence of a large Knight shift is direct evidence of finite spin density at the Fermi level.</p> <p>Not all members of the family behave in this way. Although the electronic conductivity of TiNb<sub>2</sub>O<sub>7</sub> increases by over four orders of magnitude on lithiation, it remains semiconducting even at full Li<sup>+</sup> insertion <d-cite key="griffith2019"></d-cite>.</p> <h2 id="electrode-materials-with-metal-metal-bonds">Electrode materials with metal-metal bonds</h2> <p>Electrode materials featuring direct metal-metal bonding offer a platform for emergent magnetic phenomena arising from the interplay between charge ordering, orbital overlap, and structural distortion.</p> <p>Electrochemical (de)insertion of Na<sup>+</sup> in P2-Na<sub>x</sub>VO<sub>2</sub> results in metal-metal bond formation <d-cite key="guignard2013"></d-cite>. Deinsertion raises the average valence on the vanadium site and leads to displacement of the metal atoms, forming distorted octahedra and allowing $t_{2g}$ overlap through the edge-sharing framework. This gives rise to pseudo-trimers with short V-V distances of 2.58 to 2.69 Å, which couple to the Na<sup>+</sup>/vacancy ordering such that at $x = 0.5$ full sodium order and vanadium displacement jointly minimize the total energy.</p> <p>The metal-metal clusters change how electrons are shared among the vanadium sites, producing drastic changes in electronic structure and transport. P2-Na<sub>0.5</sub>VO<sub>2</sub> possesses an anomalously small Curie constant compared with a naive mixture of V<sup>3+</sup> and V<sup>4+</sup> spins, consistent with most <em>d</em> electrons being sequestered into nonmagnetic or weakly magnetic cluster bonding states rather than acting as independent local moments. A first-order structural and electronic transition near 322 K is accompanied by an increase in electrical conductivity of roughly two orders of magnitude, as the vanadium atoms move back towards their ideal positions in the triangular lattice and the trimer motif is lost.</p> <h2 id="geometric-frustration-in-breathing-kagome-networks">Geometric frustration in breathing kagome networks</h2> <p>Kagome networks represent the maximally frustrated structure possible in two dimensions and have yielded exotic properties including frustrated magnetism, quantum spin liquids, and superconductivity <d-cite key="balents2010"></d-cite>.</p> <p>Both O1-LiScMo<sub>3</sub>O<sub>8</sub> and O2-Li<sub>2</sub>ScMo<sub>3</sub>O<sub>8</sub> contain two-dimensional kagome networks formed from layers of Mo-Mo bonded triangles. Spin-polarized density of states calculations show that the two <em>d</em> electrons per Mo are completely localized within the Mo-Mo bonds in LiScMo<sub>3</sub>O<sub>8</sub>, making the material a diamagnetic insulator <d-cite key="wyckoff2022"></d-cite>. The addition of one extra <em>d</em> electron per cluster results in the spins becoming polarized, giving magnetic frustration and spin-liquid behavior with no sign of magnetic ordering down to 0.5 K <d-cite key="haraguchi2015"></d-cite>.</p> <p>Reversible electrochemical insertion of Li<sup>+</sup> has been demonstrated across the range $1 \leq x \leq 3$, providing a new means of soft-chemical synthesis <d-cite key="wyckoff2023"></d-cite>. Notably, low-temperature susceptibility measurements show a magnetic ordering peak at 12 K, reaching a maximum at $x = 2$, for samples prepared electrochemically, which is absent in Li<sub>2</sub>ScMo<sub>3</sub>O<sub>8</sub> synthesized directly at high temperature. This ordering is attributed to Li<sup>+</sup> site ordering that is only possible within the structures of electrochemically prepared samples, which retain the O1-type layering and symmetry of the parent phase rather than adopting the offset cluster stacking of the directly synthesized product.</p> <p>The magnetic behavior correlates not only with electron count but also with subtle changes in Mo-Mo bond distances across the breathing kagome network. Electrochemical insertion leads to a systematic decrease in the breathing ratio, defined as the ratio of the longest to the shortest Mo-Mo bonding distance, from 1.27 in LiScMo<sub>3</sub>O<sub>8</sub> to 1.24 in Li<sub>3</sub>ScMo<sub>3</sub>O<sub>8</sub>, indicating that the Mo<sub>3</sub> clusters become more geometrically uniform with increasing lithium content.</p> <h2 id="challenges-and-outlook">Challenges and outlook</h2> <p>Several fundamental challenges remain, and these may be broadly separated into experimental challenges and measurement limitations.</p> <p>Only a small subset of materials can simultaneously accommodate mobile guest ions and support redox-active transition metals. While Li<sup>+</sup> and Na<sup>+</sup> (de)insertion has proven effective in materials with open frameworks, extending this to larger or multivalent ions such as Mg<sup>2+</sup> and Ca<sup>2+</sup> presents difficulties relating to sluggish kinetics. Furthermore, the emergence of phase coexistence during cycling, together with the frequently inhomogeneous nature of ion (de)insertion, can result in spatial variance, defect concentrations, and interfacial gradients that mask intrinsic electronic or magnetic transitions. Many of the most interesting quantum phenomena are sensitive to symmetry, topology, and precise stoichiometry, yet these are precisely the properties most susceptible to disorder. It is uncommon, for instance, for LiCoO<sub>2</sub> to exhibit ideal diamagnetism despite the $S = 0$ configuration of $d^6$ Co<sup>3+</sup>, owing to trace cation disorder and oxidation-state heterogeneity. This highlights a mismatch in scale between the physical phenomena, which emerge from spatially local effects, and the macroscopic mechanism of electrochemical control.</p> <p>Equally pressing practical challenges limit the measurement of physical properties. The four-point-probe method remains conventional for transport measurements but requires single-crystal samples, and advances in contactless techniques offer a promising route for polycrystalline electrode materials. Spectroscopic probes such as SQUID magnetometry and solid-state NMR remain essential, but are highly sensitive to contamination from the conductive additives, binders, and metallic components frequently employed in electrochemical cells. Development of quantum-compatible cell architectures permitting operando magnetometry <d-cite key="topolovec2016"></d-cite> and operando NMR <d-cite key="marker2020"></d-cite> will be a key innovation.</p> <p>It should also be noted that electrochemically driven quantum phenomena carry direct performance consequences. Electron localization and charge ordering reduce intrinsic conductivity, increase voltage hysteresis, and limit rate performance; Jahn-Teller and orbital ordering drive cooperative lattice distortions that raise mechanical strain and result in irreversible capacity loss. By contrast, reversible band-filling transitions or deliberate metal-metal bonding may enhance conduction.</p> <p>Perhaps the most interesting challenge is to develop predictive control. Static Kohn-Sham DFT and DFT+<em>U</em> are useful starting points but can misrepresent dynamic screening, spectral weight, and phase stability in strongly correlated electrode oxides. Many-body techniques such as DMFT capture time-dependent correlations and Mott or charge-transfer physics <d-cite key="paul2019"></d-cite>, while GW and related self-energy methods improve quasiparticle energies and nonlocal screening. We conclude that electrochemistry can provide a powerful platform for exploring and manipulating physical phenomena in correlated and quantum materials, and that continued electrochemical modulation of quantum ground states can serve as a proving ground not only for new materials, but for the fundamental models that seek to describe them.</p> <p>The full perspective, with complete treatment of each material system, is published in <em>Physical Review Materials</em> <d-cite key="wright2025"></d-cite>.</p>]]></content><author><name>Matthew A. Wright</name></author><category term="research"/><category term="batteries"/><category term="magnetism"/><category term="correlated-electrons"/><summary type="html"><![CDATA[Electrochemical alkali-ion (de)insertion provides dynamic, room-temperature control over spin state, charge ordering, and electron localization in transition metal oxides.]]></summary></entry><entry><title type="html">a post with marimo snippets</title><link href="https://matthewalexwright.github.io/blog/2025/marimo/" rel="alternate" type="text/html" title="a post with marimo snippets"/><published>2025-04-28T12:00:00+00:00</published><updated>2025-04-28T12:00:00+00:00</updated><id>https://matthewalexwright.github.io/blog/2025/marimo</id><content type="html" xml:base="https://matthewalexwright.github.io/blog/2025/marimo/"><![CDATA[<p><a href="https://marimo.io">marimo</a> notebooks can run Python directly in the reader’s browser. Opt a page in from its front matter:</p> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://matthewalexwright.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://matthewalexwright.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2026-09-02T22:31:06+00:00</updated><id>https://matthewalexwright.github.io/feed.xml</id><title type="html">blank</title><subtitle>Dr Matthew A. Wright. A Quantum Foundry Postdoctoral Associate at the University of California Santa Barbara. </subtitle><entry><title type="html">Linking battery electrode science with correlated and quantum materials</title><link href="https://matthewalexwright.github.io/blog/2025/battery-electrodes-as-quantum-materials/" rel="alternate" type="text/html" title="Linking battery electrode science with correlated and quantum materials"/><published>2025-11-26T00:00:00+00:00</published><updated>2025-11-26T00:00:00+00:00</updated><id>https://matthewalexwright.github.io/blog/2025/battery-electrodes-as-quantum-materials</id><content type="html" xml:base="https://matthewalexwright.github.io/blog/2025/battery-electrodes-as-quantum-materials/"><![CDATA[<h2 id="introduction">Introduction</h2> <p>Quantum materials, including superconductors and quantum spin liquids, as well as correlated oxides displaying coupled charge, spin, and magnetic order, possess properties that are exquisitely controlled by the electron count <d-cite key="dagotto2005"></d-cite>. The ability to control the properties of such a material is therefore directly related to the ability to control its electronic structure. Conventionally this is dictated at the point of synthesis, through elemental composition, synthetic conditions, and stoichiometry. A number of options are nevertheless available to researchers who wish to modify the properties of quantum materials postsynthesis <d-cite key="basov2017"></d-cite>, including the application of high pressures, high magnetic fields, high electric fields, or electrostatic gating.</p> <p>One method that remains underutilized, despite being well understood, is electrochemistry. In a transition metal oxide the position and quantity of metal and oxide ions is determined by high-temperature thermodynamics and is almost impossible to change at room temperature. In contrast, the relative amounts of electrochemically transportable ions such as lithium or sodium are readily controllable, provided the structure supplies diffusion paths for ion transport and the chemistry supplies transition metals capable of serving as electron reservoirs. Under these conditions the electron count of the bulk material may be varied continuously, reversibly, and at ambient temperature.</p> <p>This post summarizes a recent perspective in <em>Physical Review Materials</em> <d-cite key="wright2025"></d-cite> in which we review how alkali-ion (de)insertion has been used to alter spin states, induce charge ordering, and drive transitions between insulating, metallic, and magnetically frustrated phases across a range of battery electrode materials.</p> <p>The connection is not merely conceptual. First-principles calculations have shown that electronic correlations significantly impact the redox behavior of electrode materials, owing to the localized nature of the relevant states and to strong on-site Coulomb interactions <d-cite key="zhou2004"></d-cite>. In the absence of such correlations, the calculated voltage of an LiFePO<sub>4</sub> cathode is diminished by at least 0.5 V. Battery electrodes may therefore reasonably be described as one of the most useful real-world manifestations of electronic correlations of the Hubbard-<em>U</em> variety <d-cite key="hubbard1963"></d-cite>.</p> <div class="l-body"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/2025-11-26-battery-quantum/fig1-hubbard-u-voltage-480.webp 480w,/assets/img/2025-11-26-battery-quantum/fig1-hubbard-u-voltage-800.webp 800w,/assets/img/2025-11-26-battery-quantum/fig1-hubbard-u-voltage-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/2025-11-26-battery-quantum/fig1-hubbard-u-voltage.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" data-zoomable="" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"/> </picture> </figure> </div> <div class="caption"> Electrochemical potential as a function of the on-site Coulomb interaction, modeled by the Hubbard <em>U</em>, in olivine-structured LiMPO<sub>4</sub> (M = Fe, Mn, Co, Ni). The experimental potential is given by the short black dashes. The average potential (star) is derived from the calculated potential for the material in an oxidized and reduced state (triangles). Adapted with permission from F. Zhou, M. Cococcioni, C. A. Marianetti, D. Morgan and G. Ceder, <em>Phys. Rev. B</em> <b>70</b>, 235121 (2004). Copyright 2004 American Physical Society. </div> <h2 id="crystal-field-theory-and-jahn-teller-distortions">Crystal field theory and Jahn-Teller distortions</h2> <p>The majority of the <em>d</em> electrons residing on a transition metal do not partake in bond formation, but do influence the coordination environment of the metal atom and are responsible for properties such as electronic structure and magnetism. In an octahedral environment the <em>d</em> orbitals split into the lower-lying $t_{2g}$ set, which lies between the ligands, and the higher-lying $e_g$ set, which points directly towards them. The energy difference between the two is the crystal field splitting energy, $\Delta_\mathrm{oct}$. Since O<sup>2−</sup> is a weak field ligand, high-spin configurations are common for 3<em>d</em> metal oxides.</p> <p>Significant Jahn-Teller distortions occur when electrons are unevenly distributed within the $e_g$ set, as is the case for high-spin $d^4$, low-spin $d^7$, and $d^9$ configurations, which results in an unstable electronic configuration. The instability is relieved by altering the energies of the orbitals so as to remove the orbital degeneracy, typically by lengthening the metal-oxygen bonds along one axis and compressing those perpendicular to it. Such distortions can have a profound effect on physical properties, and can give rise to cooperative distortion, orbital ordering, and modification of magnetic superexchange pathways.</p> <p>Electrochemical (de)insertion therefore does not simply modulate the formal charge state of the transition metal. It also alters spin configuration and orbital occupancy, influencing electron localization and spin-state energetics. Readers seeking a more comprehensive treatment of magnetism in solids are directed to articles discussing the measurement <d-cite key="mozur2023"></d-cite> and interpretation <d-cite key="mugiraneza2022"></d-cite> of magnetic data.</p> <h2 id="layered-oxides---lixcoo2">Layered oxides - LixCoO2</h2> <div class="l-page"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/2025-11-26-battery-quantum/licoo2-electrochemical-states-480.webp 480w,/assets/img/2025-11-26-battery-quantum/licoo2-electrochemical-states-800.webp 800w,/assets/img/2025-11-26-battery-quantum/licoo2-electrochemical-states-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/2025-11-26-battery-quantum/licoo2-electrochemical-states.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" data-zoomable="" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"/> </picture> </figure> </div> <div class="caption"> Crystal structures of O3-LiCoO<sub>2</sub>, vacancy-ordered O3-Li<sub>0.55</sub>CoO<sub>2</sub> (shown schematically), and O1-CoO<sub>2</sub>, viewed along the [100] direction. Charging and discharging carry the material between a diamagnetic insulator, a charge-ordered antiferromagnet, and a paramagnetic metal. Reproduced from M. A. Wright and R. Seshadri, <em>Phys. Rev. Materials</em> <b>9</b>, 110302 (2025). </div> <p>Given the commercial and technological relevance of Li<sub>x</sub>CoO<sub>2</sub> <d-cite key="mizushima1980"></d-cite>, the mechanism of Li<sup>+</sup> (de)insertion across the whole range of <em>x</em> has been thoroughly investigated by detailed structural and spectroscopic studies. Fully lithiated O3-LiCoO<sub>2</sub> is an insulator with a band gap of 2.7 eV, containing Co<sup>3+</sup> in a low-spin $d^6$ configuration with a filled $t_{2g}$ manifold and no unpaired spins. Despite this diamagnetic ground state, the material displays a small temperature-independent susceptibility attributed to Van Vleck paramagnetism.</p> <p>A significant increase in magnetic susceptibility is observed immediately upon Li<sup>+</sup> deinsertion. The temperature-independent part of the susceptibility rises from $1.4 \times 10^{-4}$ emu mol<sup>−1</sup> Oe<sup>−1</sup> for LiCoO<sub>2</sub> to $2.5 \times 10^{-4}$ emu mol<sup>−1</sup> Oe<sup>−1</sup> for Li<sub>0.98</sub>CoO<sub>2</sub>, corresponding to the removal of only 0.02 Li<sup>+</sup> per formula unit, and continues to increase thereafter <d-cite key="hertz2008"></d-cite>.</p> <p>Lithium and vacancy ordering phenomena emerge at the commensurate compositions $x = 0.67$ and $x = 0.5$ near 175 K, evidenced by latent heat in differential scanning calorimetry and by sharp anomalies in the magnetic susceptibility. These are first-order transitions and are believed to originate from partial charge ordering of Co<sup>3+</sup> and Co<sup>4+</sup>, since the observed transition entropies are smaller than the mixing entropy expected for full charge separation. At $x = 0.5$, 1:1 lithium and vacancy ordering causes a hexagonal to monoclinic distortion that lowers the symmetry to $P2/m$, although O3-type layering is maintained <d-cite key="motohashi2009"></d-cite>.</p> <p>The end member CoO<sub>2</sub> can be synthesized by complete electrochemical Li<sup>+</sup> deinsertion, yielding a phase-pure, oxygen-stoichiometric compound with an O1-stacking sequence <d-cite key="devaulx2007"></d-cite>. Magnetic susceptibility measurements reveal a large temperature-independent susceptibility of $5.7 \times 10^{-4}$ emu mol<sup>−1</sup> Oe<sup>−1</sup> characteristic of Pauli paramagnetism. The effective moment of 0.18 $\mu_\mathrm{B}$ per Co is far lower than expected for localized low-spin Co<sup>4+</sup>, confirming that the system does not support localized spin moments and is best described as a Pauli paramagnetic metal <d-cite key="motohashi2007"></d-cite>. This contrasts sharply with the diamagnetic insulating behavior of LiCoO<sub>2</sub>, and demonstrates an evolution from an orbitally filled, insulating $S = 0$ configuration with localized electrons to a metallic quantum paramagnetic state with delocalized electrons.</p> <div class="l-body"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/2025-11-26-battery-quantum/fig4d-lixcoo2-phase-diagram-480.webp 480w,/assets/img/2025-11-26-battery-quantum/fig4d-lixcoo2-phase-diagram-800.webp 800w,/assets/img/2025-11-26-battery-quantum/fig4d-lixcoo2-phase-diagram-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/2025-11-26-battery-quantum/fig4d-lixcoo2-phase-diagram.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" data-zoomable="" loading="lazy" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"/> </picture> </figure> </div> <div class="caption"> The electronic phase diagram of Li<sub>x</sub>CoO<sub>2</sub>, derived from dc magnetic susceptibility and <sup>59</sup>Co NMR data. Adapted with permission from T. Motohashi, T. Ono, Y. Sugimoto, Y. Masubuchi, S. Kikkawa, R. Kanno, M. Karppinen and H. Yamauchi, <em>Phys. Rev. B</em> <b>80</b>, 165114 (2009). Copyright 2009 American Physical Society. </div> <p>Electron correlation in Li<sub>x</sub>CoO<sub>2</sub> also highlights the limitations of static DFT+<em>U</em> calculations, which artificially stabilize charge-ordered solutions, and instead require DMFT to correctly capture phase stability and suppress spurious charge order <d-cite key="isaacs2020"></d-cite>.</p> <h2 id="lixcoo2-versus-naxcoo2">LixCoO2 versus NaxCoO2</h2> <p>NaCoO<sub>2</sub> is isostructural with LiCoO<sub>2</sub>, and Na<sup>+</sup> can likewise be chemically and electrochemically (de)inserted. Changes in quantum properties as a function of alkali metal content nevertheless differ significantly between the two materials. The larger ionic radius of Na<sup>+</sup> compared with Li<sup>+</sup> (1.02 against 0.76 Å) results in more dynamic changes to the CoO<sub>2</sub> layers, with significant octahedral distortion and expanded interlayer spacing observed during (de)insertion <d-cite key="hertz2008"></d-cite>.</p> <p>At $x = 0.5$ a well-defined Co<sup>3+</sup>/Co<sup>4+</sup> charge-ordering and Na<sup>+</sup>/vacancy site-ordering transition occurs. This phase displays insulating behavior and a sharp decrease in Pauli susceptibility <d-cite key="foo2004"></d-cite>. An increased Pauli susceptibility is observed for $x = 0.3$, consistent with a correlated paramagnetic metal.</p> <p>This latter composition also forms the basis for the hydrated superconductor Na<sub>0.35</sub>CoO<sub>2</sub>·1.3H<sub>2</sub>O, with a critical temperature of approximately 4.5 K <d-cite key="schaak2003"></d-cite>. Partial deinsertion of Na<sup>+</sup> in aqueous environments is accompanied by insertion of guest H<sub>2</sub>O molecules, which occupy either side of the sodium and spatially separate it from the CoO<sub>2</sub> layer. The resulting <em>c</em>-axis expansion gives rise to a strong two-dimensional character similar to that observed between CuO<sub>2</sub> planes in layered cuprates, which is understood to be important for superconductivity <d-cite key="takada2003"></d-cite>. The critical temperature traces a domed profile against sodium content, mirroring the behavior of high-<em>T</em><sub>C</sub> cuprates. The hydrated phase is chemically fragile and is not a practical electrode, but it serves as an instructive example of how ion and water content can be used to tune carrier concentration and emergent phases.</p> <h2 id="lixnio2-and-the-role-of-antisite-disorder">LixNiO2 and the role of antisite disorder</h2> <p>Prior to his work on Li<sup>+</sup> (de)insertion in LiCoO<sub>2</sub>, Goodenough investigated the magnetic properties of disordered layered oxides for memory storage applications <d-cite key="goodenough1958"></d-cite>, a point that underscores how closely the two fields were once connected.</p> <p>NiO is an antiferromagnetic charge-transfer insulator with a Néel temperature of 525 K and a room temperature resistivity of order $10^8$ Ω cm. Insertion of Li<sup>+</sup> leads to a rapid decrease in electrical resistivity to approximately 1 Ω cm by $x = 0.2$. As more lithium is introduced, nanoscale domains of layered Li and Ni ordering begin to form, leading to chemical inhomogeneity and the emergence of complex magnetic phenomena <d-cite key="barton2013"></d-cite>. In this regime, Ni<sup>2+</sup> defects residing in the lithium layer mediate interlayer magnetic coupling and give rise to uncompensated ferrimagnetism, magnetic exchange bias, and Griffiths-phase-like behavior. At the end-member composition, chemical disorder caused by mixing of Ni<sup>2+</sup> and Li<sup>+</sup> sites disrupts long-range ordering, and LiNiO<sub>2</sub> exhibits a low-temperature glassy antiferromagnetic state with no magnetic Bragg peaks observed in neutron diffraction down to 1.4 K <d-cite key="reimers1993"></d-cite>.</p> <p>In contrast to the well-understood transitions of LiCoO<sub>2</sub>, there remains no consensus on the exact nature of the Ni<sup>3+</sup> electronic state in LiNiO<sub>2</sub>. Recent theoretical work employing advanced GW approximations as well as DMFT suggests the existence of Ni<sup>2+</sup> together with a negative charge-transfer ligand hole on oxygen, with theory matching experimental spectra <d-cite key="genreith2023,banerjee2024"></d-cite>. Much of the historical ambiguity appears attributable to defects. Highly ordered LiNiO<sub>2</sub> can be obtained by low-temperature ion exchange from defect-free NaNiO<sub>2</sub>, revealing a monoclinic, collinear Jahn-Teller ordered ground state that is otherwise hidden by defects in conventionally prepared samples <d-cite key="phillips2025"></d-cite>. Exchanging Li<sup>+</sup> for larger Na<sup>+</sup> reduces antisite inversion by expanding the interlayer distance beyond the size that Ni<sup>2+</sup> can readily occupy.</p> <p>The sodium analog is instructive in its own right. NaNiO<sub>2</sub> adopts a defect-free O’3-layered structure, and neutron pair distribution function analysis, EXAFS, and variable temperature NMR point to a predominantly displacive Jahn-Teller transition with vanishing local static distortions above the transition temperature <d-cite key="naglecocco2024"></d-cite>. Electrochemical desodiation produces the commensurate vacancy-ordered phase Na<sub>0.67</sub>NiO<sub>2</sub>, which possesses in-plane honeycomb Ni charge ordering and zigzag Na/vacancy motifs <d-cite key="steele2025"></d-cite>.</p> <h2 id="amno2-and-mixed-metal-layered-oxides">AMnO2 and mixed metal layered oxides</h2> <p>Manganese-based layered oxides are theoretically desirable owing to the low cost and low toxicity of Mn, but in practice LiMnO<sub>2</sub> and NaMnO<sub>2</sub> have not proved successful as electrode materials. This is because of the orbital degeneracy associated with the high-spin Mn<sup>3+</sup> $d^4$ configuration, which leads to significant Jahn-Teller distortions and drives an irreversible transition to the spinel structure during oxidation.</p> <p>The magnetism is correspondingly rich. In O3-NaMnO<sub>2</sub>, magnetic order is quasi-one-dimensional at high temperatures; at low temperatures, short-range incommensurate correlations give way to collinear antiferromagnetic order below 22 K, driven by strong in-plane exchange, structural anisotropy, and orbital ordering <d-cite key="dally2018"></d-cite>. The introduction of Na<sup>+</sup> vacancies at $x = 0.8$ induces an antiferromagnetic to ferromagnetic transition, together with a metal-to-semiconductor transition, arising from double-exchange interactions between Mn<sup>3+</sup> and Mn<sup>4+</sup>.</p> <p>For the mixed-metal materials that dominate commercial cells, the magnetic response of LiNi<sub>x</sub>Mn<sub>y</sub>Co<sub>z</sub>O<sub>2</sub> varies greatly with transition metal composition and lithium content. At high nickel content these materials exhibit complex ferrimagnetic-like behavior, since nickel ions in the lithium layer introduce strong antiferromagnetic coupling via 180° Ni-O-Ni bonds and weaker ferromagnetic coupling via 90° bonds, producing small ferromagnetic clusters embedded in a larger antiferromagnetic framework. The evolution of magnetic response across this compositional range is discussed in detail by Chernova and coworkers <d-cite key="chernova2007"></d-cite>.</p> <h2 id="a-site-control-of-properties-in-layered-oxides">A-site control of properties in layered oxides</h2> <p>The alkali cation modulates the behavior of layered oxide electrodes through three linked effects: interlayer spacing and steric constraints, site-preference and defect energetics, and ionic mobility.</p> <p>Larger A-site cations such as Na<sup>+</sup> and K<sup>+</sup> expand the interlayer gap and suppress antisite disorder, favoring long-range cooperative Jahn-Teller and vacancy-ordering motifs that are often frustrated or nanoscale in the lithium-rich analogs. Smaller Li<sup>+</sup> favors closer-packed stacking, resulting in increased metal-oxygen covalency that raises working potentials, but also lowering the energetic cost of antisite defects that fragment cooperative ordering. Consequently, sodium-rich phases tend to show pronounced, commensurate vacancy and charge ordering together with sharp voltage plateaus, while lithium-rich phases more commonly exhibit disorder-smeared transitions, higher voltages, frustrated or glassy magnetic states, and a stronger sensitivity to synthesis route and defect concentration.</p> <h2 id="olivine-phosphates">Olivine phosphates</h2> <p>LiFePO<sub>4</sub> <d-cite key="padhi1997"></d-cite> is a Curie-Weiss paramagnet at room temperature but undergoes a transition below a Néel temperature of 50 K, becoming an antiferromagnetic Mott insulator in which the moments of high-spin Fe<sup>2+</sup> order collinearly along the <em>b</em> axis <d-cite key="santoro1967"></d-cite>. Upon Li<sup>+</sup> deinsertion the system exhibits a first-order phase separation between LiFePO<sub>4</sub> and FePO<sub>4</sub> rather than forming mixed-valence intermediate compositions. This arises from strong electron correlation effects which stabilize the two end members and inhibit the coexistence of Fe<sup>2+</sup> and Fe<sup>3+</sup>. The transition to high-spin Fe<sup>3+</sup> modifies the superexchange and crystal field environments, resulting in an increased Néel temperature of 125 K and a realignment of spins at a slight angle to the <em>a</em> axis <d-cite key="rousse2003"></d-cite>.</p> <p>While first-principles calculations confirm that intermediate compositions are energetically unstable as homogeneous phases, nanoscale particles below 100 nm or elevated temperatures can suppress this behavior, stabilizing a metastable single-phase state through surface energy and elastic strain effects. Operando studies have captured such metastable structures during high-rate cycling and mapped the compositional spatiodynamics within individual primary particles <d-cite key="liu2014,lim2016"></d-cite>.</p> <p>Recent theoretical work has shown that extended Hubbard treatments including both onsite <em>U</em> and intersite <em>V</em> parameters provide the most accurate description of the electronic structure of LiFePO<sub>4</sub>, correcting for the nonlocal charge screening and ligand-metal hybridization that static DFT+<em>U</em> can miss <d-cite key="timrov2022"></d-cite>.</p> <h2 id="spinel-oxides">Spinel oxides</h2> <p>At high temperatures, stoichiometric LiMn<sub>2</sub>O<sub>4</sub> <d-cite key="thackeray1983"></d-cite> adopts cubic symmetry and behaves as a Curie-Weiss paramagnet, with Mn fluctuating between 3+ and 4+ valence. Upon cooling, a first-order structural transition is observed near 290 K in which the material undergoes symmetry lowering to an orthorhombic $Fddd$ phase due to partial charge ordering of Jahn-Teller active Mn<sup>3+</sup> and Mn<sup>4+</sup> cations <d-cite key="rodriguez1998"></d-cite>. This electronic crystallization localizes electrons at the ordered sites, disrupting carrier mobility and producing a metal-to-insulator-like transition, in direct analogy with charge-ordering manganites such as La<sub>0.5</sub>Ca<sub>0.5</sub>MnO<sub>3</sub>. Despite strong antiferromagnetic exchange, the geometrically frustrated pyrochlore-like Mn sublattice suppresses long-range magnetic ordering down to 5 K <d-cite key="wills1999"></d-cite>.</p> <p>A particularly direct demonstration of electrochemical control over magnetism is provided by the spinel ferrites. Dasgupta and coworkers demonstrated control over the bulk magnetic properties of CuFe<sub>2</sub>O<sub>4</sub> and ZnFe<sub>2</sub>O<sub>4</sub> via reversible electrochemical (de)insertion of Li<sup>+</sup> <d-cite key="dasgupta2016"></d-cite>. In inverse-spinel CuFe<sub>2</sub>O<sub>4</sub>, lithium insertion partially reduces octahedral Cu<sup>2+</sup> to nonmagnetic Cu<sup>+</sup>, disrupting the Cu-O-Fe superexchange interactions and decreasing the room temperature magnetization by approximately 50%, with the Néel temperature falling from 610 to 530 K. In ZnFe<sub>2</sub>O<sub>4</sub>, insertion produces a significant broadening in the onset of magnetic ordering and an even larger decrease in room temperature magnetization of approximately 70%.</p> <p>In both cases the modulation of magnetization is fully reversible. Conventional magnetoelectric approaches rely primarily on voltage-induced polarization at interfaces, limiting effective control to surface atoms or thin films. The magnetic states achieved through Li<sup>+</sup> insertion are representative of the bulk material and are nonvolatile, removing the necessity for continuous application of an electric field.</p> <h2 id="wadsley-roth-oxide-anodes">Wadsley-Roth oxide anodes</h2> <p>Wadsley-Roth structures, derived from the crystallographic shear phases of ReO<sub>3</sub>, have garnered interest for their record-breaking rate capabilities <d-cite key="griffith2018"></d-cite>. PNb<sub>9</sub>O<sub>25</sub> achieves 85% of its theoretical charge capacity in 30 minutes, enabled by a multielectron redox mechanism involving stepwise reduction of niobium from Nb<sup>5+</sup> to Nb<sup>4+</sup> and finally to Nb<sup>3+</sup> <d-cite key="preefer2020"></d-cite>.</p> <p>One of the most striking observations is an insulator-to-metal transition upon lithium insertion. At low lithium content, magnetic susceptibility measurements show behavior consistent with localized, paramagnetic Nb <em>d</em> electrons. As more lithium is inserted the system undergoes a delocalization of <em>d</em> electrons, and beyond $x = 5$ it transitions to a band-like metallic regime, evidenced by a suppression of Curie-Weiss behavior and the onset of Pauli paramagnetism. This is observed experimentally as a large Knight shift in the <sup>31</sup>P solid-state NMR spectra, as conduction electrons induce a strong hyperfine field at the phosphorus nuclei. The emergence of a large Knight shift is direct evidence of finite spin density at the Fermi level.</p> <p>Not all members of the family behave in this way. Although the electronic conductivity of TiNb<sub>2</sub>O<sub>7</sub> increases by over four orders of magnitude on lithiation, it remains semiconducting even at full Li<sup>+</sup> insertion <d-cite key="griffith2019"></d-cite>.</p> <h2 id="electrode-materials-with-metal-metal-bonds">Electrode materials with metal-metal bonds</h2> <p>Electrode materials featuring direct metal-metal bonding offer a platform for emergent magnetic phenomena arising from the interplay between charge ordering, orbital overlap, and structural distortion.</p> <p>Electrochemical (de)insertion of Na<sup>+</sup> in P2-Na<sub>x</sub>VO<sub>2</sub> results in metal-metal bond formation <d-cite key="guignard2013"></d-cite>. Deinsertion raises the average valence on the vanadium site and leads to displacement of the metal atoms, forming distorted octahedra and allowing $t_{2g}$ overlap through the edge-sharing framework. This gives rise to pseudo-trimers with short V-V distances of 2.58 to 2.69 Å, which couple to the Na<sup>+</sup>/vacancy ordering such that at $x = 0.5$ full sodium order and vanadium displacement jointly minimize the total energy.</p> <p>The metal-metal clusters change how electrons are shared among the vanadium sites, producing drastic changes in electronic structure and transport. P2-Na<sub>0.5</sub>VO<sub>2</sub> possesses an anomalously small Curie constant compared with a naive mixture of V<sup>3+</sup> and V<sup>4+</sup> spins, consistent with most <em>d</em> electrons being sequestered into nonmagnetic or weakly magnetic cluster bonding states rather than acting as independent local moments. A first-order structural and electronic transition near 322 K is accompanied by an increase in electrical conductivity of roughly two orders of magnitude, as the vanadium atoms move back towards their ideal positions in the triangular lattice and the trimer motif is lost.</p> <h2 id="geometric-frustration-in-breathing-kagome-networks">Geometric frustration in breathing kagome networks</h2> <p>Kagome networks represent the maximally frustrated structure possible in two dimensions and have yielded exotic properties including frustrated magnetism, quantum spin liquids, and superconductivity <d-cite key="balents2010"></d-cite>.</p> <p>Both O1-LiScMo<sub>3</sub>O<sub>8</sub> and O2-Li<sub>2</sub>ScMo<sub>3</sub>O<sub>8</sub> contain two-dimensional kagome networks formed from layers of Mo-Mo bonded triangles. Spin-polarized density of states calculations show that the two <em>d</em> electrons per Mo are completely localized within the Mo-Mo bonds in LiScMo<sub>3</sub>O<sub>8</sub>, making the material a diamagnetic insulator <d-cite key="wyckoff2022"></d-cite>. The addition of one extra <em>d</em> electron per cluster results in the spins becoming polarized, giving magnetic frustration and spin-liquid behavior with no sign of magnetic ordering down to 0.5 K <d-cite key="haraguchi2015"></d-cite>.</p> <p>Reversible electrochemical insertion of Li<sup>+</sup> has been demonstrated across the range $1 \leq x \leq 3$, providing a new means of soft-chemical synthesis <d-cite key="wyckoff2023"></d-cite>. Notably, low-temperature susceptibility measurements show a magnetic ordering peak at 12 K, reaching a maximum at $x = 2$, for samples prepared electrochemically, which is absent in Li<sub>2</sub>ScMo<sub>3</sub>O<sub>8</sub> synthesized directly at high temperature. This ordering is attributed to Li<sup>+</sup> site ordering that is only possible within the structures of electrochemically prepared samples, which retain the O1-type layering and symmetry of the parent phase rather than adopting the offset cluster stacking of the directly synthesized product.</p> <p>The magnetic behavior correlates not only with electron count but also with subtle changes in Mo-Mo bond distances across the breathing kagome network. Electrochemical insertion leads to a systematic decrease in the breathing ratio, defined as the ratio of the longest to the shortest Mo-Mo bonding distance, from 1.27 in LiScMo<sub>3</sub>O<sub>8</sub> to 1.24 in Li<sub>3</sub>ScMo<sub>3</sub>O<sub>8</sub>, indicating that the Mo<sub>3</sub> clusters become more geometrically uniform with increasing lithium content.</p> <h2 id="challenges-and-outlook">Challenges and outlook</h2> <p>Several fundamental challenges remain, and these may be broadly separated into experimental challenges and measurement limitations.</p> <p>Only a small subset of materials can simultaneously accommodate mobile guest ions and support redox-active transition metals. While Li<sup>+</sup> and Na<sup>+</sup> (de)insertion has proven effective in materials with open frameworks, extending this to larger or multivalent ions such as Mg<sup>2+</sup> and Ca<sup>2+</sup> presents difficulties relating to sluggish kinetics. Furthermore, the emergence of phase coexistence during cycling, together with the frequently inhomogeneous nature of ion (de)insertion, can result in spatial variance, defect concentrations, and interfacial gradients that mask intrinsic electronic or magnetic transitions. Many of the most interesting quantum phenomena are sensitive to symmetry, topology, and precise stoichiometry, yet these are precisely the properties most susceptible to disorder. It is uncommon, for instance, for LiCoO<sub>2</sub> to exhibit ideal diamagnetism despite the $S = 0$ configuration of $d^6$ Co<sup>3+</sup>, owing to trace cation disorder and oxidation-state heterogeneity. This highlights a mismatch in scale between the physical phenomena, which emerge from spatially local effects, and the macroscopic mechanism of electrochemical control.</p> <p>Equally pressing practical challenges limit the measurement of physical properties. The four-point-probe method remains conventional for transport measurements but requires single-crystal samples, and advances in contactless techniques offer a promising route for polycrystalline electrode materials. Spectroscopic probes such as SQUID magnetometry and solid-state NMR remain essential, but are highly sensitive to contamination from the conductive additives, binders, and metallic components frequently employed in electrochemical cells. Development of quantum-compatible cell architectures permitting operando magnetometry <d-cite key="topolovec2016"></d-cite> and operando NMR <d-cite key="marker2020"></d-cite> will be a key innovation.</p> <p>It should also be noted that electrochemically driven quantum phenomena carry direct performance consequences. Electron localization and charge ordering reduce intrinsic conductivity, increase voltage hysteresis, and limit rate performance; Jahn-Teller and orbital ordering drive cooperative lattice distortions that raise mechanical strain and result in irreversible capacity loss. By contrast, reversible band-filling transitions or deliberate metal-metal bonding may enhance conduction.</p> <p>Perhaps the most interesting challenge is to develop predictive control. Static Kohn-Sham DFT and DFT+<em>U</em> are useful starting points but can misrepresent dynamic screening, spectral weight, and phase stability in strongly correlated electrode oxides. Many-body techniques such as DMFT capture time-dependent correlations and Mott or charge-transfer physics <d-cite key="paul2019"></d-cite>, while GW and related self-energy methods improve quasiparticle energies and nonlocal screening. We conclude that electrochemistry can provide a powerful platform for exploring and manipulating physical phenomena in correlated and quantum materials, and that continued electrochemical modulation of quantum ground states can serve as a proving ground not only for new materials, but for the fundamental models that seek to describe them.</p> <p>The full perspective, with complete treatment of each material system, is published in <em>Physical Review Materials</em> <d-cite key="wright2025"></d-cite>.</p>]]></content><author><name>Matthew A. Wright</name></author><category term="research"/><category term="batteries"/><category term="magnetism"/><category term="correlated-electrons"/><summary type="html"><![CDATA[Electrochemical alkali-ion (de)insertion provides dynamic, room-temperature control over spin state, charge ordering, and electron localization in transition metal oxides.]]></summary></entry><entry><title type="html">a post with marimo snippets</title><link href="https://matthewalexwright.github.io/blog/2025/marimo/" rel="alternate" type="text/html" title="a post with marimo snippets"/><published>2025-04-28T12:00:00+00:00</published><updated>2025-04-28T12:00:00+00:00</updated><id>https://matthewalexwright.github.io/blog/2025/marimo</id><content type="html" xml:base="https://matthewalexwright.github.io/blog/2025/marimo/"><![CDATA[<p><a href="https://marimo.io">marimo</a> notebooks can run Python directly in the reader’s browser. Opt a page in from its front matter:</p> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
 <span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
 <span class="na">title</span><span class="pi">:</span> <span class="s">a post with marimo snippets</span>
 <span class="na">marimo</span><span class="pi">:</span> <span class="kc">true</span>
@@ -104,563 +104,253 @@ Content 2
 <span class="cp">{%</span><span class="w"> </span><span class="nt">endtab</span><span class="w"> </span><span class="cp">%}</span>
 
 <span class="cp">{%</span><span class="w"> </span><span class="nt">endtabs</span><span class="w"> </span><span class="cp">%}</span>
-</code></pre></div></div> <p>With this you can generate visualizations like:</p> <ul id="log" class="tab" data-tab="e4ad7516-28c2-41fb-8064-4c4d2fb40b03" data-name="log"> <li class="active" id="log-php"> <a href="#">php </a> </li> <li id="log-js"> <a href="#">js </a> </li> <li id="log-ruby"> <a href="#">ruby </a> </li> </ul> <ul class="tab-content" id="e4ad7516-28c2-41fb-8064-4c4d2fb40b03" data-name="log"> <li class="active"> <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">var_dump</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">);</span>
+</code></pre></div></div> <p>With this you can generate visualizations like:</p> <ul id="log" class="tab" data-tab="1e86d5d7-65aa-4e31-93e3-85a4caf9ca8f" data-name="log"> <li class="active" id="log-php"> <a href="#">php </a> </li> <li id="log-js"> <a href="#">js </a> </li> <li id="log-ruby"> <a href="#">ruby </a> </li> </ul> <ul class="tab-content" id="1e86d5d7-65aa-4e31-93e3-85a4caf9ca8f" data-name="log"> <li class="active"> <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">var_dump</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">);</span>
 </code></pre></div></div> </li> <li> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span><span class="p">);</span>
 </code></pre></div></div> </li> <li> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">pputs</span> <span class="dl">'</span><span class="s1">hello</span><span class="dl">'</span>
-</code></pre></div></div> </li> </ul> <h2 id="another-example">Another example</h2> <ul id="data-struct" class="tab" data-tab="cd3f0146-baea-4497-a956-8c2d592103c9" data-name="data-struct"> <li class="active" id="data-struct-yaml"> <a href="#">yaml </a> </li> <li id="data-struct-json"> <a href="#">json </a> </li> </ul> <ul class="tab-content" id="cd3f0146-baea-4497-a956-8c2d592103c9" data-name="data-struct"> <li class="active"> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">hello</span><span class="pi">:</span>
+</code></pre></div></div> </li> </ul> <h2 id="another-example">Another example</h2> <ul id="data-struct" class="tab" data-tab="6b66f323-beb5-4850-a8eb-7ebce321fc9e" data-name="data-struct"> <li class="active" id="data-struct-yaml"> <a href="#">yaml </a> </li> <li id="data-struct-json"> <a href="#">json </a> </li> </ul> <ul class="tab-content" id="6b66f323-beb5-4850-a8eb-7ebce321fc9e" data-name="data-struct"> <li class="active"> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">hello</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="s2">"</span><span class="s">whatsup"</span>
   <span class="pi">-</span> <span class="s2">"</span><span class="s">hi"</span>
 </code></pre></div></div> </li> <li> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"hello"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"whatsup"</span><span class="p">,</span><span class="w"> </span><span class="s2">"hi"</span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div></div> </li> </ul> <h2 id="tabs-for-something-else">Tabs for something else</h2> <ul id="something-else" class="tab" data-tab="1fd2ef5d-eab6-43fe-bd54-89daa20a48a2" data-name="something-else"> <li class="active" id="something-else-text"> <a href="#">text </a> </li> <li id="something-else-quote"> <a href="#">quote </a> </li> <li id="something-else-list"> <a href="#">list </a> </li> </ul> <ul class="tab-content" id="1fd2ef5d-eab6-43fe-bd54-89daa20a48a2" data-name="something-else"> <li class="active"> <p>Regular text</p> </li> <li> <blockquote> <p>A quote</p> </blockquote> </li> <li> <p>Hipster list</p> <ul> <li>brunch</li> <li>fixie</li> <li>raybans</li> <li>messenger bag</li> </ul> </li> </ul>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="code"/><summary type="html"><![CDATA[this is what included tabs in a post could look like]]></summary></entry><entry><title type="html">a post with typograms</title><link href="https://matthewalexwright.github.io/blog/2024/typograms/" rel="alternate" type="text/html" title="a post with typograms"/><published>2024-04-29T23:36:10+00:00</published><updated>2024-04-29T23:36:10+00:00</updated><id>https://matthewalexwright.github.io/blog/2024/typograms</id><content type="html" xml:base="https://matthewalexwright.github.io/blog/2024/typograms/"><![CDATA[<p>This is an example post with some <a href="https://github.com/google/typograms/">typograms</a> code.</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">typograms
-</span><span class="sb">+----+
-|    |---&gt; My first diagram!
-+----+</span>
+</span></code></pre></div></div> </li> </ul> <h2 id="tabs-for-something-else">Tabs for something else</h2> <ul id="something-else" class="tab" data-tab="79657b8f-6bc2-43e3-8eec-b0f84e82de7d" data-name="something-else"> <li class="active" id="something-else-text"> <a href="#">text </a> </li> <li id="something-else-quote"> <a href="#">quote </a> </li> <li id="something-else-list"> <a href="#">list </a> </li> </ul> <ul class="tab-content" id="79657b8f-6bc2-43e3-8eec-b0f84e82de7d" data-name="something-else"> <li class="active"> <p>Regular text</p> </li> <li> <blockquote> <p>A quote</p> </blockquote> </li> <li> <p>Hipster list</p> <ul> <li>brunch</li> <li>fixie</li> <li>raybans</li> <li>messenger bag</li> </ul> </li> </ul>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="code"/><summary type="html"><![CDATA[this is what included tabs in a post could look like]]></summary></entry><entry><title type="html">a post with vega lite</title><link href="https://matthewalexwright.github.io/blog/2024/vega-lite/" rel="alternate" type="text/html" title="a post with vega lite"/><published>2024-01-27T00:20:00+00:00</published><updated>2024-04-14T04:30:00+00:00</updated><id>https://matthewalexwright.github.io/blog/2024/vega-lite</id><content type="html" xml:base="https://matthewalexwright.github.io/blog/2024/vega-lite/"><![CDATA[<p>This is an example post with some <a href="https://vega.github.io/vega-lite/">vega lite</a> code.</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">vega_lite
+</span><span class="sb">{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A dot plot showing each movie in the database, and the difference from the average movie rating. The display is sorted by year to visualize everything in sequential order. The graph is for all Movies before 2019.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/movies.json"
+  },
+  "transform": [
+    {"filter": "datum['IMDB Rating'] != null"},
+    {"filter": {"timeUnit": "year", "field": "Release Date", "range": [null, 2019]}},
+    {
+      "joinaggregate": [{
+        "op": "mean",
+        "field": "IMDB Rating",
+        "as": "AverageRating"
+      }]
+    },
+    {
+      "calculate": "datum['IMDB Rating'] - datum.AverageRating",
+      "as": "RatingDelta"
+    }
+  ],
+  "mark": "point",
+  "encoding": {
+    "x": {
+      "field": "Release Date",
+      "type": "temporal"
+    },
+    "y": {
+      "field": "RatingDelta",
+      "type": "quantitative",
+      "title": "Rating Delta"
+    },
+    "color": {
+      "field": "RatingDelta",
+      "type": "quantitative",
+      "scale": {"domainMid": 0},
+      "title": "Rating Delta"
+    }
+  }
+}</span>
 <span class="p">```</span>
-</code></pre></div></div> <p>Which generates:</p> <pre><code class="language-typograms">+----+
-|    |---&gt; My first diagram!
-+----+
-</code></pre> <p>Another example:</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">typograms
-</span><span class="sb">.------------------------.
-|.----------------------.|
-||"https://example.com" ||
-|'----------------------'|
-| ______________________ |
-||                      ||
-||   Welcome!           ||
-||                      ||
-||                      ||
-||  .----------------.  ||
-||  | username       |  ||
-||  '----------------'  ||
-||  .----------------.  ||
-||  |"*******"       |  ||
-||  '----------------'  ||
-||                      ||
-||  .----------------.  ||
-||  |   "Sign-up"    |  ||
-||  '----------------'  ||
-||                      ||
-|+----------------------+|
-.------------------------.</span>
+</code></pre></div></div> <p>Which generates:</p> <pre><code class="language-vega_lite">{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A dot plot showing each movie in the database, and the difference from the average movie rating. The display is sorted by year to visualize everything in sequential order. The graph is for all Movies before 2019.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/movies.json"
+  },
+  "transform": [
+    {"filter": "datum['IMDB Rating'] != null"},
+    {"filter": {"timeUnit": "year", "field": "Release Date", "range": [null, 2019]}},
+    {
+      "joinaggregate": [{
+        "op": "mean",
+        "field": "IMDB Rating",
+        "as": "AverageRating"
+      }]
+    },
+    {
+      "calculate": "datum['IMDB Rating'] - datum.AverageRating",
+      "as": "RatingDelta"
+    }
+  ],
+  "mark": "point",
+  "encoding": {
+    "x": {
+      "field": "Release Date",
+      "type": "temporal"
+    },
+    "y": {
+      "field": "RatingDelta",
+      "type": "quantitative",
+      "title": "Rating Delta"
+    },
+    "color": {
+      "field": "RatingDelta",
+      "type": "quantitative",
+      "scale": {"domainMid": 0},
+      "title": "Rating Delta"
+    }
+  }
+}
+</code></pre> <p>This plot supports both light and dark themes.</p>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="charts"/><summary type="html"><![CDATA[this is what included vega lite code could look like]]></summary></entry><entry><title type="html">a post with chart.js</title><link href="https://matthewalexwright.github.io/blog/2024/chartjs/" rel="alternate" type="text/html" title="a post with chart.js"/><published>2024-01-26T01:04:00+00:00</published><updated>2024-01-26T01:04:00+00:00</updated><id>https://matthewalexwright.github.io/blog/2024/chartjs</id><content type="html" xml:base="https://matthewalexwright.github.io/blog/2024/chartjs/"><![CDATA[<p>This is an example post with some <a href="https://www.chartjs.org/">chart.js</a> code.</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">chartjs
+</span><span class="sb">{
+  "type": "line",
+  "data": {
+    "labels": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July"
+    ],
+    "datasets": [
+      {
+        "label": "# of bugs",
+        "fill": false,
+        "lineTension": 0.1,
+        "backgroundColor": "rgba(75,192,192,0.4)",
+        "borderColor": "rgba(75,192,192,1)",
+        "borderCapStyle": "butt",
+        "borderDash": [],
+        "borderDashOffset": 0,
+        "borderJoinStyle": "miter",
+        "pointBorderColor": "rgba(75,192,192,1)",
+        "pointBackgroundColor": "#fff",
+        "pointBorderWidth": 1,
+        "pointHoverRadius": 5,
+        "pointHoverBackgroundColor": "rgba(75,192,192,1)",
+        "pointHoverBorderColor": "rgba(220,220,220,1)",
+        "pointHoverBorderWidth": 2,
+        "pointRadius": 1,
+        "pointHitRadius": 10,
+        "data": [
+          65,
+          59,
+          80,
+          81,
+          56,
+          55,
+          40
+        ],
+        "spanGaps": false
+      }
+    ]
+  },
+  "options": {}
+}</span>
 <span class="p">```</span>
-</code></pre></div></div> <p>which generates:</p> <pre><code class="language-typograms">.------------------------.
-|.----------------------.|
-||"https://example.com" ||
-|'----------------------'|
-| ______________________ |
-||                      ||
-||   Welcome!           ||
-||                      ||
-||                      ||
-||  .----------------.  ||
-||  | username       |  ||
-||  '----------------'  ||
-||  .----------------.  ||
-||  |"*******"       |  ||
-||  '----------------'  ||
-||                      ||
-||  .----------------.  ||
-||  |   "Sign-up"    |  ||
-||  '----------------'  ||
-||                      ||
-|+----------------------+|
-.------------------------.
-</code></pre> <p>For more examples, check out the <a href="https://google.github.io/typograms/#examples">typograms documentation</a>.</p>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="diagrams"/><summary type="html"><![CDATA[this is what included typograms code could look like]]></summary></entry><entry><title type="html">a post that can be cited</title><link href="https://matthewalexwright.github.io/blog/2024/post-citation/" rel="alternate" type="text/html" title="a post that can be cited"/><published>2024-04-28T15:06:00+00:00</published><updated>2024-04-28T15:06:00+00:00</updated><id>https://matthewalexwright.github.io/blog/2024/post-citation</id><content type="html" xml:base="https://matthewalexwright.github.io/blog/2024/post-citation/"><![CDATA[<p>This is an example post that can be cited. The content of the post ends here, while the citation information is automatically provided below. The only thing needed is for you to set the <code class="language-plaintext highlighter-rouge">citation</code> key in the front matter to <code class="language-plaintext highlighter-rouge">true</code>.</p>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="citation"/><summary type="html"><![CDATA[this is what a post that can be cited looks like]]></summary></entry><entry><title type="html">a post with pseudo code</title><link href="https://matthewalexwright.github.io/blog/2024/pseudocode/" rel="alternate" type="text/html" title="a post with pseudo code"/><published>2024-04-15T00:01:00+00:00</published><updated>2024-04-15T00:01:00+00:00</updated><id>https://matthewalexwright.github.io/blog/2024/pseudocode</id><content type="html" xml:base="https://matthewalexwright.github.io/blog/2024/pseudocode/"><![CDATA[<p>This is an example post with some pseudo code rendered by <a href="https://github.com/SaswatPadhi/pseudocode.js">pseudocode</a>. The example presented here is the same as the one in the <a href="https://saswat.padhi.me/pseudocode.js/">pseudocode.js</a> documentation, with only one simple but important change: everytime you would use <code class="language-plaintext highlighter-rouge">$</code>, you should use <code class="language-plaintext highlighter-rouge">$$</code> instead. Also, note that the <code class="language-plaintext highlighter-rouge">pseudocode</code> key in the front matter is set to <code class="language-plaintext highlighter-rouge">true</code> to enable the rendering of pseudo code. As an example, using this code:</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">pseudocode
-</span><span class="sb">% This quicksort algorithm is extracted from Chapter 7, Introduction to Algorithms (3rd edition)
-\begin{algorithm}
-\caption{Quicksort}
-\begin{algorithmic}
-\PROCEDURE{Quicksort}{$$A, p, r$$}
-    \IF{$$p &lt; r$$}
-        \STATE $$q = $$ \CALL{Partition}{$$A, p, r$$}
-        \STATE \CALL{Quicksort}{$$A, p, q - 1$$}
-        \STATE \CALL{Quicksort}{$$A, q + 1, r$$}
-    \ENDIF
-\ENDPROCEDURE
-\PROCEDURE{Partition}{$$A, p, r$$}
-    \STATE $$x = A[r]$$
-    \STATE $$i = p - 1$$
-    \FOR{$$j = p$$ \TO $$r - 1$$}
-        \IF{$$A[j] &lt; x$$}
-            \STATE $$i = i + 1$$
-            \STATE exchange
-            $$A[i]$$ with $$A[j]$$
-        \ENDIF
-        \STATE exchange $$A[i]$$ with $$A[r]$$
-    \ENDFOR
-\ENDPROCEDURE
-\end{algorithmic}
-\end{algorithm}</span>
+</code></pre></div></div> <p>This is how it looks like:</p> <pre><code class="language-chartjs">{
+  "type": "line",
+  "data": {
+    "labels": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July"
+    ],
+    "datasets": [
+      {
+        "label": "# of bugs",
+        "fill": false,
+        "lineTension": 0.1,
+        "backgroundColor": "rgba(75,192,192,0.4)",
+        "borderColor": "rgba(75,192,192,1)",
+        "borderCapStyle": "butt",
+        "borderDash": [],
+        "borderDashOffset": 0,
+        "borderJoinStyle": "miter",
+        "pointBorderColor": "rgba(75,192,192,1)",
+        "pointBackgroundColor": "#fff",
+        "pointBorderWidth": 1,
+        "pointHoverRadius": 5,
+        "pointHoverBackgroundColor": "rgba(75,192,192,1)",
+        "pointHoverBorderColor": "rgba(220,220,220,1)",
+        "pointHoverBorderWidth": 2,
+        "pointRadius": 1,
+        "pointHitRadius": 10,
+        "data": [
+          65,
+          59,
+          80,
+          81,
+          56,
+          55,
+          40
+        ],
+        "spanGaps": false
+      }
+    ]
+  },
+  "options": {}
+}
+</code></pre> <p>Also another example chart.</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">chartjs
+</span><span class="sb">{
+  "type": "doughnut",
+  "data": {
+    "labels": [
+      "Red",
+      "Blue",
+      "Yellow"
+    ],
+    "datasets": [
+      {
+        "data": [
+          300,
+          50,
+          100
+        ],
+        "backgroundColor": [
+          "#FF6384",
+          "#36A2EB",
+          "#FFCE56"
+        ],
+        "hoverBackgroundColor": [
+          "#FF6384",
+          "#36A2EB",
+          "#FFCE56"
+        ]
+      }
+    ]
+  },
+  "options": {}
+}</span>
 <span class="p">```</span>
-</code></pre></div></div> <p>Generates:</p> <pre><code class="language-pseudocode">% This quicksort algorithm is extracted from Chapter 7, Introduction to Algorithms (3rd edition)
-\begin{algorithm}
-\caption{Quicksort}
-\begin{algorithmic}
-\PROCEDURE{Quicksort}{$$A, p, r$$}
-    \IF{$$p &lt; r$$}
-        \STATE $$q = $$ \CALL{Partition}{$$A, p, r$$}
-        \STATE \CALL{Quicksort}{$$A, p, q - 1$$}
-        \STATE \CALL{Quicksort}{$$A, q + 1, r$$}
-    \ENDIF
-\ENDPROCEDURE
-\PROCEDURE{Partition}{$$A, p, r$$}
-    \STATE $$x = A[r]$$
-    \STATE $$i = p - 1$$
-    \FOR{$$j = p$$ \TO $$r - 1$$}
-        \IF{$$A[j] &lt; x$$}
-            \STATE $$i = i + 1$$
-            \STATE exchange
-            $$A[i]$$ with $$A[j]$$
-        \ENDIF
-        \STATE exchange $$A[i]$$ with $$A[r]$$
-    \ENDFOR
-\ENDPROCEDURE
-\end{algorithmic}
-\end{algorithm}
-</code></pre>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="code"/><summary type="html"><![CDATA[this is what included pseudo code could look like]]></summary></entry><entry><title type="html">a post with code diff</title><link href="https://matthewalexwright.github.io/blog/2024/code-diff/" rel="alternate" type="text/html" title="a post with code diff"/><published>2024-01-27T19:22:00+00:00</published><updated>2024-01-27T19:22:00+00:00</updated><id>https://matthewalexwright.github.io/blog/2024/code-diff</id><content type="html" xml:base="https://matthewalexwright.github.io/blog/2024/code-diff/"><![CDATA[<p>You can display diff code by using the regular markdown syntax:</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">diff
-</span><span class="gh">diff --git a/sample.js b/sample.js
-index 0000001..0ddf2ba
-</span><span class="gd">--- a/sample.js
-</span><span class="gi">+++ b/sample.js
-</span><span class="p">@@ -1 +1 @@</span>
-<span class="gd">-console.log("Hello World!")
-</span><span class="gi">+console.log("Hello from Diff2Html!")</span>
-<span class="p">```</span>
-</code></pre></div></div> <p>Which generates:</p> <div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh">diff --git a/sample.js b/sample.js
-index 0000001..0ddf2ba
-</span><span class="gd">--- a/sample.js
-</span><span class="gi">+++ b/sample.js
-</span><span class="p">@@ -1 +1 @@</span>
-<span class="gd">-console.log("Hello World!")
-</span><span class="gi">+console.log("Hello from Diff2Html!")
-</span></code></pre></div></div> <p>But this is difficult to read, specially if you have a large diff. You can use <a href="https://diff2html.xyz/">diff2html</a> to display a more readable version of the diff. For this, just use <code class="language-plaintext highlighter-rouge">diff2html</code> instead of <code class="language-plaintext highlighter-rouge">diff</code> for the code block language:</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">diff2html
-</span><span class="sb">diff --git a/sample.js b/sample.js
-index 0000001..0ddf2ba
---- a/sample.js
-+++ b/sample.js
-@@ -1 +1 @@
--console.log("Hello World!")
-+console.log("Hello from Diff2Html!")</span>
-<span class="p">```</span>
-</code></pre></div></div> <p>If we use a longer example, for example <a href="https://github.com/rtfpessoa/diff2html/commit/c2c253d3e3f8b8b267f551e659f72b44ca2ac927">this commit from diff2html</a>, it will generate the following output:</p> <pre><code class="language-diff2html">From 2aaae31cc2a37bfff83430c2c914b140bee59b6a Mon Sep 17 00:00:00 2001
-From: Rodrigo Fernandes &lt;rtfrodrigo@gmail.com&gt;
-Date: Sun, 9 Oct 2016 16:41:54 +0100
-Subject: [PATCH 1/2] Initial template override support
-
----
- scripts/hulk.js                    |  4 ++--
- src/diff2html.js                   |  3 +--
- src/file-list-printer.js           | 11 ++++++++---
- src/hoganjs-utils.js               | 29 +++++++++++++++++------------
- src/html-printer.js                |  6 ++++++
- src/line-by-line-printer.js        |  6 +++++-
- src/side-by-side-printer.js        |  6 +++++-
- test/file-list-printer-tests.js    |  2 +-
- test/hogan-cache-tests.js          | 18 +++++++++++++++---
- test/line-by-line-tests.js         |  3 +--
- test/side-by-side-printer-tests.js |  3 +--
- 11 files changed, 62 insertions(+), 29 deletions(-)
-
-diff --git a/scripts/hulk.js b/scripts/hulk.js
-index 5a793c18..a4b1a4d5 100755
---- a/scripts/hulk.js
-+++ b/scripts/hulk.js
-@@ -173,11 +173,11 @@ function namespace(name) {
- // write a template foreach file that matches template extension
- templates = extractFiles(options.argv.remain)
-   .map(function(file) {
--    var openedFile = fs.readFileSync(file, 'utf-8');
-+    var openedFile = fs.readFileSync(file, 'utf-8').trim();
-     var name;
-     if (!openedFile) return;
-     name = namespace(path.basename(file).replace(/\..*$/, ''));
--    openedFile = removeByteOrderMark(openedFile.trim());
-+    openedFile = removeByteOrderMark(openedFile);
-     openedFile = wrap(file, name, openedFile);
-     if (!options.outputdir) return openedFile;
-     fs.writeFileSync(path.join(options.outputdir, name + '.js')
-diff --git a/src/diff2html.js b/src/diff2html.js
-index 21b0119e..64e138f5 100644
---- a/src/diff2html.js
-+++ b/src/diff2html.js
-@@ -7,7 +7,6 @@
-
- (function() {
-   var diffParser = require('./diff-parser.js').DiffParser;
--  var fileLister = require('./file-list-printer.js').FileListPrinter;
-   var htmlPrinter = require('./html-printer.js').HtmlPrinter;
-
-   function Diff2Html() {
-@@ -43,7 +42,7 @@
-
-     var fileList = '';
-     if (configOrEmpty.showFiles === true) {
--      fileList = fileLister.generateFileList(diffJson, configOrEmpty);
-+      fileList = htmlPrinter.generateFileListSummary(diffJson, configOrEmpty);
-     }
-
-     var diffOutput = '';
-diff --git a/src/file-list-printer.js b/src/file-list-printer.js
-index e408d9b2..1e0a2c61 100644
---- a/src/file-list-printer.js
-+++ b/src/file-list-printer.js
-@@ -8,11 +8,16 @@
- (function() {
-   var printerUtils = require('./printer-utils.js').PrinterUtils;
-
--  var hoganUtils = require('./hoganjs-utils.js').HoganJsUtils;
-+  var hoganUtils;
-+
-   var baseTemplatesPath = 'file-summary';
-   var iconsBaseTemplatesPath = 'icon';
-
--  function FileListPrinter() {
-+  function FileListPrinter(config) {
-+    this.config = config;
-+
-+    var HoganJsUtils = require('./hoganjs-utils.js').HoganJsUtils;
-+    hoganUtils = new HoganJsUtils(config);
-   }
-
-   FileListPrinter.prototype.generateFileList = function(diffFiles) {
-@@ -38,5 +43,5 @@
-     });
-   };
-
--  module.exports.FileListPrinter = new FileListPrinter();
-+  module.exports.FileListPrinter = FileListPrinter;
- })();
-diff --git a/src/hoganjs-utils.js b/src/hoganjs-utils.js
-index 9949e5fa..0dda08d7 100644
---- a/src/hoganjs-utils.js
-+++ b/src/hoganjs-utils.js
-@@ -8,18 +8,19 @@
- (function() {
-   var fs = require('fs');
-   var path = require('path');
--
-   var hogan = require('hogan.js');
-
-   var hoganTemplates = require('./templates/diff2html-templates.js');
-
--  var templatesPath = path.resolve(__dirname, 'templates');
-+  var extraTemplates;
-
--  function HoganJsUtils() {
-+  function HoganJsUtils(configuration) {
-+    this.config = configuration || {};
-+    extraTemplates = this.config.templates || {};
-   }
-
--  HoganJsUtils.prototype.render = function(namespace, view, params, configuration) {
--    var template = this.template(namespace, view, configuration);
-+  HoganJsUtils.prototype.render = function(namespace, view, params) {
-+    var template = this.template(namespace, view);
-     if (template) {
-       return template.render(params);
-     }
-@@ -27,17 +28,16 @@
-     return null;
-   };
-
--  HoganJsUtils.prototype.template = function(namespace, view, configuration) {
--    var config = configuration || {};
-+  HoganJsUtils.prototype.template = function(namespace, view) {
-     var templateKey = this._templateKey(namespace, view);
-
--    return this._getTemplate(templateKey, config);
-+    return this._getTemplate(templateKey);
-   };
-
--  HoganJsUtils.prototype._getTemplate = function(templateKey, config) {
-+  HoganJsUtils.prototype._getTemplate = function(templateKey) {
-     var template;
-
--    if (!config.noCache) {
-+    if (!this.config.noCache) {
-       template = this._readFromCache(templateKey);
-     }
-
-@@ -53,6 +53,7 @@
-
-     try {
-       if (fs.readFileSync) {
-+        var templatesPath = path.resolve(__dirname, 'templates');
-         var templatePath = path.join(templatesPath, templateKey);
-         var templateContent = fs.readFileSync(templatePath + '.mustache', 'utf8');
-         template = hogan.compile(templateContent);
-@@ -66,12 +67,16 @@
-   };
-
-   HoganJsUtils.prototype._readFromCache = function(templateKey) {
--    return hoganTemplates[templateKey];
-+    return extraTemplates[templateKey] || hoganTemplates[templateKey];
-   };
-
-   HoganJsUtils.prototype._templateKey = function(namespace, view) {
-     return namespace + '-' + view;
-   };
-
--  module.exports.HoganJsUtils = new HoganJsUtils();
-+  HoganJsUtils.prototype.compile = function(templateStr) {
-+    return hogan.compile(templateStr);
-+  };
-+
-+  module.exports.HoganJsUtils = HoganJsUtils;
- })();
-diff --git a/src/html-printer.js b/src/html-printer.js
-index 585d5b66..13f83047 100644
---- a/src/html-printer.js
-+++ b/src/html-printer.js
-@@ -8,6 +8,7 @@
- (function() {
-   var LineByLinePrinter = require('./line-by-line-printer.js').LineByLinePrinter;
-   var SideBySidePrinter = require('./side-by-side-printer.js').SideBySidePrinter;
-+  var FileListPrinter = require('./file-list-printer.js').FileListPrinter;
-
-   function HtmlPrinter() {
-   }
-@@ -22,5 +23,10 @@
-     return sideBySidePrinter.generateSideBySideJsonHtml(diffFiles);
-   };
-
-+  HtmlPrinter.prototype.generateFileListSummary = function(diffJson, config) {
-+    var fileListPrinter = new FileListPrinter(config);
-+    return fileListPrinter.generateFileList(diffJson);
-+  };
-+
-   module.exports.HtmlPrinter = new HtmlPrinter();
- })();
-diff --git a/src/line-by-line-printer.js b/src/line-by-line-printer.js
-index b07eb53c..d230bedd 100644
---- a/src/line-by-line-printer.js
-+++ b/src/line-by-line-printer.js
-@@ -11,7 +11,8 @@
-   var utils = require('./utils.js').Utils;
-   var Rematch = require('./rematch.js').Rematch;
-
--  var hoganUtils = require('./hoganjs-utils.js').HoganJsUtils;
-+  var hoganUtils;
-+
-   var genericTemplatesPath = 'generic';
-   var baseTemplatesPath = 'line-by-line';
-   var iconsBaseTemplatesPath = 'icon';
-@@ -19,6 +20,9 @@
-
-   function LineByLinePrinter(config) {
-     this.config = config;
-+
-+    var HoganJsUtils = require('./hoganjs-utils.js').HoganJsUtils;
-+    hoganUtils = new HoganJsUtils(config);
-   }
-
-   LineByLinePrinter.prototype.makeFileDiffHtml = function(file, diffs) {
-diff --git a/src/side-by-side-printer.js b/src/side-by-side-printer.js
-index bbf1dc8d..5e3033b3 100644
---- a/src/side-by-side-printer.js
-+++ b/src/side-by-side-printer.js
-@@ -11,7 +11,8 @@
-   var utils = require('./utils.js').Utils;
-   var Rematch = require('./rematch.js').Rematch;
-
--  var hoganUtils = require('./hoganjs-utils.js').HoganJsUtils;
-+  var hoganUtils;
-+
-   var genericTemplatesPath = 'generic';
-   var baseTemplatesPath = 'side-by-side';
-   var iconsBaseTemplatesPath = 'icon';
-@@ -26,6 +27,9 @@
-
-   function SideBySidePrinter(config) {
-     this.config = config;
-+
-+    var HoganJsUtils = require('./hoganjs-utils.js').HoganJsUtils;
-+    hoganUtils = new HoganJsUtils(config);
-   }
-
-   SideBySidePrinter.prototype.makeDiffHtml = function(file, diffs) {
-diff --git a/test/file-list-printer-tests.js b/test/file-list-printer-tests.js
-index a502a46f..60ea3208 100644
---- a/test/file-list-printer-tests.js
-+++ b/test/file-list-printer-tests.js
-@@ -1,6 +1,6 @@
- var assert = require('assert');
-
--var fileListPrinter = require('../src/file-list-printer.js').FileListPrinter;
-+var fileListPrinter = new (require('../src/file-list-printer.js').FileListPrinter)();
-
- describe('FileListPrinter', function() {
-   describe('generateFileList', function() {
-diff --git a/test/hogan-cache-tests.js b/test/hogan-cache-tests.js
-index 190bf6f8..3bb754ac 100644
---- a/test/hogan-cache-tests.js
-+++ b/test/hogan-cache-tests.js
-@@ -1,6 +1,6 @@
- var assert = require('assert');
-
--var HoganJsUtils = require('../src/hoganjs-utils.js').HoganJsUtils;
-+var HoganJsUtils = new (require('../src/hoganjs-utils.js').HoganJsUtils)();
- var diffParser = require('../src/diff-parser.js').DiffParser;
-
- describe('HoganJsUtils', function() {
-@@ -21,16 +21,28 @@ describe('HoganJsUtils', function() {
-       });
-       assert.equal(emptyDiffHtml, result);
-     });
-+
-     it('should render view without cache', function() {
-       var result = HoganJsUtils.render('generic', 'empty-diff', {
-         contentClass: 'd2h-code-line',
-         diffParser: diffParser
-       }, {noCache: true});
--      assert.equal(emptyDiffHtml + '\n', result);
-+      assert.equal(emptyDiffHtml, result);
-     });
-+
-     it('should return null if template is missing', function() {
--      var result = HoganJsUtils.render('generic', 'missing-template', {}, {noCache: true});
-+      var hoganUtils = new (require('../src/hoganjs-utils.js').HoganJsUtils)({noCache: true});
-+      var result = hoganUtils.render('generic', 'missing-template', {});
-       assert.equal(null, result);
-     });
-+
-+    it('should allow templates to be overridden', function() {
-+      var emptyDiffTemplate = HoganJsUtils.compile('&lt;p&gt;&lt;/p&gt;');
-+
-+      var config = {templates: {'generic-empty-diff': emptyDiffTemplate}};
-+      var hoganUtils = new (require('../src/hoganjs-utils.js').HoganJsUtils)(config);
-+      var result = hoganUtils.render('generic', 'empty-diff', {myName: 'Rodrigo Fernandes'});
-+      assert.equal('&lt;p&gt;Rodrigo Fernandes&lt;/p&gt;', result);
-+    });
-   });
- });
-diff --git a/test/line-by-line-tests.js b/test/line-by-line-tests.js
-index 1cd92073..8869b3df 100644
---- a/test/line-by-line-tests.js
-+++ b/test/line-by-line-tests.js
-@@ -14,7 +14,7 @@ describe('LineByLinePrinter', function() {
-         '            File without changes\n' +
-         '        &lt;/div&gt;\n' +
-         '    &lt;/td&gt;\n' +
--        '&lt;/tr&gt;\n';
-+        '&lt;/tr&gt;';
-
-       assert.equal(expected, fileHtml);
-     });
-@@ -422,7 +422,6 @@ describe('LineByLinePrinter', function() {
-         '        &lt;/div&gt;\n' +
-         '    &lt;/td&gt;\n' +
-         '&lt;/tr&gt;\n' +
--        '\n' +
-         '                &lt;/tbody&gt;\n' +
-         '            &lt;/table&gt;\n' +
-         '        &lt;/div&gt;\n' +
-diff --git a/test/side-by-side-printer-tests.js b/test/side-by-side-printer-tests.js
-index 76625f8e..771daaa5 100644
---- a/test/side-by-side-printer-tests.js
-+++ b/test/side-by-side-printer-tests.js
-@@ -14,7 +14,7 @@ describe('SideBySidePrinter', function() {
-         '            File without changes\n' +
-         '        &lt;/div&gt;\n' +
-         '    &lt;/td&gt;\n' +
--        '&lt;/tr&gt;\n';
-+        '&lt;/tr&gt;';
-
-       assert.equal(expectedRight, fileHtml.right);
-       assert.equal(expectedLeft, fileHtml.left);
-@@ -324,7 +324,6 @@ describe('SideBySidePrinter', function() {
-         '        &lt;/div&gt;\n' +
-         '    &lt;/td&gt;\n' +
-         '&lt;/tr&gt;\n' +
--        '\n' +
-         '                    &lt;/tbody&gt;\n' +
-         '                &lt;/table&gt;\n' +
-         '            &lt;/div&gt;\n' +
-
-From f3cadb96677d0eb82fc2752dc3ffbf35ca9b5bdb Mon Sep 17 00:00:00 2001
-From: Rodrigo Fernandes &lt;rtfrodrigo@gmail.com&gt;
-Date: Sat, 15 Oct 2016 13:21:22 +0100
-Subject: [PATCH 2/2] Allow uncompiled templates
-
----
- README.md                 |  3 +++
- src/hoganjs-utils.js      |  7 +++++++
- test/hogan-cache-tests.js | 24 +++++++++++++++++++++++-
- 3 files changed, 33 insertions(+), 1 deletion(-)
-
-diff --git a/README.md b/README.md
-index 132c8a28..46909f25 100644
---- a/README.md
-+++ b/README.md
-@@ -98,6 +98,9 @@ The HTML output accepts a Javascript object with configuration. Possible options
-   - `synchronisedScroll`: scroll both panes in side-by-side mode: `true` or `false`, default is `false`
-   - `matchWordsThreshold`: similarity threshold for word matching, default is 0.25
-   - `matchingMaxComparisons`: perform at most this much comparisons for line matching a block of changes, default is `2500`
-+  - `templates`: object with previously compiled templates to replace parts of the html
-+  - `rawTemplates`: object with raw not compiled templates to replace parts of the html
-+  &gt; For more information regarding the possible templates look into [src/templates](https://github.com/rtfpessoa/diff2html/tree/master/src/templates)
-
- ## Diff2HtmlUI Helper
-
-diff --git a/src/hoganjs-utils.js b/src/hoganjs-utils.js
-index 0dda08d7..b2e9c275 100644
---- a/src/hoganjs-utils.js
-+++ b/src/hoganjs-utils.js
-@@ -17,6 +17,13 @@
-   function HoganJsUtils(configuration) {
-     this.config = configuration || {};
-     extraTemplates = this.config.templates || {};
-+
-+    var rawTemplates = this.config.rawTemplates || {};
-+    for (var templateName in rawTemplates) {
-+      if (rawTemplates.hasOwnProperty(templateName)) {
-+        if (!extraTemplates[templateName]) extraTemplates[templateName] = this.compile(rawTemplates[templateName]);
-+      }
-+    }
-   }
-
-   HoganJsUtils.prototype.render = function(namespace, view, params) {
-diff --git a/test/hogan-cache-tests.js b/test/hogan-cache-tests.js
-index 3bb754ac..a34839c0 100644
---- a/test/hogan-cache-tests.js
-+++ b/test/hogan-cache-tests.js
-@@ -36,7 +36,7 @@ describe('HoganJsUtils', function() {
-       assert.equal(null, result);
-     });
-
--    it('should allow templates to be overridden', function() {
-+    it('should allow templates to be overridden with compiled templates', function() {
-       var emptyDiffTemplate = HoganJsUtils.compile('&lt;p&gt;&lt;/p&gt;');
-
-       var config = {templates: {'generic-empty-diff': emptyDiffTemplate}};
-@@ -44,5 +44,27 @@ describe('HoganJsUtils', function() {
-       var result = hoganUtils.render('generic', 'empty-diff', {myName: 'Rodrigo Fernandes'});
-       assert.equal('&lt;p&gt;Rodrigo Fernandes&lt;/p&gt;', result);
-     });
-+
-+    it('should allow templates to be overridden with uncompiled templates', function() {
-+      var emptyDiffTemplate = '&lt;p&gt;&lt;/p&gt;';
-+
-+      var config = {rawTemplates: {'generic-empty-diff': emptyDiffTemplate}};
-+      var hoganUtils = new (require('../src/hoganjs-utils.js').HoganJsUtils)(config);
-+      var result = hoganUtils.render('generic', 'empty-diff', {myName: 'Rodrigo Fernandes'});
-+      assert.equal('&lt;p&gt;Rodrigo Fernandes&lt;/p&gt;', result);
-+    });
-+
-+    it('should allow templates to be overridden giving priority to compiled templates', function() {
-+      var emptyDiffTemplate = HoganJsUtils.compile('&lt;p&gt;&lt;/p&gt;');
-+      var emptyDiffTemplateUncompiled = '&lt;p&gt;Not used!&lt;/p&gt;';
-+
-+      var config = {
-+        templates: {'generic-empty-diff': emptyDiffTemplate},
-+        rawTemplates: {'generic-empty-diff': emptyDiffTemplateUncompiled}
-+      };
-+      var hoganUtils = new (require('../src/hoganjs-utils.js').HoganJsUtils)(config);
-+      var result = hoganUtils.render('generic', 'empty-diff', {myName: 'Rodrigo Fernandes'});
-+      assert.equal('&lt;p&gt;Rodrigo Fernandes&lt;/p&gt;', result);
-+    });
-   });
- });
-</code></pre>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="code"/><summary type="html"><![CDATA[this is how you can display code diffs]]></summary></entry><entry><title type="html">a post with advanced image components</title><link href="https://matthewalexwright.github.io/blog/2024/advanced-images/" rel="alternate" type="text/html" title="a post with advanced image components"/><published>2024-01-27T11:46:00+00:00</published><updated>2024-01-27T11:46:00+00:00</updated><id>https://matthewalexwright.github.io/blog/2024/advanced-images</id><content type="html" xml:base="https://matthewalexwright.github.io/blog/2024/advanced-images/"><![CDATA[<p>This is an example post with advanced image components.</p> <h2 id="image-slider">Image Slider</h2> <p>This is a simple image slider. It uses the <a href="https://swiperjs.com/">Swiper</a> library. Check the <a href="https://swiperjs.com/demos">examples page</a> for more information of what you can achieve with it.</p> <swiper-container keyboard="true" navigation="true" pagination="true" pagination-clickable="true" pagination-dynamic-bullets="true" rewind="true"> <swiper-slide> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/9-480.webp 480w,/assets/img/9-800.webp 800w,/assets/img/9-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/9.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"/> </picture> </figure> </swiper-slide> <swiper-slide> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/7-480.webp 480w,/assets/img/7-800.webp 800w,/assets/img/7-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/7.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"/> </picture> </figure> </swiper-slide> <swiper-slide> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/8-480.webp 480w,/assets/img/8-800.webp 800w,/assets/img/8-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/8.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"/> </picture> </figure> </swiper-slide> <swiper-slide> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/10-480.webp 480w,/assets/img/10-800.webp 800w,/assets/img/10-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/10.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"/> </picture> </figure> </swiper-slide> <swiper-slide> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/12-480.webp 480w,/assets/img/12-800.webp 800w,/assets/img/12-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/12.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"/> </picture> </figure> </swiper-slide> </swiper-container> <h2 id="image-comparison-slider">Image Comparison Slider</h2> <p>This is a simple image comparison slider. It uses the <a href="https://img-comparison-slider.sneas.io/">img-comparison-slider</a> library. Check the <a href="https://img-comparison-slider.sneas.io/examples.html">examples page</a> for more information of what you can achieve with it.</p> <img-comparison-slider> <figure slot="first"> <picture> <source class="responsive-img-srcset" srcset="/assets/img/prof_pic-480.webp 480w,/assets/img/prof_pic-800.webp 800w,/assets/img/prof_pic-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/prof_pic.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="lazy" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"/> </picture> </figure> <figure slot="second"> <picture> <source class="responsive-img-srcset" srcset="/assets/img/prof_pic_color-480.webp 480w,/assets/img/prof_pic_color-800.webp 800w,/assets/img/prof_pic_color-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/prof_pic_color.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="lazy" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"/> </picture> </figure> </img-comparison-slider>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="images"/><summary type="html"><![CDATA[this is what advanced image components could look like]]></summary></entry></feed>
+</code></pre></div></div> <p>Which generates:</p> <pre><code class="language-chartjs">{
+  "type": "doughnut",
+  "data": {
+    "labels": [
+      "Red",
+      "Blue",
+      "Yellow"
+    ],
+    "datasets": [
+      {
+        "data": [
+          300,
+          50,
+          100
+        ],
+        "backgroundColor": [
+          "#FF6384",
+          "#36A2EB",
+          "#FFCE56"
+        ],
+        "hoverBackgroundColor": [
+          "#FF6384",
+          "#36A2EB",
+          "#FFCE56"
+        ]
+      }
+    ]
+  },
+  "options": {}
+}
+</code></pre>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="charts"/><summary type="html"><![CDATA[this is what included chart.js code could look like]]></summary></entry></feed>
