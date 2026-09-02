@@ -82,4 +82,5 @@ Four editorials by Jillian M. Buriak in *Chemistry of Materials* that are worth 
 
 ## Just for fun
 - [A guide to the mural artworks of Santa Barbara, California] (https://www.sbartscollaborative.org/public-art-map)
-- [https://www.compoundchem.com/](https://www.compoundchem.com/) — Science infographics by Andy Brunning, University of Cambridge
+- [Art Institute of Chicago](https://www.artic.edu/collection?is_public_domain=1)
+- [Compound Interest: Chemistry Infographics](https://www.compoundchem.com/) — by Andy Brunning, University of Cambridge
