@@ -81,6 +81,6 @@ Four editorials by Jillian M. Buriak in *Chemistry of Materials* that are worth 
 - [MΔTERIALISM](https://materialismpodcast.com/) — hosted by Andrew Falkowski and Professor Taylor Sparks
 
 ## Just for fun
-- [A guide to the mural artworks of Santa Barbara, California](https://www.sbartscollaborative.org/public-art-map) 
+- [A guide to the mural artworks of Santa Barbara](https://www.sbartscollaborative.org/public-art-map) 
 - [Art Institute of Chicago](https://www.artic.edu/collection?is_public_domain=1)
 - [Compound Interest: Chemistry Infographics](https://www.compoundchem.com/) — by Andy Brunning, University of Cambridge
