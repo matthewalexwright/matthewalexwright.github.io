@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: Linking battery electrode science with correlated and quantum materials
-description: Electrochemical alkali-ion (de)insertion can provide dynamic, room-temperature control over spin state, charge ordering, and electron localization in transition metal oxides.
+description: Electrochemical alkali-ion (de)insertion provides dynamic, room-temperature control over spin state, charge ordering, and electron localization in transition metal oxides.
 tags: batteries magnetism correlated-electrons
 categories: research
 giscus_comments: true
@@ -48,7 +48,22 @@ This post summarizes a recent perspective in *Physical Review Materials* <d-cite
 
 The connection is not merely conceptual. First-principles calculations have shown that electronic correlations significantly impact the redox behavior of electrode materials, owing to the localized nature of the relevant states and to strong on-site Coulomb interactions <d-cite key="zhou2004"></d-cite>. In the absence of such correlations, the calculated voltage of an LiFePO<sub>4</sub> cathode is diminished by at least 0.5 V. Battery electrodes may therefore reasonably be described as one of the most useful real-world manifestations of electronic correlations of the Hubbard-*U* variety <d-cite key="hubbard1963"></d-cite>.
 
-<!-- FIGURE SLOT 1: Fig. 1 of the paper, electrochemical potential versus Hubbard U for LiMPO4. Include syntax is given at the end of this file. -->
+<div class="l-body">
+  {% include figure.liquid
+     loading="eager"
+     path="assets/img/2025-11-26-battery-quantum/fig1-hubbard-u-voltage.png"
+     class="img-fluid rounded z-depth-1"
+     zoomable=true %}
+</div>
+<div class="caption">
+  Electrochemical potential as a function of the on-site Coulomb interaction, modeled by
+  the Hubbard <em>U</em>, in olivine-structured LiMPO<sub>4</sub> (M = Fe, Mn, Co, Ni). The
+  experimental potential is given by the short black dashes. The average potential (star)
+  is derived from the calculated potential for the material in an oxidized and reduced
+  state (triangles). Adapted with permission from F. Zhou, M. Cococcioni, C. A. Marianetti,
+  D. Morgan and G. Ceder, <em>Phys. Rev. B</em> <b>70</b>, 235121 (2004). Copyright 2004
+  American Physical Society.
+</div>
 
 ## Crystal field theory and Jahn-Teller distortions
 
@@ -60,6 +75,21 @@ Electrochemical (de)insertion therefore does not simply modulate the formal char
 
 ## Layered oxides - LixCoO2
 
+<div class="l-page">
+  {% include figure.liquid
+     loading="eager"
+     path="assets/img/2025-11-26-battery-quantum/licoo2-electrochemical-states.png"
+     class="img-fluid rounded z-depth-1"
+     zoomable=true %}
+</div>
+<div class="caption">
+  Crystal structures of O3-LiCoO<sub>2</sub>, vacancy-ordered O3-Li<sub>0.55</sub>CoO<sub>2</sub>
+  (shown schematically), and O1-CoO<sub>2</sub>, viewed along the [100] direction. Charging and
+  discharging carry the material between a diamagnetic insulator, a charge-ordered
+  antiferromagnet, and a paramagnetic metal. Reproduced from M. A. Wright and R. Seshadri,
+  <em>Phys. Rev. Materials</em> <b>9</b>, 110302 (2025).
+</div>
+
 Given the commercial and technological relevance of Li<sub>x</sub>CoO<sub>2</sub> <d-cite key="mizushima1980"></d-cite>, the mechanism of Li<sup>+</sup> (de)insertion across the whole range of *x* has been thoroughly investigated by detailed structural and spectroscopic studies. Fully lithiated O3-LiCoO<sub>2</sub> is an insulator with a band gap of 2.7 eV, containing Co<sup>3+</sup> in a low-spin $d^6$ configuration with a filled $t_{2g}$ manifold and no unpaired spins. Despite this diamagnetic ground state, the material displays a small temperature-independent susceptibility attributed to Van Vleck paramagnetism.
 
 A significant increase in magnetic susceptibility is observed immediately upon Li<sup>+</sup> deinsertion. The temperature-independent part of the susceptibility rises from $1.4 \times 10^{-4}$ emu mol<sup>−1</sup> Oe<sup>−1</sup> for LiCoO<sub>2</sub> to $2.5 \times 10^{-4}$ emu mol<sup>−1</sup> Oe<sup>−1</sup> for Li<sub>0.98</sub>CoO<sub>2</sub>, corresponding to the removal of only 0.02 Li<sup>+</sup> per formula unit, and continues to increase thereafter <d-cite key="hertz2008"></d-cite>.
@@ -68,7 +98,19 @@ Lithium and vacancy ordering phenomena emerge at the commensurate compositions $
 
 The end member CoO<sub>2</sub> can be synthesized by complete electrochemical Li<sup>+</sup> deinsertion, yielding a phase-pure, oxygen-stoichiometric compound with an O1-stacking sequence <d-cite key="devaulx2007"></d-cite>. Magnetic susceptibility measurements reveal a large temperature-independent susceptibility of $5.7 \times 10^{-4}$ emu mol<sup>−1</sup> Oe<sup>−1</sup> characteristic of Pauli paramagnetism. The effective moment of 0.18 $\mu_\mathrm{B}$ per Co is far lower than expected for localized low-spin Co<sup>4+</sup>, confirming that the system does not support localized spin moments and is best described as a Pauli paramagnetic metal <d-cite key="motohashi2007"></d-cite>. This contrasts sharply with the diamagnetic insulating behavior of LiCoO<sub>2</sub>, and demonstrates an evolution from an orbitally filled, insulating $S = 0$ configuration with localized electrons to a metallic quantum paramagnetic state with delocalized electrons.
 
-<!-- FIGURE SLOT 2: Fig. 4(d) of the paper, the electronic phase diagram of LixCoO2. -->
+<div class="l-body">
+  {% include figure.liquid
+     loading="lazy"
+     path="assets/img/2025-11-26-battery-quantum/fig4d-lixcoo2-phase-diagram.png"
+     class="img-fluid rounded z-depth-1"
+     zoomable=true %}
+</div>
+<div class="caption">
+  The electronic phase diagram of Li<sub>x</sub>CoO<sub>2</sub>, derived from dc magnetic
+  susceptibility and <sup>59</sup>Co NMR data. Adapted with permission from T. Motohashi,
+  T. Ono, Y. Sugimoto, Y. Masubuchi, S. Kikkawa, R. Kanno, M. Karppinen and H. Yamauchi,
+  <em>Phys. Rev. B</em> <b>80</b>, 165114 (2009). Copyright 2009 American Physical Society.
+</div>
 
 Electron correlation in Li<sub>x</sub>CoO<sub>2</sub> also highlights the limitations of static DFT+*U* calculations, which artificially stabilize charge-ordered solutions, and instead require DMFT to correctly capture phase stability and suppress spurious charge order <d-cite key="isaacs2020"></d-cite>.
 
@@ -145,8 +187,6 @@ Both O1-LiScMo<sub>3</sub>O<sub>8</sub> and O2-Li<sub>2</sub>ScMo<sub>3</sub>O<s
 Reversible electrochemical insertion of Li<sup>+</sup> has been demonstrated across the range $1 \leq x \leq 3$, providing a new means of soft-chemical synthesis <d-cite key="wyckoff2023"></d-cite>. Notably, low-temperature susceptibility measurements show a magnetic ordering peak at 12 K, reaching a maximum at $x = 2$, for samples prepared electrochemically, which is absent in Li<sub>2</sub>ScMo<sub>3</sub>O<sub>8</sub> synthesized directly at high temperature. This ordering is attributed to Li<sup>+</sup> site ordering that is only possible within the structures of electrochemically prepared samples, which retain the O1-type layering and symmetry of the parent phase rather than adopting the offset cluster stacking of the directly synthesized product.
 
 The magnetic behavior correlates not only with electron count but also with subtle changes in Mo-Mo bond distances across the breathing kagome network. Electrochemical insertion leads to a systematic decrease in the breathing ratio, defined as the ratio of the longest to the shortest Mo-Mo bonding distance, from 1.27 in LiScMo<sub>3</sub>O<sub>8</sub> to 1.24 in Li<sub>3</sub>ScMo<sub>3</sub>O<sub>8</sub>, indicating that the Mo<sub>3</sub> clusters become more geometrically uniform with increasing lithium content.
-
-<!-- FIGURE SLOT 3 (optional): Fig. 12 of the paper, LixScMo3O8 and the breathing kagome network. -->
 
 ## Challenges and outlook
 
