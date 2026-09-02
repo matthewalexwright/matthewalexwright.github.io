@@ -22,8 +22,7 @@ nav_order: 4
 - [Introduction to Powder Diffraction](http://pd.chem.ucl.ac.uk/pdnn/pdindex.htm) — Birkbeck College, University of London
 - [Bilbao Crystallographic Server](https://www.cryst.ehu.es/)
 - [Shannon Radii](https://mrlweb.mrl.ucsb.edu/~seshadri/Periodic/index.html) — R. Seshadri and R. Basu
-- [Bond Valence Parameters](https://drive.google.com/file/d/1xEOF--QM7N0Z6Pw180dvzzSiQ8mDaQue/view?usp=drive_link) — I. D. Brown, Brockhouse Institute for Materials Research, McMaster University
-- [PeriodicTable.vesta](https://drive.google.com/file/d/1__rt_uVA4fhZJz8irEJUyaNfkysxhGgN/view?usp=drive_link) — the title speaks for itself
+- [Bond Valence Parameters](https://www.iucr.org/what-we-do/digital-standards/data/datasets/bond-valence-parameters) — IUCr & I. D. Brown, Brockhouse Institute for Materials Research, McMaster University
 - [XRD Conversion Tool](https://www.gallixa.com/XRPD/) — Gallixa
 - [11-BM X-ray Absorption Calculator](https://11bm.xray.aps.anl.gov/absorb/) — Advanced Photon Source
 - [Neutron scattering lengths and cross sections](https://www.ncnr.nist.gov/resources/n-lengths/) — NIST Center for Neutron Research
@@ -82,8 +81,5 @@ Four editorials by Jillian M. Buriak in *Chemistry of Materials* that are worth 
 - [MΔTERIALISM](https://materialismpodcast.com/) — hosted by Andrew Falkowski and Professor Taylor Sparks
 
 ## Just for fun
-
-<!-- These two had no URL in your list. Add the links and delete this comment. -->
-
-- A guide to the mural artworks of Santa Barbara, California
-- Science infographics by Andy Brunning, University of Cambridge
+- [A guide to the mural artworks of Santa Barbara, California] (https://www.sbartscollaborative.org/public-art-map)
+- [https://www.compoundchem.com/](https://www.compoundchem.com/) — Science infographics by Andy Brunning, University of Cambridge
