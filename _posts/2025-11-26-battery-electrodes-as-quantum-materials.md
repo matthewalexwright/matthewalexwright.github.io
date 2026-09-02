@@ -20,6 +20,28 @@ authors:
 
 bibliography: 2025-11-26-battery-quantum.bib
 
+# Post-specific CSS. Constrains figure widths so that tall, near-square
+# plots do not fill the whole text column. Adjust the max-width values
+# to taste; they cap the figure and its caption together.
+_styles: >
+  .fig-sm,
+  .fig-md {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .fig-sm {
+    max-width: 340px;
+  }
+  .fig-md {
+    max-width: 560px;
+  }
+  .fig-sm .caption,
+  .fig-md .caption {
+    margin-top: 0.6rem;
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
 # Section names must match the headings in the body exactly.
 # Headings are deliberately plain ASCII so that the slugified anchors resolve.
 toc:
@@ -48,21 +70,21 @@ This post summarizes a recent perspective in *Physical Review Materials* <d-cite
 
 The connection is not merely conceptual. First-principles calculations have shown that electronic correlations significantly impact the redox behavior of electrode materials, owing to the localized nature of the relevant states and to strong on-site Coulomb interactions <d-cite key="zhou2004"></d-cite>. In the absence of such correlations, the calculated voltage of an LiFePO<sub>4</sub> cathode is diminished by at least 0.5 V. Battery electrodes may therefore reasonably be described as one of the most useful real-world manifestations of electronic correlations of the Hubbard-*U* variety <d-cite key="hubbard1963"></d-cite>.
 
-<div class="l-body">
+<div class="l-body fig-sm">
   {% include figure.liquid
      loading="eager"
      path="assets/img/2025-11-26-battery-quantum/fig1-hubbard-u-voltage.png"
      class="img-fluid rounded z-depth-1"
      zoomable=true %}
-</div>
-<div class="caption">
-  Electrochemical potential as a function of the on-site Coulomb interaction, modeled by
-  the Hubbard <em>U</em>, in olivine-structured LiMPO<sub>4</sub> (M = Fe, Mn, Co, Ni). The
-  experimental potential is given by the short black dashes. The average potential (star)
-  is derived from the calculated potential for the material in an oxidized and reduced
-  state (triangles). Adapted with permission from F. Zhou, M. Cococcioni, C. A. Marianetti,
-  D. Morgan and G. Ceder, <em>Phys. Rev. B</em> <b>70</b>, 235121 (2004). Copyright 2004
-  American Physical Society.
+  <div class="caption">
+    Electrochemical potential as a function of the on-site Coulomb interaction, modeled by
+    the Hubbard <em>U</em>, in olivine-structured LiMPO<sub>4</sub> (M = Fe, Mn, Co, Ni). The
+    experimental potential is given by the short black dashes. The average potential (star)
+    is derived from the calculated potential for the material in an oxidized and reduced
+    state (triangles). Adapted with permission from F. Zhou, M. Cococcioni, C. A. Marianetti,
+    D. Morgan and G. Ceder, <em>Phys. Rev. B</em> <b>70</b>, 235121 (2004). Copyright 2004
+    American Physical Society.
+  </div>
 </div>
 
 ## Crystal field theory and Jahn-Teller distortions
@@ -75,19 +97,19 @@ Electrochemical (de)insertion therefore does not simply modulate the formal char
 
 ## Layered oxides - LixCoO2
 
-<div class="l-page">
+<div class="l-body fig-md">
   {% include figure.liquid
      loading="eager"
      path="assets/img/2025-11-26-battery-quantum/licoo2-electrochemical-states.png"
      class="img-fluid rounded z-depth-1"
      zoomable=true %}
-</div>
-<div class="caption">
-  Crystal structures of O3-LiCoO<sub>2</sub>, vacancy-ordered O3-Li<sub>0.55</sub>CoO<sub>2</sub>
-  (shown schematically), and O1-CoO<sub>2</sub>, viewed along the [100] direction. Charging and
-  discharging carry the material between a diamagnetic insulator, a charge-ordered
-  antiferromagnet, and a paramagnetic metal. Reproduced from M. A. Wright and R. Seshadri,
-  <em>Phys. Rev. Materials</em> <b>9</b>, 110302 (2025).
+  <div class="caption">
+    Crystal structures of O3-LiCoO<sub>2</sub>, vacancy-ordered O3-Li<sub>0.55</sub>CoO<sub>2</sub>
+    (shown schematically), and O1-CoO<sub>2</sub>, viewed along the [100] direction. Charging and
+    discharging carry the material between a diamagnetic insulator, a charge-ordered
+    antiferromagnet, and a paramagnetic metal. Reproduced from M. A. Wright and R. Seshadri,
+    <em>Phys. Rev. Materials</em> <b>9</b>, 110302 (2025).
+  </div>
 </div>
 
 Given the commercial and technological relevance of Li<sub>x</sub>CoO<sub>2</sub> <d-cite key="mizushima1980"></d-cite>, the mechanism of Li<sup>+</sup> (de)insertion across the whole range of *x* has been thoroughly investigated by detailed structural and spectroscopic studies. Fully lithiated O3-LiCoO<sub>2</sub> is an insulator with a band gap of 2.7 eV, containing Co<sup>3+</sup> in a low-spin $d^6$ configuration with a filled $t_{2g}$ manifold and no unpaired spins. Despite this diamagnetic ground state, the material displays a small temperature-independent susceptibility attributed to Van Vleck paramagnetism.
