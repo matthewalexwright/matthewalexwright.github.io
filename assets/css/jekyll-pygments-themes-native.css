@@ -52,7 +52,15 @@
 } /* Generic.Output */ /* Generic.Prompt */ /* Generic.Strong */ /* Generic.Subheading */
 .highlight .gt {
   color: #d22323;
-} /* Generic.Traceback */ /* Keyword.Constant */ /* Keyword.Declaration */ /* Keyword.Namespace */ /* Keyword.Pseudo */ /* Keyword.Reserved */ /* Keyword.Type */
+} /* Generic.Traceback */
+.highlight .kc {
+  color: #6ab825;
+  font-weight: bold;
+} /* Keyword.Constant */ /* Keyword.Declaration */
+.highlight .kn {
+  color: #6ab825;
+  font-weight: bold;
+} /* Keyword.Namespace */ /* Keyword.Pseudo */ /* Keyword.Reserved */ /* Keyword.Type */
 .highlight .ld {
   color: #d0d0d0;
 } /* Literal.Date */
@@ -83,17 +91,28 @@
 } /* Name.Entity */
 .highlight .ne {
   color: #bbbbbb;
-} /* Name.Exception */ /* Name.Function */
+} /* Name.Exception */
+.highlight .nf {
+  color: #447fcf;
+} /* Name.Function */
 .highlight .nl {
   color: #d0d0d0;
-} /* Name.Label */ /* Name.Namespace */ /* Name.Other */
+} /* Name.Label */
+.highlight .nn {
+  color: #447fcf;
+  text-decoration: underline;
+} /* Name.Namespace */ /* Name.Other */
 .highlight .py {
   color: #d0d0d0;
 } /* Name.Property */
 .highlight .nt {
   color: #6ab825;
   font-weight: bold;
-} /* Name.Tag */ /* Name.Variable */ /* Operator.Word */
+} /* Name.Tag */ /* Name.Variable */
+.highlight .ow {
+  color: #6ab825;
+  font-weight: bold;
+} /* Operator.Word */
 .highlight .w {
   color: #666666;
 } /* Text.Whitespace */ /* Literal.Number.Float */ /* Literal.Number.Hex */
@@ -108,7 +127,10 @@
 } /* Literal.String.Double */ /* Literal.String.Escape */
 .highlight .sh {
   color: #ed9d13;
-} /* Literal.String.Heredoc */ /* Literal.String.Interpol */ /* Literal.String.Other */ /* Literal.String.Regex */ /* Literal.String.Single */ /* Literal.String.Symbol */
+} /* Literal.String.Heredoc */
+.highlight .si {
+  color: #ed9d13;
+} /* Literal.String.Interpol */ /* Literal.String.Other */ /* Literal.String.Regex */ /* Literal.String.Single */ /* Literal.String.Symbol */
 .highlight .bp {
   color: #24909d;
 } /* Name.Builtin.Pseudo */ /* Name.Variable.Class */ /* Name.Variable.Global */
