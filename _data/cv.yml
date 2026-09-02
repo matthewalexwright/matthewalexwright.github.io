@@ -1,14 +1,3 @@
-# _data/cv.yml — RenderCV format
-#
-# Populated from Wright_CV_2026 (August 2026).
-#
-# THINGS TO CHECK BEFORE YOU COMMIT:
-#   1. LinkedIn username below is a placeholder — fill it in or delete the entry.
-#   2. Your phone number is deliberately NOT included. Add it only if you want a
-#      personal mobile on a public, crawlable page.
-#   3. Section names marked "custom" in the accompanying notes are not in the
-#      stock template. Build locally and confirm they render before pushing.
-
 cv:
   name: Matthew A. Wright
   label: Quantum Foundry Postdoctoral Associate
@@ -43,650 +32,152 @@ cv:
   sections:
     Experience:
       - company: University of California Santa Barbara
-        position: Postdoctoral Associate
-        location: Santa Barbara, California, USA
-        url: https://seshadri-group.materials.ucsb.edu/
+        position: Quantum Foundary Postdoctoral Associate
+        location: California, USA
         start_date: 2024
         end_date: present
-        summary: >
-          Materials Department, College of Engineering. Developing new chemical
-          compounds and processes for batteries and quantum materials. Advised by
-          Professor Ram Seshadri.
+        summary: Developing new chemical compounds and processes for batteries and quantum materials. 
+        highlights: 
+          - Advised by Professor Ram Seshadri
 
       - company: University of Liverpool
         position: Honorary Research Assistant
         location: Liverpool, UK
-        url: https://www.liverpool.ac.uk/people/laurence-hardwick
         start_date: 2024
         end_date: 2024
-        summary: >
-          Stephenson Institute for Renewable Energy. Exploring multi-valent ion
-          insertion mechanisms in covalent framework materials. Advised by
-          Professor Laurence J. Hardwick.
+        summary: Exploring multi-valent ioninsertion mechanisms in covalent framework materials. 
+        highlights: 
+          - Advised by Professor Laurence J. Hardwick
+          - Funded by the Faraday Institute 
 
     Education:
       - institution: University of Liverpool
         location: Liverpool, UK
-        url: https://www.liverpool.ac.uk/people/matthew-rosseinsky
         area: Solid-State Chemistry
         studyType: PhD
         start_date: 2019
         end_date: 2023
+        Thesis: Structure and Properties of New Positive Electrode Materials for Magnesium-Ion Batteries
         highlights:
-          - Materials Innovation Factory, Department of Chemistry.
-          - "Thesis: Structure and Properties of New Positive Electrode Materials for Magnesium-Ion Batteries."
-          - Advised by Professor Matthew J. Rosseinsky OBE FRS.
+          - Thesis: Structure and Properties of New Positive Electrode Materials for Magnesium-Ion Batteries
+          - Advised by Professor Matthew J. Rosseinsky OBE FRS
+          - Industrial collaboration with Johnson—Matthey
 
       - institution: University of Liverpool
         location: Liverpool, UK
-        url: https://www.liverpool.ac.uk/chemistry/
         area: Chemistry
         studyType: MChem (Hons)
         start_date: 2015
         end_date: 2019
         highlights:
-          - Includes a study-abroad year at Boston College, Massachusetts, USA.
-          - "Master's thesis: Discovery & Characterization of New Pb-free Piezoelectric-Relaxor Ceramic Materials. Advised by Professor Matthew J. Rosseinsky OBE FRS."
-          - "Bachelor's thesis: Covalent Polymers for the Catalysis of Hydrogen Evolution from Water. Advised by Professor Andy Cooper FRS."
+          - Masters Thesis: Discovery & Characterization of New Pb-free Piezoelectric-Relaxor Ceramic Materials
+          - Advised by Professor Matthew J. Rosseinsky OBE FRS
+          - Baschelors Thesis: Covalent Polymers for the Catalysis of Hydrogen Evolution from Water
+          - Advised by Professor Andrew I. Cooper FRS
+          - faraday Internship
+          - Erasmus at Boston College, Massachusetts, USA
 
+   
+    
     Publications:
-      - title: Linking Battery Electrode Science with Correlated and Quantum Materials
-        authors:
-          - "MA Wright*"
-          - "R Seshadri*"
-        publisher: "Phys. Rev. Mater. 9, 110302 (Perspective)"
-        releaseDate: 2025
-        url: https://doi.org/10.1103/zwkw-zc5n
-
       - title: "Na-ion Cathodes in Minutes: Microwave Synthesis Across the Na-Mn-Fe-Ni-Cu-O Composition Space"
-        authors:
-          - "MA Wright*"
-          - "EC Moya"
-          - "S Browne"
-          - "AJ Bologna"
-          - "KE Brockmeyer"
-          - "AR Reach"
-          - "R Seshadri*"
         publisher: "ACS Appl. Energy Mater. (accepted, in press)"
         releaseDate: 2026
 
       - title: Covalently Integrated Amorphous MnxMo3S13-GO Chalcocarbogel for High Capacity and Long-Life Sulfur Equivalent Conversion Electrodes
-        authors:
-          - "T Islam"
-          - "S Bayat"
-          - "K Pitton"
-          - "MA Wright"
-          - "MM Rahman"
-          - "R Yin"
-          - "S Clark"
-          - "SC Roy"
-          - "R Feng"
-          - "R Chernikov"
-          - "KM Wiaderek"
-          - "LC Gallington"
-          - "AM Abeykoon"
-          - "C Risko"
-          - "R Amin"
-          - "BS Guiton"
-          - "MS Islam*"
         publisher: "Small (Early Access)"
         releaseDate: 2026
         url: https://doi.org/10.1002/smll.75060
 
-      - title: Rapid and Phase-Selective Routes to Layered Na-Ion Cathodes
-        authors:
-          - "MA Wright*"
-          - "S Browne"
-          - "EC Moya"
-          - "AR Reach"
-          - "A Sebastian"
-          - "A Abulajiang"
-          - "R Yin"
-          - "J Cesareo"
-          - "J Li"
-          - "A Tarin"
-          - "SH Tolbert"
-          - "BC Melot"
-          - "A Van der Ven"
-          - "R Seshadri*"
-        publisher: "Chem. Mater. (Early Access)"
-        releaseDate: 2026
-        url: https://doi.org/10.1021/acs.chemmater.6c01282
-
       - title: Monitoring the Microwave Synthesis of d0-Free Disordered Rocksalt Cathodes Using in Situ Infrared Pyrometry
-        authors:
-          - "EA Lawrence"
-          - "MA Wright"
-          - "T Li"
-          - "EN Bassey"
-          - "V Kumar"
-          - "P Cardon"
-          - "S Yuan"
-          - "PE Cabelguen"
-          - "RJ Clement*"
         publisher: "Angew. Chem. Int. Ed. (Early Access)"
         releaseDate: 2026
         url: https://doi.org/10.1002/ange.1884534
 
+      - title: Rapid and Phase-Selective Routes to Layered Na-Ion Cathodes
+        publisher: "Chem. Mater. 38, 8476-8488"
+        releaseDate: 2026
+        url: https://doi.org/10.1021/acs.chemmater.6c01282
+
       - title: "High Lithium Content and Site Disorder in the Transition Metal Oxide Argyrodites Li7TiO5X (X = Cl, Br)"
-        authors:
-          - "A Morscher"
-          - "L Corti"
-          - "SL Goodwin"
-          - "MA Wright"
-          - "TW Surta"
-          - "MS Dyer"
-          - "F Blanc"
-          - "LM Daniels"
-          - "JB Claridge"
-          - "MJ Rosseinsky*"
         publisher: "Chem. Mater. 38, 6312-6322"
         releaseDate: 2026
         url: https://doi.org/10.1021/acs.chemmater.6c00177
 
       - title: Enhanced Sodium Dynamics in Biphasic NaSICON Solid Electrolytes
-        authors:
-          - "A Reach"
-          - "MA Wright"
-          - "AS Mulligan"
-          - "Z Fang"
-          - "KT Tseng"
-          - "C Wang"
-          - "JG Hu"
-          - "M Chi"
-          - "AK Cheetham"
-          - "R Seshadri"
-          - "J Sakamoto*"
         publisher: "Chem. Mater. 38, 5356-5368"
         releaseDate: 2026
         url: https://doi.org/10.1021/acs.chemmater.5c03070
 
       - title: "Structural Properties in Cs2MBiX6 (M = Na, Ag; X = Cl, Br) Bismuth Halide Double Perovskites"
-        authors:
-          - "H Tian"
-          - "T Li"
-          - "AS Mulligan"
-          - "J Tregidga"
-          - "MA Wright"
-          - "A Zohar"
-          - "A Chezhiyan"
-          - "MB Preefer"
-          - "KH Stone"
-          - "J Hu"
-          - "G Wu"
-          - "AM Manjon-Sanz"
-          - "SH Lapidus"
-          - "JW Harter"
-          - "AK Cheetham*"
-          - "R Seshadri*"
         publisher: "Chem. Mater. 38, 3350-3360"
         releaseDate: 2026
         url: https://doi.org/10.1021/acs.chemmater.5c03072
 
       - title: Direct Microwave Pyrolysis of Cellulose to Hard Carbon Anodes for Sodium-Ion Batteries
-        authors:
-          - "KE Brockmeyer"
-          - "AJ Bologna"
-          - "MA Wright"
-          - "J Wong"
-          - "C Rodriguez"
-          - "T Li"
-          - "RA Segalman"
-          - "R Seshadri*"
         publisher: "Chem. Mater. 38, 1377-1384"
         releaseDate: 2026
         url: https://doi.org/10.1021/acs.chemmater.5c02824
 
+      - title: Linking Battery Electrode Science with Correlated and Quantum Materials
+        publisher: "Phys. Rev. Mater. 9, 110302 (Perspective)"
+        releaseDate: 2025
+        url: https://doi.org/10.1103/zwkw-zc5n
+      
       - title: "Strong, Yet Split Hydrogen Bonding with Ice Rules in Delafossite (H/D)RhO2"
-        authors:
-          - "MA Wright"
-          - "AS Mulligan"
-          - "D Rout"
-          - "JG Hu"
-          - "RL Behrens"
-          - "JR Chamorro"
-          - "SD Wilson"
-          - "AK Cheetham"
-          - "R Seshadri*"
         publisher: "Angew. Chem. Int. Ed. 137, e15471"
         releaseDate: 2025
         url: https://doi.org/10.1002/anie.202515471
 
       - title: Revealing the Mg-Ion Storage Mechanism Within a Covalent Organic Framework Electrode
-        authors:
-          - "MA Wright"
-          - "AR Neale"
-          - "AA Lalanza"
-          - "H Gao"
-          - "MJ Rosseinsky"
-          - "AI Cooper"
-          - "LJ Hardwick*"
         publisher: "ACS Appl. Energy Mater. 8, 16451-16456"
         releaseDate: 2025
         url: https://doi.org/10.1021/acsaem.5c03247
 
       - title: "Semiconducting ZnxMo3S13-GO Chalcocarbogel: a High-Capacity and Stable Sulfur-Equivalent Conversion-Based Electrode for Lithium-Ion Batteries"
-        authors:
-          - "MA Weret"
-          - "T Islam"
-          - "S Bayat"
-          - "SC Roy"
-          - "C Sawicki"
-          - "P Powe"
-          - "CL Donley"
-          - "AS Kumbar"
-          - "AM Abeykoon"
-          - "R Chernikov"
-          - "RM Curtis"
-          - "MA Wright"
-          - "KM Wiaderek"
-          - "C Risko"
-          - "R Amin"
-          - "SM Islam*"
         publisher: "Chem. Mater. 37, 5466-5475"
         releaseDate: 2025
         url: https://doi.org/10.1021/acs.chemmater.4c03483
 
       - title: Pyrolyzed Black Mass Feedstocks and Their Synthetic Proxies Relevant to Li-Ion Battery Recycling
-        authors:
-          - "AJ Bologna"
-          - "RC Vincent"
-          - "A Kallistova"
-          - "JA Mayer"
-          - "MA Wright"
-          - "CR Dela Cruz"
-          - "R Zhang"
-          - "F Seeler"
-          - "K Schierle-Arndt"
-          - "R Seshadri*"
         publisher: "ACS Omega 10, 25546-25554"
         releaseDate: 2025
         url: https://pubs.acs.org/doi/10.1021/acsomega.5c00995
 
       - title: Rapid Microwave Preparation of AlNb11O29 and Ti2Nb10O29 Wadsley-Roth Lithium-Ion Anode Compounds from Parent Oxides
-        authors:
-          - "AR Reach"
-          - "A Zohar"
-          - "MA Wright"
-          - "T Li"
-          - "R Seshadri*"
         publisher: "ACS Appl. Energy Mater. 8, 7714-7721"
         releaseDate: 2025
         url: https://doi.org/10.1021/acsaem.5c01005
 
       - title: Porous Amorphous MnxMo3S13 Chalcogel Electrode for High-Capacity Conversion-Based Lithium-Ion Batteries
-        authors:
-          - "T Islam"
-          - "S Bayat"
-          - "MA Wright"
-          - "SC Roy"
-          - "C Sawicki"
-          - "CL Donley"
-          - "AS Kumbar"
-          - "R Chernikov"
-          - "MA Weret"
-          - "KM Wiaderek"
-          - "C Risko"
-          - "R Amin"
-          - "S Islam*"
         publisher: "J. Am. Chem. Soc. 147, 7400-7410"
         releaseDate: 2025
         url: https://doi.org/10.1021/jacs.4c15552
 
       - title: Fast Mg-ion insertion kinetics in V2Se9
-        authors:
-          - "MA Wright"
-          - "J Lim"
-          - "RA Pacheco"
-          - "AE Krowitz"
-          - "CJ Hawkins"
-          - "M Bahri"
-          - "LM Daniels"
-          - "R Chen"
-          - "LG Chagas"
-          - "J Cookson"
-          - "P Collier"
-          - "AV Chadwick"
-          - "ND Browning"
-          - "JB Claridge"
-          - "LJ Hardwick*"
-          - "MJ Rosseinsky*"
         publisher: "J. Mater. Chem. A 12, 32349-32358"
         releaseDate: 2024
         url: https://pubs.rsc.org/en/Content/ArticleLanding/2024/TA/D4TA04469J
 
       - title: "Navigation Through High-Dimensional Chemical Space: Discovery of Ba5Y13[SiO4]8O8.5 and Ba3Y2[Si2O7]2"
-        authors:
-          - "N Hulai"
-          - "M Zanella"
-          - "C Robertson"
-          - "D Ritchie"
-          - "M Sonni"
-          - "MA Wright"
-          - "JA Newnham"
-          - "CJ Hawkins"
-          - "J Whitworth"
-          - "B Mali"
-          - "H Niu"
-          - "M Dyer"
-          - "CM Collins"
-          - "LM Daniels"
-          - "JB Claridge"
-          - "MJ Rosseinsky*"
         publisher: "Chem. Sci. 15, 16503-16518"
         releaseDate: 2024
         url: https://doi.org/10.1039/D4SC04440A
 
       - title: Accessing Mg-Ion Storage in V2PS10 Via Combined Cationic-Anionic Redox with Selective Bond Cleavage
-        authors:
-          - "MA Wright"
-          - "TW Surta"
-          - "JA Evans"
-          - "J Lim"
-          - "H Jo"
-          - "CJ Hawkins"
-          - "M Bahri"
-          - "LM Daniels"
-          - "R Chen"
-          - "M Zanella"
-          - "LG Chagas"
-          - "J Cookson"
-          - "P Collier"
-          - "G Cibin"
-          - "AV Chadwick"
-          - "MS Dyer"
-          - "ND Browning"
-          - "JB Claridge"
-          - "LJ Hardwick*"
-          - "MJ Rosseinsky*"
         publisher: "Angew. Chem. Int. Ed. 63, e202400837"
         releaseDate: 2024
         url: https://doi.org/10.1002/anie.202400837
 
       - title: A Database of Experimentally Measured Lithium Solid Electrolyte Conductivities Evaluated with Machine Learning
-        authors:
-          - "CJ Hargreaves"
-          - "MG Gaultois"
-          - "LM Daniels"
-          - "EJ Watts"
-          - "VA Kurlin"
-          - "M Moran"
-          - "Y Dung"
-          - "R Morris"
-          - "A Morscher"
-          - "K Thompson"
-          - "MA Wright"
-          - "BE Prasad"
-          - "F Blanc"
-          - "CM Collins"
-          - "CA Crawford"
-          - "BB Duff"
-          - "J Evans"
-          - "J Gamon"
-          - "G Han"
-          - "BT Leube"
-          - "H Niu"
-          - "AJ Perez"
-          - "A Robinson"
-          - "O Rogan"
-          - "PM Sharp"
-          - "E Shoko"
-          - "M Sonni"
-          - "WJ Thomas"
-          - "A Vasylenko"
-          - "L Wang"
-          - "MJ Rosseinsky*"
-          - "MS Dyer*"
         publisher: "NPJ Comp. Mater. 9, 1935"
         releaseDate: 2023
         url: https://doi.org/10.1038/s41524-022-00951-z
 
       - title: "One Site, Two Cations, Three Environments: s2 and s0 Electronic Configurations Generate Pb-Free Relaxor Behaviour in a Perovskite Oxide"
-        authors:
-          - "TW Surta"
-          - "TA Whittle"
-          - "MA Wright"
-          - "H Niu"
-          - "J Gamon"
-          - "QD Gibson"
-          - "LM Daniels"
-          - "WJ Thomas"
-          - "M Zanella"
-          - "PM Shepley"
-          - "Y Li"
-          - "A Goetzee-Barral"
-          - "AJ Bell"
-          - "J Alaria"
-          - "JB Claridge"
-          - "MJ Rosseinsky*"
         publisher: "J. Am. Chem. Soc. 143, 1386-1398"
         releaseDate: 2021
         url: https://doi.org/10.1021/jacs.0c10572
-
-      - title: "Polyol Synthesis of Water-Dispersible Hard-Soft CoFe2O4@ZnFe2O4 Core-Shell Nanoparticles for Enhanced MRI and MPI"
-        authors:
-          - "Q Zhang"
-          - "CH Shiau"
-          - "D Graf"
-          - "MA Wright"
-          - "X Zhu"
-          - "D Davis"
-          - "Y Zhao*"
-        publisher: Under review
-
-      - title: Accessing Polyanionic Redox in High Voltage Li-Rich Thiophosphates
-        authors:
-          - "P Zarabadi-Poor"
-          - "J Lim"
-          - "X Wang"
-          - "JD Bocarsly"
-          - "MA Wright"
-          - "AA Lalanza"
-          - "LM Daniels"
-          - "IM Pateli"
-          - "AR Neale"
-          - "R Chen"
-          - "JB Claridge"
-          - "CP Grey"
-          - "BJ Morgan"
-          - "LJ Hardwick*"
-          - "MJ Rosseinsky*"
-          - "MS Islam*"
-        publisher: "Under review (preprint available)"
-        url: https://doi.org/10.21203/rs.3.rs-2605439/v1
-
-      - title: Short-Range-Ordered Mo3S13-Graphene Oxide Chalcocarbogel Electrodes for High-Capacity and Cycle-Stable Lithium-Ion Batteries
-        authors:
-          - "MA Weret"
-          - "A Adebenjo"
-          - "T Islam"
-          - "K Pitton"
-          - "T Islam"
-          - "CL Donley"
-          - "AS Kumbhar"
-          - "BS Guiton"
-          - "AM Abeykoon"
-          - "MA Wright"
-          - "SC Roy"
-          - "O Oketola"
-          - "R Amin"
-          - "SM Islam*"
-        publisher: Under review
-
-      - title: "Ir-Sb-Sn-O Solid Solutions as Acid-Stable OER Catalysts: Structural Origin of Improved Ir Utilization Compared to Supported IrOx"
-        authors:
-          - "A Malik"
-          - "A Gardner"
-          - "CJ Hawkins"
-          - "D Inns"
-          - "H Jang"
-          - "M Sonni"
-          - "MA Wright"
-          - "M Bahri"
-          - "M Alfredson"
-          - "AV Chadwick"
-          - "T Manning"
-          - "R Moca"
-          - "I Casely"
-          - "G Stevens"
-          - "J Stevens"
-          - "R Chen"
-          - "AJ Cowan"
-          - "MJ Rosseinsky*"
-        publisher: Under review
-
-    Invited Talks:
-      - company: Partnership for Research and Education in Materials
-        position: Invited Speaker and Poster Judge
-        location: Jackson State University, Mississippi, USA
-        start_date: 2025
-        end_date: 2025
-        summary: Talk titled "Protocols for Microwave-Assisted Synthesis of Inorganic Oxides".
-
-      - company: Johnson Matthey Academic Conference
-        position: Invited Speaker
-        location: University of Warwick, Coventry, UK
-        start_date: 2023
-        end_date: 2023
-        summary: >
-          Talk titled "Unlocking Combined Cationic-Anionic Multi-Electron Redox in
-          Mg Batteries" (best oral presentation prize).
-
-    Select Presentations:
-      - company: Gordon Research Conference on Solid State Chemistry
-        position: Poster
-        location: Colby-Sawyer College, New Hampshire, USA
-        start_date: 2026
-        end_date: 2026
-        summary: "Strong, yet split hydrogen bonding with ice rules in delafossite (H/D)RhO2."
-
-      - company: Artificial Intelligence Science at Scale Annual Meeting
-        position: Poster (co-presented)
-        location: Santa Fe, New Mexico, USA
-        start_date: 2026
-        end_date: 2026
-        summary: "New Materials for Topological Switches."
-
-      - company: Materials Research Outreach Program
-        position: Poster
-        location: Santa Barbara, California, USA
-        start_date: 2026
-        end_date: 2026
-        summary: "Strong, yet split hydrogen bonding with ice rules in delafossite (H/D)RhO2."
-
-      - company: American Chemical Society Fall Meeting
-        position: Two Talks
-        location: Washington, District of Columbia, USA
-        start_date: 2025
-        end_date: 2025
-        highlights:
-          - "Understanding hydrogen bonding and residual entropy in delafossite structures."
-          - "Accessing Mg-Ion Storage via Combined Cationic-Anionic Redox with Selective Bond Cleavage."
-
-      - company: 16th International Workshop on Advanced Materials
-        position: Poster
-        location: Ras Al Khaimah Center for Advanced Materials, UAE
-        start_date: 2025
-        end_date: 2025
-        summary: "Electrochemical Control of Quantum Materials Response."
-
-      - company: Materials Research Society Meeting
-        position: Talk
-        location: Boston, Massachusetts, USA
-        start_date: 2024
-        end_date: 2024
-        summary: "Accessing Mg-Ion Storage via Combined Cationic-Anionic Redox with Selective Bond Cleavage."
-
-      - company: Neutron Scattering Workshop
-        position: Poster
-        location: Oak Ridge National Laboratory, Tennessee, USA
-        start_date: 2024
-        end_date: 2024
-        summary: "Electrochemical Control of Quantum Materials Response."
-
-      - company: 241st Electrochemical Society Meeting
-        position: Poster
-        location: Vancouver, British Columbia, Canada
-        start_date: 2022
-        end_date: 2022
-        summary: "Anionic Redox and Multi-Electron Processes in Mg Batteries."
-
-      - company: Faraday Summer Internship Conference
-        position: Poster
-        location: University of Warwick, Coventry, UK
-        start_date: 2020
-        end_date: 2020
-        summary: >
-          "Computationally Predicted Doping of Aluminosilicates for Li-Ion
-          Conductivity" (runner-up poster prize).
-
-      - company: Undergraduate Research Symposium
-        position: Talk
-        location: University of Liverpool, Merseyside, UK
-        start_date: 2019
-        end_date: 2019
-        summary: "Discovery and Characterization of New Pb-free Perovskite Relaxors for Piezoelectric Applications."
-
-    Teaching and Mentoring:
-      - company: UC Santa Barbara
-        position: Guest Lecturer, Materials 218 / Chemistry 277
-        location: Santa Barbara, California, USA
-        start_date: 2026
-        end_date: 2026
-        summary: Delivered a lecture on crystal structures and bonding in inorganic solids.
-
-      - company: PREM and FLAM Programs
-        position: Intern Mentor
-        location: UC Santa Barbara, California, USA
-        start_date: 2025
-        end_date: present
-        summary: >
-          Mentored student interns via the NSF-supported Partnership for Research in
-          Energy Materials and Future Leaders in Advanced Materials programs. Provided
-          research mentorship and training to undergraduate researchers from
-          underrepresented groups at partner institutions (JSU/UTEP), supporting their
-          development in materials synthesis, characterization techniques, and
-          scientific communication.
-
-      - company: UC Santa Barbara and University of Liverpool
-        position: Research Mentor
-        location: California, USA and Liverpool, UK
-        start_date: 2023
-        end_date: present
-        summary: >
-          Extensive mentoring of graduate and undergraduate researchers, with current
-          destinations shown.
-        highlights:
-          - "UC Santa Barbara: Amelia Reach (University of Oxford, PhD), Enrique Moya (Helmholtz Institute Ulm, PhD), Roland Yin (Columbia University, PhD), Alejandro Tarin (University of Texas at El Paso, PhD), Presley Cochran (Leeta Materials)."
-          - "University of Liverpool: Clement Morel (College de France, PhD), Raul Pacheco Muino (Imperial College London, PhD)."
-
-      - company: University of Liverpool
-        position: Graduate Teaching Assistant, Department of Chemistry
-        location: Liverpool, UK
-        url: https://www.liverpool.ac.uk/chemistry/
-        start_date: 2019
-        end_date: 2023
-        highlights:
-          - Solid State Chemistry (Chem442, Level 7 FHEQ).
-          - Third- and Fourth-Year Research Project (Chem370/380, Chem480, Level 6-7 FHEQ).
-          - Applications for Group Theory (Chem216, Level 5 FHEQ).
-
-      - company: TutorRight
-        position: Private Tutor
-        location: UK
-        start_date: 2018
-        end_date: 2022
-        summary: >
-          Teaching mathematics, chemistry, and physics (UK Key Stage 2 through A-Level).
-
-      - company: University of Liverpool
-        position: Peer-Assisted Learning (PAL) Leader
-        location: Liverpool, UK
-        start_date: 2016
-        end_date: 2018
-        summary: >
-          A student-driven scheme organizing and facilitating weekly study support
-          sessions for new undergraduates.
 
     Awards:
       - title: Heeger Fellowship
@@ -714,114 +205,12 @@ cv:
       - title: Faraday Undergraduate Summer Internship
         date: 2019
         awarder: The Faraday Institution
-        summary: GBP 5,800 stipend awarded.
+        summary: £5,800 stipend awarded.
 
       - title: Santander Global Mobility Award
         date: 2016
         awarder: Santander Universities
         summary: GBP 1,000 supporting an exchange year at Boston College, USA.
-
-    Proposals Awarded:
-      - name: NOMAD, Spallation Neutron Source
-        summary: Oak Ridge National Laboratory, USA. 5 days awarded total.
-        start_date: 2024
-        end_date: 2024
-
-      - name: Beamline I11, Diamond Light Source
-        summary: >
-          UK. UC Santa Barbara Batch Allocation Grant, 12 days per year.
-        start_date: 2023
-        end_date: 2025
-
-      - name: Photon Science Institute
-        summary: University of Manchester, UK. 10 days awarded total.
-        start_date: 2023
-        end_date: 2023
-
-      - name: Beamline B18, Diamond Light Source
-        summary: Didcot, UK. 3 days awarded total.
-        start_date: 2023
-        end_date: 2023
-
-      - name: HarwellXPS
-        summary: Rutherford Appleton Laboratory, Didcot, UK. 2 days awarded.
-        start_date: 2022
-        end_date: 2022
-
-      - name: Beamline I11, Diamond Light Source
-        summary: >
-          UK. University of Liverpool Batch Allocation Grant, 12 days per year.
-        start_date: 2019
-        end_date: 2023
-
-    Service and Leadership:
-      - company: Young Professionals Network, UC Santa Barbara
-        position: Co-Chair
-        location: Santa Barbara, California, USA
-        start_date: 2026
-        end_date: present
-        summary: >
-          A campus network supporting postdoctoral researchers and early-career staff
-          through professional development, networking, and community-building events.
-          Selected to co-lead the organization's relaunch and expand its reach across
-          campus.
-
-      - company: UCSB Materials Research Laboratory Outreach Program
-        position: Science Demonstrator
-        location: Santa Barbara, California, USA
-        start_date: 2025
-        end_date: present
-        summary: >
-          Delivered hands-on science demonstrations to elementary school students,
-          broadening early exposure to STEM in local schools.
-
-      - company: Diamond Light Source I11 BAG User Development Program
-        position: Tutorial Lead
-        location: UC Santa Barbara, California, USA
-        start_date: 2025
-        end_date: present
-        summary: >
-          Delivered technical TOPAS tutorials on the analysis of X-ray and neutron
-          diffraction data. Topics included Pawley and LeBail fitting, quantitative
-          Rietveld refinement of single- and multi-phase data, structure solution
-          methods, sequential refinements, and treatment of (an)isotropic
-          displacement parameters.
-
-      - company: Partnership for Research and Education in Materials (PREM)
-        position: Collaborating Scientist
-        location: UC Santa Barbara, California, USA
-        url: https://www.mrl.ucsb.edu/education/undergraduate-opportunities/prem
-        start_date: 2024
-        end_date: 2026
-        summary: >
-          An NSF program pairing minority-serving institutions with leading materials
-          research centers; UCSB's PREM is a joint research and education partnership
-          with Jackson State University, Mississippi, and the University of Texas at
-          El Paso. Contributed experimental data to collaborative UCSB projects;
-          delivered an invited talk and served as a poster judge at the 2025 PREM
-          conference at Jackson State University.
-
-      - company: Future Leaders in Advanced Materials (FLAM)
-        position: Research Mentor
-        location: UC Santa Barbara, California, USA
-        url: https://www.mrl.ucsb.edu/education/undergraduate-opportunities/flam
-        start_date: 2024
-        end_date: 2026
-        summary: >
-          A summer research internship program sponsored by the UCSB Materials Research
-          Laboratory and College of Engineering, hosting undergraduate students from
-          universities across the US. Provided training in materials synthesis,
-          characterization, data analysis, and scientific communication.
-
-      - company: University of Liverpool, Physical Sciences Department
-        position: Postgraduate Researcher Support Lead
-        location: Liverpool, UK
-        start_date: 2022
-        end_date: 2024
-        summary: >
-          Organized and facilitated fortnightly check-ins for new and junior
-          postgraduate researchers, supporting wellbeing, mentoring, and professional
-          development.
 
     Skills:
       - name: Battery Development & Electrochemistry
@@ -853,104 +242,14 @@ cv:
           TopSpin, EC-Lab, ZView; LaTeX, OriginPro, GIMP; laboratory safety officer;
           glovebox maintenance; cryogen and gas handling; fire and first-aid trained
 
-    Certificates:
-      - name: Workshop on Quantum Geometry
-        date: 2025-11
-        issuer: Rice Center for Quantum Materials, Rice University, TX, USA
-        icon: fa-solid fa-atom
-
-      - name: School on Quantum Materials Synthesis
-        date: 2025-11
-        issuer: Rice Center for Quantum Materials, Rice University, TX, USA
-        icon: fa-solid fa-flask
-
-      - name: Advanced Neutron Powder Diffraction Analysis with TOPAS
-        date: 2024-09
-        issuer: Oak Ridge National Laboratory, TN, USA
-        icon: fa-solid fa-chart-line
-
-      - name: Leadership in Academia Workshop
-        date: 2023-07
-        issuer: University of Liverpool, UK
-        icon: fa-solid fa-users
-
-      - name: EPSRC Doctoral Training Centre in Digital & Automated Materials Chemistry
-        date: 2019
-        issuer: University of Liverpool, UK
-        icon: fa-solid fa-graduation-cap
-
-      - name: Faraday Institution Summer Internship
-        date: 2019
-        issuer: The Faraday Institution, UK
-        icon: fa-solid fa-bolt
-
-    Professional Affiliations:
-      - name: American Chemical Society (ACS)
-        date: 2023
-        issuer: Member
-        icon: fa-solid fa-certificate
-
-      - name: The Electrochemical Society (ECS)
-        date: 2022
-        issuer: Member
-        icon: fa-solid fa-certificate
-
-      - name: Royal Society of Chemistry (RSC)
-        date: 2019
-        issuer: Member
-        icon: fa-solid fa-certificate
-
-    Volunteer:
-      - company: United Way "Lunch Bunch" Summer Enrichment Program
-        position: Volunteer Team Lead
-        location: Santa Barbara, California, USA
-        start_date: 2026
-        end_date: present
-        summary: >
-          Organized and led a team of ten UCSB students and staff supporting a summer
-          enrichment program for underprivileged elementary schoolers, bridging the
-          learning gap of summer vacation.
-
-      - company: University of Liverpool, Physical Sciences Department
-        position: Founder, Departmental Book Club
-        location: Liverpool, UK
-        start_date: 2022
-        end_date: 2024
-
-      - company: Royal Liverpool University Hospital
-        position: Patient Companion Volunteer
-        location: Liverpool, UK
-        start_date: 2015
-        end_date: 2016
-        summary: >
-          Provided companionship to isolated patients without family support.
-
-      - company: Loud and Clear
-        position: Volunteer
-        location: Warrington, UK
-        start_date: 2014
-        end_date: 2015
-        summary: >
-          A community initiative using music and performance to support mental health,
-          wellbeing, and creative expression.
-
-      - company: Tim Parry and Jonathan Ball Peace Foundation
-        position: National Citizen Service Participant
-        location: Warrington, UK
-        start_date: 2013
-        end_date: 2014
-        summary: >
-          Developed skills in youth leadership, teamwork, peacebuilding, and community
-          engagement.
-
     Interests:
       - name: Battery Materials
         icon: fa-solid fa-battery-full
-        keywords: "Li-ion, Na-ion, and Mg-ion cathodes; solid electrolytes; multi-valent ion insertion; anionic redox"
+        keywords: "Li-ion, Na-ion, and Mg-ion batteries; cathode materials; anode materials; solid electrolytes; multi-valent ion insertion; anionic redox"
 
       - name: Quantum & Correlated Materials
         icon: fa-solid fa-atom
-        keywords: "Electrochemical control of electronic structure; magnetism; delafossites; hydrogen bonding and residual entropy"
+        keywords: "Electronic structure; magnetism"
 
       - name: Structure-Property Relationships
         icon: fa-solid fa-cubes
