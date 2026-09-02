@@ -1,7 +1,7 @@
 ---
 layout: page
-permalink: /links/
-title: links
+permalink: /resources/
+title: resources
 description: A collection of databases, software, tutorials and other links I find useful.
 nav: false
 nav_order: 4
