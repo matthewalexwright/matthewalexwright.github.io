@@ -10,4 +10,7 @@ children:
   - title: divider
   - title: images
     permalink: /photos/
+  - title: divider
+  - title: resources
+    permalink: /resources/
 ---
