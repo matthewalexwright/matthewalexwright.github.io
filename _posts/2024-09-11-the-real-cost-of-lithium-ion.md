@@ -3,7 +3,7 @@ layout: distill
 title: "The real cost of lithium-ion: an environmentally and ethically tarnishing metal"
 description: How the current status of lithium batteries is diminishing their sustainability
 date: 2024-09-11
-tags: batteries sustainability lithium cobalt
+tags: batteries sustainability 
 categories: commentary
 giscus_comments: false
 related_posts: true
