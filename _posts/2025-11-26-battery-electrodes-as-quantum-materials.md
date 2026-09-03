@@ -2,7 +2,7 @@
 layout: distill
 title: Linking battery electrode science with correlated and quantum materials
 description: Electrochemical alkali-ion (de)insertion provides dynamic, room-temperature control over spin state, charge ordering, and electron localization in transition metal oxides.
-tags: batteries magnetism correlated-electrons
+tags: batteries quantum
 categories: research
 giscus_comments: false
 date: 2025-11-26
