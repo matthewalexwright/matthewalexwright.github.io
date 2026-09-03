@@ -5,7 +5,8 @@ description: How the current status of lithium batteries is diminishing their su
 date: 2024-09-11
 tags: batteries sustainability lithium cobalt
 categories: commentary
-giscus_comments: true
+giscus_comments: false
+related posts: true
 
 authors:
   - name: Matthew A. Wright
