@@ -5,7 +5,7 @@ date: 2025-10-14 09:00:00-0700
 description: Digital records offer traceability, carbon data and supply-chain due diligence
 tags: batteries policy regulation sustainability recycling
 categories: commentary
-giscus_comments: true
+giscus_comments: false
 related_posts: true
 ---
 
