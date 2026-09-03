@@ -332,7 +332,7 @@ jekyll-archives:
   books:
     enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
 
-display_tags: [batteries, sustainability, crystallography, software, quantum]
+display_tags: [batteries, energy, sustainability, crystallography, quantum, software]
 display_categories: [research, commentary, tools]
 
 # -----------------------------------------------------------------------------
