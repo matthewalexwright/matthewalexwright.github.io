@@ -3,7 +3,7 @@ layout: post
 title: "MP-query-ternaries: A ternary phase diagram explorer by Anya S. Mulligan"
 date: 2026-09-02 09:00:00-0700
 description: A tool from our group that queries the Materials Project across whole families of ternary systems at once, and returns CSVs and phase diagrams
-tags: software materials-project phase-diagrams crystallography tools
+tags: software crystallography
 categories: tools
 giscus_comments: false
 related_posts: true
