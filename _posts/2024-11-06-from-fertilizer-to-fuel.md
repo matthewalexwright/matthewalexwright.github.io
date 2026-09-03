@@ -5,7 +5,7 @@ date: 2024-11-06 09:00:00-0800
 description: Using the world's fertilizer to help bridge hydrogen cells and highway cars
 tags: hydrogen ammonia fuel-cells energy sustainability
 categories: commentary
-giscus_comments: true
+giscus_comments: false
 related_posts: true
 ---
 
