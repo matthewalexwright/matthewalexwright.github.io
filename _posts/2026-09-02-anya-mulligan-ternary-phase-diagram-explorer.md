@@ -5,7 +5,7 @@ date: 2026-09-02 09:00:00-0700
 description: A tool from our group that queries the Materials Project across whole families of ternary systems at once, and returns CSVs and phase diagrams
 tags: software materials-project phase-diagrams crystallography tools
 categories: tools
-giscus_comments: true
+giscus_comments: false
 related_posts: true
 thumbnail: assets/img/2026-09-02-mp-query-ternaries/icon.png
 featured: true
