@@ -5,7 +5,7 @@ date: 2024-10-01 09:00:00-0700
 description: How a current lack of financial incentives is preventing development and deployment of reliable Li-ion recycling strategies
 tags: batteries recycling sustainability policy
 categories: commentary
-giscus_comments: true
+giscus_comments: false
 related_posts: true
 ---
 
