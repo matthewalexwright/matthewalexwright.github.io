@@ -6,14 +6,12 @@ date: 2024-09-11
 tags: batteries sustainability lithium cobalt
 categories: commentary
 giscus_comments: false
-related posts: true
-
+related_posts: true
 authors:
   - name: Matthew A. Wright
     url: "mailto:matthew-wright@ucsb.edu"
     affiliations:
       name: Materials Department and MRL, UC Santa Barbara
-
 bibliography: 2024-09-11-lithium-cost.bib
 ---
 
