@@ -3,7 +3,7 @@ layout: post
 title: "Europe's new EV battery passport"
 date: 2025-10-14 09:00:00-0700
 description: Digital records offer traceability, carbon data and supply-chain due diligence
-tags: batteries policy regulation sustainability recycling
+tags: batteries sustainability energy
 categories: commentary
 giscus_comments: false
 related_posts: true
