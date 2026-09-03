@@ -3,7 +3,7 @@ layout: post
 title: "Closing the loop on Li-ion: why recycling matters for the future of battery tech"
 date: 2024-10-01 09:00:00-0700
 description: How a current lack of financial incentives is preventing development and deployment of reliable Li-ion recycling strategies
-tags: batteries recycling sustainability policy
+tags: batteries sustainability 
 categories: commentary
 giscus_comments: false
 related_posts: true
