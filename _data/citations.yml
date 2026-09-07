@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-08-28'
+  last_updated: '2026-09-07'
 papers:
   4d5Rx_4AAAAJ:0EnyYjriUFMC:
     citations: 0
@@ -50,11 +50,11 @@ papers:
     title: "High Lithium Content and Site Disorder in the Transition Metal Oxide Argyrodites Li7TiO5X (X= Cl\u2013, Br\u2013)"
     year: '2026'
   4d5Rx_4AAAAJ:UebtZRa9Y70C:
-    citations: 3
+    citations: 4
     title: Revealing the Mg-Ion Storage Mechanism within a Covalent Organic Framework Electrode
     year: '2025'
   4d5Rx_4AAAAJ:W7OEmFMy1HYC:
-    citations: 7
+    citations: 8
     title: "Rapid Microwave Preparation of AlNb11O29 and Ti2Nb10O29 Wadsley\u2013Roth Lithium\u2013Ion Anode Compounds from Parent Oxides"
     year: '2025'
   4d5Rx_4AAAAJ:WF5omc3nYNoC:
@@ -84,23 +84,19 @@ papers:
   4d5Rx_4AAAAJ:_kc_bZDykSQC:
     citations: 0
     title: "Rapid and Phase\u2013Selective Routes to Layered Na\u2013Ion Cathodes"
-    year: Unknown Year
+    year: '2026'
   4d5Rx_4AAAAJ:eQOLeE2rZwMC:
     citations: 0
     title: 'Navigation through high-dimensional chemical space: discovery of two Ba-Y silicates'
     year: '2024'
   4d5Rx_4AAAAJ:kNdYIx-mwKoC:
-    citations: 0
+    citations: 1
     title: "Structural Propensities in Cs2MBiX6 (M \u2009= Na, Ag; X \u2009= Cl, Br) Bismuth Halide Double Perovskites"
     year: '2026'
   4d5Rx_4AAAAJ:qjMakFHDy7sC:
     citations: 3
     title: 'Navigation through high-dimensional chemical space: discovery of Ba5Y13 [SiO4] 8O8. 5 and Ba3Y2 [Si2O7] 2'
     year: '2024'
-  4d5Rx_4AAAAJ:qxL8FJ1GzNcC:
-    citations: 0
-    title: Rapid andPhase-Selective Routes to LayeredNa-Ion Cathodes
-    year: '2026'
   4d5Rx_4AAAAJ:roLk4NBRz8UC:
     citations: 0
     title: Accessing polyanionic redox in high-voltage Li-rich thiophosphate-type materials
@@ -110,7 +106,7 @@ papers:
     title: 'One site, two cations, three environments: s2 and s0 electronic configurations generate Pb-free relaxor behavior in a perovskite oxide'
     year: '2021'
   4d5Rx_4AAAAJ:u5HHmVD_uO8C:
-    citations: 115
+    citations: 116
     title: A database of experimentally measured lithium solid electrolyte conductivities evaluated with machine learning
     year: '2023'
   4d5Rx_4AAAAJ:ufrVoPGSRksC:
