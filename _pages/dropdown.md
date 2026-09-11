@@ -11,6 +11,9 @@ children:
   - title: text books
     permalink: /books/
   - title: divider
-  - title: resources
+  - title: ionic radii
+    permalink: /assets/html/shannon-radii.html
+  - title: divider
+  - title: external resources
     permalink: /resources/
 ---
