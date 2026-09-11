@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shannonâ€“Prewitt Ionic Radii</title>
+<style>
+  :root{
+    --paper:#ffffff; --ink:#182430; --muted:#66707c; --hair:#e4e8ed; --hair2:#d3d9e0;
+    --blue:38,74,117; --rust:158,74,44;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    --mono:ui-monospace,"SF Mono","Cascadia Code",Menlo,Consolas,monospace;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{background:var(--paper)}
+  body{font-family:var(--sans);color:var(--ink);background:var(--paper);
+       padding:28px clamp(14px,3vw,44px) 72px;}
+  a{color:inherit}
+
+  /* ---------- masthead ---------- */
+  header{display:flex;flex-wrap:wrap;align-items:flex-end;gap:18px 32px;
+         border-bottom:1px solid var(--ink);padding-bottom:16px;margin-bottom:22px}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(24px,3.4vw,36px);
+     letter-spacing:.01em;line-height:1.05}
+  .cite{font-size:12.5px;color:var(--muted);max-width:34em;line-height:1.45}
+  .cite i{font-style:italic}
+  .mast-right{margin-left:auto;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+  .search{display:flex;align-items:center;gap:8px}
+  .search input{font-family:var(--mono);font-size:14px;padding:7px 10px;width:11em;
+    border:1px solid var(--hair2);border-radius:6px;background:#fff;color:var(--ink)}
+  .search input:focus{outline:2px solid rgb(var(--blue));outline-offset:1px;border-color:transparent}
+  .search label{font-size:12px;color:var(--muted)}
+  .mode{display:flex;border:1px solid var(--hair2);border-radius:6px;overflow:hidden}
+  .mode button{font-family:var(--sans);font-size:12px;padding:6px 11px;border:0;background:#fff;
+    color:var(--muted);cursor:pointer}
+  .mode button[aria-pressed="true"]{background:var(--ink);color:#fff}
+  .mode button:focus-visible{outline:2px solid rgb(var(--blue));outline-offset:-2px}
+
+  /* ---------- periodic table ---------- */
+  .pt-scroll{overflow-x:auto;padding-bottom:6px}
+  .pt{display:grid;grid-template-columns:repeat(18,minmax(46px,1fr));
+      grid-auto-rows:minmax(52px,auto);gap:4px;min-width:920px}
+  .cell{position:relative;border:1px solid var(--hair);border-radius:5px;background:#fff;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    padding:4px 2px;cursor:pointer;user-select:none;
+    transition:transform .09s ease,box-shadow .09s ease}
+  .cell .z{position:absolute;top:3px;left:5px;font-family:var(--mono);font-size:9px;color:var(--muted)}
+  .cell .sym{font-family:var(--serif);font-weight:600;font-size:17px;line-height:1}
+  .cell .n{font-family:var(--mono);font-size:8.5px;color:var(--muted);margin-top:3px}
+  .cell.nodata{cursor:default;border-style:dashed;background:#fff}
+  .cell.nodata .sym{color:#b9c0c8}
+  .cell.nodata .z{color:#c9cfd6}
+  .cell:not(.nodata):hover{transform:translateY(-2px);box-shadow:0 3px 10px rgba(24,36,48,.14);z-index:2}
+  .cell:focus-visible{outline:2px solid var(--ink);outline-offset:1px;z-index:2}
+  .cell.sel{outline:2px solid var(--ink);outline-offset:1px;z-index:1}
+  .fgap{grid-column:1 / -1;height:10px}
+  .marker{border:0;background:transparent;display:flex;align-items:center;justify-content:center;
+    font-family:var(--mono);font-size:9px;color:var(--muted)}
+
+  /* legend */
+  .legend{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:center;
+    margin:16px 0 30px;font-size:12px;color:var(--muted)}
+  .ramp{display:inline-flex;align-items:center;gap:6px}
+  .ramp .sw{width:15px;height:15px;border-radius:3px;border:1px solid var(--hair)}
+  .legend .dash{width:15px;height:15px;border:1px dashed var(--hair2);border-radius:3px}
+
+  /* ---------- tooltip ---------- */
+  .tip{position:fixed;pointer-events:none;z-index:50;background:var(--ink);color:#fff;
+    font-size:11.5px;line-height:1.5;padding:7px 10px;border-radius:6px;max-width:240px;
+    opacity:0;transition:opacity .08s}
+  .tip b{font-family:var(--serif);font-size:13px}
+  .tip .mono{font-family:var(--mono)}
+
+  /* ---------- detail panel ---------- */
+  .panel{border-top:1px solid var(--ink);padding-top:22px;display:none}
+  .panel.open{display:block}
+  .panel-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 18px;margin-bottom:14px}
+  .panel-head .big{font-family:var(--serif);font-weight:600;font-size:34px}
+  .panel-head .nm{font-size:14px;color:var(--muted)}
+  .panel-head .zz{font-family:var(--mono);font-size:12px;color:var(--muted)}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}
+  .chip{font-family:var(--mono);font-size:13px;padding:5px 12px;border:1px solid var(--hair2);
+    border-radius:999px;background:#fff;cursor:pointer;color:var(--ink)}
+  .chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .chip.an[aria-pressed="true"]{background:rgb(var(--rust));border-color:rgb(var(--rust))}
+  .chip:focus-visible{outline:2px solid rgb(var(--blue));outline-offset:2px}
+
+  .panel-grid{display:grid;grid-template-columns:minmax(300px,430px) 1fr;gap:30px 44px}
+  @media (max-width:820px){.panel-grid{grid-template-columns:1fr}}
+
+  table{border-collapse:collapse;width:100%;font-size:13.5px}
+  caption{text-align:left;font-size:12px;color:var(--muted);padding-bottom:7px;caption-side:top}
+  th{font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.06em;
+     color:var(--muted);text-align:left;padding:5px 10px 5px 0;border-bottom:1px solid var(--ink)}
+  th.num,td.num{text-align:right;padding-right:0;padding-left:10px}
+  td{padding:5.5px 10px 5.5px 0;border-bottom:1px solid var(--hair);vertical-align:baseline}
+  td.num{font-family:var(--mono);font-size:13px}
+  td .geo{font-size:11px;color:var(--muted)}
+  .badge{display:inline-block;font-family:var(--mono);font-size:10.5px;padding:1px 6px;
+    border-radius:4px;border:1px solid var(--hair2);color:var(--muted)}
+  .badge.hs{border-color:rgba(var(--rust),.55);color:rgb(var(--rust))}
+  .badge.ls{border-color:rgba(var(--blue),.55);color:rgb(var(--blue))}
+  td.dim{opacity:.55}
+  .primary-col{font-weight:600}
+
+  /* ---------- coordination ladder ---------- */
+  .ladder h3{font-family:var(--serif);font-weight:600;font-size:16px;margin-bottom:2px}
+  .ladder .sub{font-size:12px;color:var(--muted);margin-bottom:10px}
+  .ladder svg{width:100%;height:auto;display:block}
+  .ladder text{font-family:var(--mono)}
+  .neg-note{font-size:12px;color:var(--muted);margin-top:8px;max-width:38em;line-height:1.5}
+
+  /* all-ion table */
+  details.allions{margin-top:34px}
+  details.allions summary{font-family:var(--serif);font-size:15px;font-weight:600;cursor:pointer;
+    padding:6px 0}
+  details.allions summary:focus-visible{outline:2px solid rgb(var(--blue));outline-offset:2px}
+  .allwrap{overflow-x:auto;margin-top:8px}
+
+  footer{margin-top:56px;border-top:1px solid var(--hair2);padding-top:14px;
+    font-size:12px;color:var(--muted);line-height:1.65;max-width:62em}
+  footer .mono{font-family:var(--mono)}
+
+  @media (prefers-reduced-motion:reduce){
+    .cell,.tip{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Shannonâ€“Prewitt Ionic Radii</h1>
+    <p class="cite">Effective ionic and crystal radii for all ions, coordination numbers, and spin
+    states from R.&thinsp;D. Shannon, <i>Acta Crystallogr.</i> <b>A32</b>, 751â€“767 (1976),
+    revising Shannon &amp; Prewitt (1969). All radii in Ã….</p>
+  </div>
+  <div class="mast-right">
+    <div class="search">
+      <label for="q">Find an ion</label>
+      <input id="q" type="text" placeholder="e.g. Fe2+, O2âˆ’, VI" autocomplete="off" spellcheck="false">
+    </div>
+    <div class="mode" role="group" aria-label="Radius convention">
+      <button id="mode-ion" aria-pressed="true">Effective ionic&nbsp;(r<sub>OÂ²â»</sub>=1.40)</button>
+      <button id="mode-cry" aria-pressed="false">Crystal&nbsp;(r<sub>OÂ²â»</sub>=1.26)</button>
+    </div>
+  </div>
+</header>
+
+<div class="pt-scroll"><div class="pt" id="pt"></div></div>
+
+<div class="legend">
+  <span class="ramp"><span class="sw" id="sw-c1"></span><span class="sw" id="sw-c2"></span><span class="sw" id="sw-c3"></span>&nbsp;cations only â€” shade deepens with number of tabulated ions</span>
+  <span class="ramp"><span class="sw" id="sw-a1"></span><span class="sw" id="sw-a2"></span>&nbsp;element with anion entries</span>
+  <span class="ramp"><span class="dash"></span>&nbsp;not in Shannonâ€™s table</span>
+</div>
+
+<section class="panel" id="panel" aria-live="polite">
+  <div class="panel-head">
+    <span class="big" id="p-sym"></span>
+    <span class="nm" id="p-name"></span>
+    <span class="zz" id="p-z"></span>
+  </div>
+  <div class="chips" id="chips" role="group" aria-label="Oxidation state"></div>
+  <div class="panel-grid">
+    <div>
+      <table id="ion-table">
+        <caption id="ion-caption"></caption>
+        <thead><tr>
+          <th>CN</th><th>Geometry</th><th>Spin</th>
+          <th class="num">r<sub>ionic</sub></th><th class="num">r<sub>crystal</sub></th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="ladder">
+      <h3>Radius vs. coordination</h3>
+      <p class="sub" id="ladder-sub"></p>
+      <div id="ladder-svg"></div>
+      <p class="neg-note" id="neg-note" hidden></p>
+    </div>
+  </div>
+  <details class="allions">
+    <summary>All tabulated ions of this element</summary>
+    <div class="allwrap">
+      <table id="all-table">
+        <thead><tr>
+          <th>Ion</th><th>CN</th><th>Geometry</th><th>Spin</th>
+          <th class="num">r<sub>ionic</sub></th><th class="num">r<sub>crystal</sub></th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </details>
+</section>
+
+<div class="tip" id="tip"></div>
+
+<footer>
+  <p><b>Conventions.</b> Effective ionic radii are referenced to
+  <span class="mono">r(OÂ²â», CN VI) = 1.40 Ã…</span>; crystal radii to
+  <span class="mono">1.26 Ã…</span> â€” the two scales differ by a uniform 0.14 Ã…
+  (cations larger, anions smaller on the crystal scale). Coordination geometry flags:
+  <span class="mono">SQ</span> square-planar, <span class="mono">PY</span> pyramidal.
+  <span class="mono">HS</span>/<span class="mono">LS</span> denote high- and low-spin
+  configurations of octahedral (and some tetrahedral) transition-metal ions.
+  Negative radii for Hâº/Dâº and Nâµâº (CN III) reflect the proton or bare cation sitting
+  inside the anionâ€™s electron cloud. Data as digitized in the pymatgen distribution of
+  Shannonâ€™s Table 1.</p>
+</footer>
+
+<script>
+const SHANNON={"Ac":{"3":[["VI","",1.26,1.12]]},"Ag":{"1":[["II","",0.81,0.67],["IV","",1.14,1.0],["IVSQ","",1.16,1.02],["V","",1.23,1.09],["VI","",1.29,1.15],["VII","",1.36,1.22],["VIII","",1.42,1.28]],"2":[["IVSQ","",0.93,0.79],["VI","",1.08,0.94]],"3":[["IVSQ","",0.81,0.67],["VI","",0.89,0.75]]},"Al":{"3":[["IV","",0.53,0.39],["V","",0.62,0.48],["VI","",0.675,0.535]]},"Am":{"2":[["VII","",1.35,1.21],["VIII","",1.4,1.26],["IX","",1.45,1.31]],"3":[["VI","",1.115,0.975],["VIII","",1.23,1.09]],"4":[["VI","",0.99,0.85],["VIII","",1.09,0.95]]},"As":{"3":[["VI","",0.72,0.58]],"5":[["IV","",0.475,0.335],["VI","",0.6,0.46]]},"At":{"7":[["VI","",0.76,0.62]]},"Au":{"1":[["VI","",1.51,1.37]],"3":[["IVSQ","",0.82,0.68],["VI","",0.99,0.85]],"5":[["VI","",0.71,0.57]]},"B":{"3":[["III","",0.15,0.01],["IV","",0.25,0.11],["VI","",0.41,0.27]]},"Ba":{"2":[["VI","",1.49,1.35],["VII","",1.52,1.38],["VIII","",1.56,1.42],["IX","",1.61,1.47],["X","",1.66,1.52],["XI","",1.71,1.57],["XII","",1.75,1.61]]},"Be":{"2":[["III","",0.3,0.16],["IV","",0.41,0.27],["VI","",0.59,0.45]]},"Bi":{"3":[["V","",1.1,0.96],["VI","",1.17,1.03],["VIII","",1.31,1.17]],"5":[["VI","",0.9,0.76]]},"Bk":{"3":[["VI","",1.1,0.96]],"4":[["VI","",0.97,0.83],["VIII","",1.07,0.93]]},"Br":{"-1":[["VI","",1.82,1.96]],"3":[["IVSQ","",0.73,0.59]],"5":[["IIIPY","",0.45,0.31]],"7":[["IV","",0.39,0.25],["VI","",0.53,0.39]]},"C":{"4":[["III","",0.06,-0.08],["IV","",0.29,0.15],["VI","",0.3,0.16]]},"Ca":{"2":[["VI","",1.14,1.0],["VII","",1.2,1.06],["VIII","",1.26,1.12],["IX","",1.32,1.18],["X","",1.37,1.23],["XII","",1.48,1.34]]},"Cd":{"2":[["IV","",0.92,0.78],["V","",1.01,0.87],["VI","",1.09,0.95],["VII","",1.17,1.03],["VIII","",1.24,1.1],["XII","",1.45,1.31]]},"Ce":{"3":[["VI","",1.15,1.01],["VII","",1.21,1.07],["VIII","",1.283,1.143],["IX","",1.336,1.196],["X","",1.39,1.25],["XII","",1.48,1.34]],"4":[["VI","",1.01,0.87],["VIII","",1.11,0.97],["X","",1.21,1.07],["XII","",1.28,1.14]]},"Cf":{"3":[["VI","",1.09,0.95]],"4":[["VI","",0.961,0.821],["VIII","",1.06,0.92]]},"Cl":{"-1":[["VI","",1.67,1.81]],"5":[["IIIPY","",0.26,0.12]],"7":[["IV","",0.22,0.08],["VI","",0.41,0.27]]},"Cm":{"3":[["VI","",1.11,0.97]],"4":[["VI","",0.99,0.85],["VIII","",1.09,0.95]]},"Co":{"2":[["IV","HS",0.72,0.58],["V","",0.81,0.67],["VI","HS",0.885,0.745],["VI","LS",0.79,0.65],["VIII","",1.04,0.9]],"3":[["VI","HS",0.75,0.61],["VI","LS",0.685,0.545]],"4":[["IV","",0.54,0.4],["VI","HS",0.67,0.53]]},"Cr":{"2":[["VI","HS",0.94,0.8],["VI","LS",0.87,0.73]],"3":[["VI","",0.755,0.615]],"4":[["IV","",0.55,0.41],["VI","",0.69,0.55]],"5":[["IV","",0.485,0.345],["VI","",0.63,0.49],["VIII","",0.71,0.57]],"6":[["IV","",0.4,0.26],["VI","",0.58,0.44]]},"Cs":{"1":[["VI","",1.81,1.67],["VIII","",1.88,1.74],["IX","",1.92,1.78],["X","",1.95,1.81],["XI","",1.99,1.85],["XII","",2.02,1.88]]},"Cu":{"1":[["II","",0.6,0.46],["IV","",0.74,0.6],["VI","",0.91,0.77]],"2":[["IV","",0.71,0.57],["IVSQ","",0.71,0.57],["V","",0.79,0.65],["VI","",0.87,0.73]],"3":[["VI","LS",0.68,0.54]]},"Dy":{"2":[["VI","",1.21,1.07],["VII","",1.27,1.13],["VIII","",1.33,1.19]],"3":[["VI","",1.052,0.912],["VII","",1.11,0.97],["VIII","",1.167,1.027],["IX","",1.223,1.083]]},"Er":{"3":[["VI","",1.03,0.89],["VII","",1.085,0.945],["VIII","",1.144,1.004],["IX","",1.202,1.062]]},"Eu":{"2":[["VI","",1.31,1.17],["VII","",1.34,1.2],["VIII","",1.39,1.25],["IX","",1.44,1.3],["X","",1.49,1.35]],"3":[["VI","",1.087,0.947],["VII","",1.15,1.01],["VIII","",1.206,1.066],["IX","",1.26,1.12]]},"F":{"-1":[["II","",1.145,1.285],["III","",1.16,1.3],["IV","",1.17,1.31],["VI","",1.19,1.33]],"7":[["VI","",0.22,0.08]]},"Fe":{"2":[["IV","HS",0.77,0.63],["IVSQ","HS",0.78,0.64],["VI","HS",0.92,0.78],["VI","LS",0.75,0.61],["VIII","HS",1.06,0.92]],"3":[["IV","HS",0.63,0.49],["V","",0.72,0.58],["VI","HS",0.785,0.645],["VI","LS",0.69,0.55],["VIII","HS",0.92,0.78]],"4":[["VI","",0.725,0.585]],"6":[["IV","",0.39,0.25]]},"Fr":{"1":[["VI","",1.94,1.8]]},"Ga":{"3":[["IV","",0.61,0.47],["V","",0.69,0.55],["VI","",0.76,0.62]]},"Gd":{"3":[["VI","",1.078,0.938],["VII","",1.14,1.0],["VIII","",1.193,1.053],["IX","",1.247,1.107]]},"Ge":{"2":[["VI","",0.87,0.73]],"4":[["IV","",0.53,0.39],["VI","",0.67,0.53]]},"H":{"1":[["I","",-0.24,-0.38],["II","",-0.04,-0.18]],"1D":[["II","",0.04,-0.1]]},"Hf":{"4":[["IV","",0.72,0.58],["VI","",0.85,0.71],["VII","",0.9,0.76],["VIII","",0.97,0.83]]},"Hg":{"1":[["III","",1.11,0.97],["VI","",1.33,1.19]],"2":[["II","",0.83,0.69],["IV","",1.1,0.96],["VI","",1.16,1.02],["VIII","",1.28,1.14]]},"Ho":{"3":[["VI","",1.041,0.901],["VIII","",1.155,1.015],["IX","",1.212,1.072],["X","",1.26,1.12]]},"I":{"-1":[["VI","",2.06,2.2]],"5":[["IIIPY","",0.58,0.44],["VI","",1.09,0.95]],"7":[["IV","",0.56,0.42],["VI","",0.67,0.53]]},"In":{"3":[["IV","",0.76,0.62],["VI","",0.94,0.8],["VIII","",1.06,0.92]]},"Ir":{"3":[["VI","",0.82,0.68]],"4":[["VI","",0.765,0.625]],"5":[["VI","",0.71,0.57]]},"K":{"1":[["IV","",1.51,1.37],["VI","",1.52,1.38],["VII","",1.6,1.46],["VIII","",1.65,1.51],["IX","",1.69,1.55],["X","",1.73,1.59],["XII","",1.78,1.64]]},"La":{"3":[["VI","",1.172,1.032],["VII","",1.24,1.1],["VIII","",1.3,1.16],["IX","",1.356,1.216],["X","",1.41,1.27],["XII","",1.5,1.36]]},"Li":{"1":[["IV","",0.73,0.59],["VI","",0.9,0.76],["VIII","",1.06,0.92]]},"Lu":{"3":[["VI","",1.001,0.861],["VIII","",1.117,0.977],["IX","",1.172,1.032]]},"Mg":{"2":[["IV","",0.71,0.57],["V","",0.8,0.66],["VI","",0.86,0.72],["VIII","",1.03,0.89]]},"Mn":{"2":[["IV","HS",0.8,0.66],["V","HS",0.89,0.75],["VI","HS",0.97,0.83],["VI","LS",0.81,0.67],["VII","HS",1.04,0.9],["VIII","",1.1,0.96]],"3":[["V","",0.72,0.58],["VI","HS",0.785,0.645],["VI","LS",0.72,0.58]],"4":[["IV","",0.53,0.39],["VI","",0.67,0.53]],"5":[["IV","",0.47,0.33]],"6":[["IV","",0.395,0.255]],"7":[["IV","",0.39,0.25],["VI","",0.6,0.46]]},"Mo":{"3":[["VI","",0.83,0.69]],"4":[["VI","",0.79,0.65]],"5":[["IV","",0.6,0.46],["VI","",0.75,0.61]],"6":[["IV","",0.55,0.41],["V","",0.64,0.5],["VI","",0.73,0.59],["VII","",0.87,0.73]]},"N":{"-3":[["IV","",1.32,1.46]],"3":[["VI","",0.3,0.16]],"5":[["III","",0.044,-0.104],["VI","",0.27,0.13]]},"Na":{"1":[["IV","",1.13,0.99],["V","",1.14,1.0],["VI","",1.16,1.02],["VII","",1.26,1.12],["VIII","",1.32,1.18],["IX","",1.38,1.24],["XII","",1.53,1.39]]},"Nb":{"3":[["VI","",0.86,0.72]],"4":[["VI","",0.82,0.68],["VIII","",0.93,0.79]],"5":[["IV","",0.62,0.48],["VI","",0.78,0.64],["VII","",0.83,0.69],["VIII","",0.88,0.74]]},"Nd":{"2":[["VIII","",1.43,1.29],["IX","",1.49,1.35]],"3":[["VI","",1.123,0.983],["VIII","",1.249,1.109],["IX","",1.303,1.163],["XII","",1.41,1.27]]},"Ni":{"2":[["IV","",0.69,0.55],["IVSQ","",0.63,0.49],["V","",0.77,0.63],["VI","",0.83,0.69]],"3":[["VI","HS",0.74,0.6],["VI","LS",0.7,0.56]],"4":[["VI","LS",0.62,0.48]]},"No":{"2":[["VI","",1.24,1.1]]},"Np":{"2":[["VI","",1.24,1.1]],"3":[["VI","",1.15,1.01]],"4":[["VI","",1.01,0.87],["VIII","",1.12,0.98]],"5":[["VI","",0.89,0.75]],"6":[["VI","",0.86,0.72]],"7":[["VI","",0.85,0.71]]},"O":{"-2":[["II","",1.21,1.35],["III","",1.22,1.36],["IV","",1.24,1.38],["VI","",1.26,1.4],["VIII","",1.28,1.42]]},"Os":{"4":[["VI","",0.77,0.63]],"5":[["VI","",0.715,0.575]],"6":[["V","",0.63,0.49],["VI","",0.685,0.545]],"7":[["VI","",0.665,0.525]],"8":[["IV","",0.53,0.39]]},"P":{"3":[["VI","",0.58,0.44]],"5":[["IV","",0.31,0.17],["V","",0.43,0.29],["VI","",0.52,0.38]]},"Pa":{"3":[["VI","",1.18,1.04]],"4":[["VI","",1.04,0.9],["VIII","",1.15,1.01]],"5":[["VI","",0.92,0.78],["VIII","",1.05,0.91],["IX","",1.09,0.95]]},"Pb":{"2":[["IVPY","",1.12,0.98],["VI","",1.33,1.19],["VII","",1.37,1.23],["VIII","",1.43,1.29],["IX","",1.49,1.35],["X","",1.54,1.4],["XI","",1.59,1.45],["XII","",1.63,1.49]],"4":[["IV","",0.79,0.65],["V","",0.87,0.73],["VI","",0.915,0.775],["VIII","",1.08,0.94]]},"Pd":{"1":[["II","",0.73,0.59]],"2":[["IVSQ","",0.78,0.64],["VI","",1.0,0.86]],"3":[["VI","",0.9,0.76]],"4":[["VI","",0.755,0.615]]},"Pm":{"3":[["VI","",1.11,0.97],["VIII","",1.233,1.093],["IX","",1.284,1.144]]},"Po":{"4":[["VI","",1.08,0.94],["VIII","",1.22,1.08]],"6":[["VI","",0.81,0.67]]},"Pr":{"3":[["VI","",1.13,0.99],["VIII","",1.266,1.126],["IX","",1.319,1.179]],"4":[["VI","",0.99,0.85],["VIII","",1.1,0.96]]},"Pt":{"2":[["IVSQ","",0.74,0.6],["VI","",0.94,0.8]],"4":[["VI","",0.765,0.625]],"5":[["VI","",0.71,0.57]]},"Pu":{"3":[["VI","",1.14,1.0]],"4":[["VI","",1.0,0.86],["VIII","",1.1,0.96]],"5":[["VI","",0.88,0.74]],"6":[["VI","",0.85,0.71]]},"Ra":{"2":[["VIII","",1.62,1.48],["XII","",1.84,1.7]]},"Rb":{"1":[["VI","",1.66,1.52],["VII","",1.7,1.56],["VIII","",1.75,1.61],["IX","",1.77,1.63],["X","",1.8,1.66],["XI","",1.83,1.69],["XII","",1.86,1.72],["XIV","",1.97,1.83]]},"Re":{"4":[["VI","",0.77,0.63]],"5":[["VI","",0.72,0.58]],"6":[["VI","",0.69,0.55]],"7":[["IV","",0.52,0.38],["VI","",0.67,0.53]]},"Rh":{"3":[["VI","",0.805,0.665]],"4":[["VI","",0.74,0.6]],"5":[["VI","",0.69,0.55]]},"Ru":{"3":[["VI","",0.82,0.68]],"4":[["VI","",0.76,0.62]],"5":[["VI","",0.705,0.565]],"7":[["IV","",0.52,0.38]],"8":[["IV","",0.5,0.36]]},"S":{"-2":[["VI","",1.7,1.84]],"4":[["VI","",0.51,0.37]],"6":[["IV","",0.26,0.12],["VI","",0.43,0.29]]},"Sb":{"3":[["IVPY","",0.9,0.76],["V","",0.94,0.8],["VI","",0.9,0.76]],"5":[["VI","",0.74,0.6]]},"Sc":{"3":[["VI","",0.885,0.745],["VIII","",1.01,0.87]]},"Se":{"-2":[["VI","",1.84,1.98]],"4":[["VI","",0.64,0.5]],"6":[["IV","",0.42,0.28],["VI","",0.56,0.42]]},"Si":{"4":[["IV","",0.4,0.26],["VI","",0.54,0.4]]},"Sm":{"2":[["VII","",1.36,1.22],["VIII","",1.41,1.27],["IX","",1.46,1.32]],"3":[["VI","",1.098,0.958],["VII","",1.16,1.02],["VIII","",1.219,1.079],["IX","",1.272,1.132],["XII","",1.38,1.24]]},"Sn":{"4":[["IV","",0.69,0.55],["V","",0.76,0.62],["VI","",0.83,0.69],["VII","",0.89,0.75],["VIII","",0.95,0.81]]},"Sr":{"2":[["VI","",1.32,1.18],["VII","",1.35,1.21],["VIII","",1.4,1.26],["IX","",1.45,1.31],["X","",1.5,1.36],["XII","",1.58,1.44]]},"Ta":{"3":[["VI","",0.86,0.72]],"4":[["VI","",0.82,0.68]],"5":[["VI","",0.78,0.64],["VII","",0.83,0.69],["VIII","",0.88,0.74]]},"Tb":{"3":[["VI","",1.063,0.923],["VII","",1.12,0.98],["VIII","",1.18,1.04],["IX","",1.235,1.095]],"4":[["VI","",0.9,0.76],["VIII","",1.02,0.88]]},"Tc":{"4":[["VI","",0.785,0.645]],"5":[["VI","",0.74,0.6]],"7":[["IV","",0.51,0.37],["VI","",0.7,0.56]]},"Te":{"-2":[["VI","",2.07,2.21]],"4":[["III","",0.66,0.52],["IV","",0.8,0.66],["VI","",1.11,0.97]],"6":[["IV","",0.57,0.43],["VI","",0.7,0.56]]},"Th":{"4":[["VI","",1.08,0.94],["VIII","",1.19,1.05],["IX","",1.23,1.09],["X","",1.27,1.13],["XI","",1.32,1.18],["XII","",1.35,1.21]]},"Ti":{"2":[["VI","",1.0,0.86]],"3":[["VI","",0.81,0.67]],"4":[["IV","",0.56,0.42],["V","",0.65,0.51],["VI","",0.745,0.605],["VIII","",0.88,0.74]]},"Tl":{"1":[["VI","",1.64,1.5],["VIII","",1.73,1.59],["XII","",1.84,1.7]],"3":[["IV","",0.89,0.75],["VI","",1.025,0.885],["VIII","",1.12,0.98]]},"Tm":{"2":[["VI","",1.17,1.03],["VII","",1.23,1.09]],"3":[["VI","",1.02,0.88],["VIII","",1.134,0.994],["IX","",1.192,1.052]]},"U":{"3":[["VI","",1.165,1.025]],"4":[["VI","",1.03,0.89],["VII","",1.09,0.95],["VIII","",1.14,1.0],["IX","",1.19,1.05],["XII","",1.31,1.17]],"5":[["VI","",0.9,0.76],["VII","",0.98,0.84]],"6":[["II","",0.59,0.45],["IV","",0.66,0.52],["VI","",0.87,0.73],["VII","",0.95,0.81],["VIII","",1.0,0.86]]},"V":{"2":[["VI","",0.93,0.79]],"3":[["VI","",0.78,0.64]],"4":[["V","",0.67,0.53],["VI","",0.72,0.58],["VIII","",0.86,0.72]],"5":[["IV","",0.495,0.355],["V","",0.6,0.46],["VI","",0.68,0.54]]},"W":{"4":[["VI","",0.8,0.66]],"5":[["VI","",0.76,0.62]],"6":[["IV","",0.56,0.42],["V","",0.65,0.51],["VI","",0.74,0.6]]},"Xe":{"8":[["IV","",0.54,0.4],["VI","",0.62,0.48]]},"Y":{"3":[["VI","",1.04,0.9],["VII","",1.1,0.96],["VIII","",1.159,1.019],["IX","",1.215,1.075]]},"Yb":{"2":[["VI","",1.16,1.02],["VII","",1.22,1.08],["VIII","",1.28,1.14]],"3":[["VI","",1.008,0.868],["VII","",1.065,0.925],["VIII","",1.125,0.985],["IX","",1.182,1.042]]},"Zn":{"2":[["IV","",0.74,0.6],["V","",0.82,0.68],["VI","",0.88,0.74],["VIII","",1.04,0.9]]},"Zr":{"4":[["IV","",0.73,0.59],["V","",0.8,0.66],["VI","",0.86,0.72],["VII","",0.92,0.78],["VIII","",0.98,0.84],["IX","",1.03,0.89]]}};
+const ELEMENTS=[["H","Hydrogen",1,1,1],["He","Helium",2,1,18],["Li","Lithium",3,2,1],["Be","Beryllium",4,2,2],["B","Boron",5,2,13],["C","Carbon",6,2,14],["N","Nitrogen",7,2,15],["O","Oxygen",8,2,16],["F","Fluorine",9,2,17],["Ne","Neon",10,2,18],["Na","Sodium",11,3,1],["Mg","Magnesium",12,3,2],["Al","Aluminium",13,3,13],["Si","Silicon",14,3,14],["P","Phosphorus",15,3,15],["S","Sulfur",16,3,16],["Cl","Chlorine",17,3,17],["Ar","Argon",18,3,18],["K","Potassium",19,4,1],["Ca","Calcium",20,4,2],["Sc","Scandium",21,4,3],["Ti","Titanium",22,4,4],["V","Vanadium",23,4,5],["Cr","Chromium",24,4,6],["Mn","Manganese",25,4,7],["Fe","Iron",26,4,8],["Co","Cobalt",27,4,9],["Ni","Nickel",28,4,10],["Cu","Copper",29,4,11],["Zn","Zinc",30,4,12],["Ga","Gallium",31,4,13],["Ge","Germanium",32,4,14],["As","Arsenic",33,4,15],["Se","Selenium",34,4,16],["Br","Bromine",35,4,17],["Kr","Krypton",36,4,18],["Rb","Rubidium",37,5,1],["Sr","Strontium",38,5,2],["Y","Yttrium",39,5,3],["Zr","Zirconium",40,5,4],["Nb","Niobium",41,5,5],["Mo","Molybdenum",42,5,6],["Tc","Technetium",43,5,7],["Ru","Ruthenium",44,5,8],["Rh","Rhodium",45,5,9],["Pd","Palladium",46,5,10],["Ag","Silver",47,5,11],["Cd","Cadmium",48,5,12],["In","Indium",49,5,13],["Sn","Tin",50,5,14],["Sb","Antimony",51,5,15],["Te","Tellurium",52,5,16],["I","Iodine",53,5,17],["Xe","Xenon",54,5,18],["Cs","Caesium",55,6,1],["Ba","Barium",56,6,2],["La","Lanthanum",57,9,4],["Ce","Cerium",58,9,5],["Pr","Praseodymium",59,9,6],["Nd","Neodymium",60,9,7],["Pm","Promethium",61,9,8],["Sm","Samarium",62,9,9],["Eu","Europium",63,9,10],["Gd","Gadolinium",64,9,11],["Tb","Terbium",65,9,12],["Dy","Dysprosium",66,9,13],["Ho","Holmium",67,9,14],["Er","Erbium",68,9,15],["Tm","Thulium",69,9,16],["Yb","Ytterbium",70,9,17],["Lu","Lutetium",71,9,18],["Hf","Hafnium",72,6,4],["Ta","Tantalum",73,6,5],["W","Tungsten",74,6,6],["Re","Rhenium",75,6,7],["Os","Osmium",76,6,8],["Ir","Iridium",77,6,9],["Pt","Platinum",78,6,10],["Au","Gold",79,6,11],["Hg","Mercury",80,6,12],["Tl","Thallium",81,6,13],["Pb","Lead",82,6,14],["Bi","Bismuth",83,6,15],["Po","Polonium",84,6,16],["At","Astatine",85,6,17],["Rn","Radon",86,6,18],["Fr","Francium",87,7,1],["Ra","Radium",88,7,2],["Ac","Actinium",89,10,4],["Th","Thorium",90,10,5],["Pa","Protactinium",91,10,6],["U","Uranium",92,10,7],["Np","Neptunium",93,10,8],["Pu","Plutonium",94,10,9],["Am","Americium",95,10,10],["Cm","Curium",96,10,11],["Bk","Berkelium",97,10,12],["Cf","Californium",98,10,13],["Es","Einsteinium",99,10,14],["Fm","Fermium",100,10,15],["Md","Mendelevium",101,10,16],["No","Nobelium",102,10,17],["Lr","Lawrencium",103,10,18],["Rf","Rutherfordium",104,7,4],["Db","Dubnium",105,7,5],["Sg","Seaborgium",106,7,6],["Bh","Bohrium",107,7,7],["Hs","Hassium",108,7,8],["Mt","Meitnerium",109,7,9],["Ds","Darmstadtium",110,7,10],["Rg","Roentgenium",111,7,11],["Cn","Copernicium",112,7,12],["Nh","Nihonium",113,7,13],["Fl","Flerovium",114,7,14],["Mc","Moscovium",115,7,15],["Lv","Livermorium",116,7,16],["Ts","Tennessine",117,7,17],["Og","Oganesson",118,7,18]];
+const ANIONIC=new Set(["Br", "Cl", "F", "I", "N", "O", "S", "Se", "Te"]);
+const COUNTS={"Ac":1,"Ag":11,"Al":3,"Am":7,"As":3,"At":1,"Au":4,"B":3,"Ba":7,"Be":3,"Bi":4,"Bk":3,"Br":5,"C":3,"Ca":6,"Cd":6,"Ce":10,"Cf":3,"Cl":4,"Cm":3,"Co":9,"Cr":10,"Cs":6,"Cu":8,"Dy":7,"Er":4,"Eu":9,"F":5,"Fe":12,"Fr":1,"Ga":3,"Gd":4,"Ge":3,"H":3,"Hf":4,"Hg":6,"Ho":4,"I":5,"In":3,"Ir":3,"K":7,"La":6,"Li":3,"Lu":3,"Mg":4,"Mn":15,"Mo":8,"N":4,"Na":7,"Nb":7,"Nd":6,"Ni":7,"No":1,"Np":7,"O":5,"Os":6,"P":4,"Pa":6,"Pb":12,"Pd":5,"Pm":3,"Po":3,"Pr":5,"Pt":4,"Pu":5,"Ra":2,"Rb":8,"Re":5,"Rh":3,"Ru":5,"S":4,"Sb":4,"Sc":2,"Se":4,"Si":2,"Sm":8,"Sn":5,"Sr":6,"Ta":5,"Tb":6,"Tc":4,"Te":6,"Th":6,"Ti":6,"Tl":6,"Tm":5,"U":13,"V":8,"W":5,"Xe":2,"Y":4,"Yb":7,"Zn":4,"Zr":6};
+
+
+const CNNUM={I:1,II:2,III:3,IIIPY:3,IV:4,IVPY:4,IVSQ:4,V:5,VI:6,VII:7,VIII:8,IX:9,X:10,XI:11,XII:12,XIV:14};
+const GEO={IIIPY:"pyramidal",IVPY:"pyramidal",IVSQ:"square-planar"};
+const romanOf=cn=>cn.replace(/(SQ|PY)$/,"");
+const geoOf=cn=>GEO[cn]||"";
+
+let mode="ionic"; // or "crystal"
+let selEl=null, selOx=null;
+
+const oxLabel=(ox,sym)=>{
+  if(ox==="1D") return "Dâº";
+  const n=parseInt(ox,10), a=Math.abs(n);
+  const sup=(a===1?"":String(a))+(n>0?"+":"âˆ’");
+  return sym+sup.replace(/(\d)/g,m=>"â°Â¹Â²Â³â´âµâ¶â·â¸â¹"[+m]);
+};
+const oxSort=(a,b)=>{
+  const va=a==="1D"?1.5:parseInt(a,10), vb=b==="1D"?1.5:parseInt(b,10);
+  return va-vb;
+};
+
+/* ---------- build table ---------- */
+const pt=document.getElementById("pt");
+const tip=document.getElementById("tip");
+const maxCount=Math.max(...Object.values(COUNTS));
+function cellBg(sym){
+  const c=COUNTS[sym]; if(!c) return "#fff";
+  const hue=ANIONIC.has(sym)?"158,74,44":"38,74,117";
+  const a=0.07+0.42*Math.sqrt(c/maxCount);
+  return `rgba(${hue},${a.toFixed(3)})`;
+}
+const bySym={};
+ELEMENTS.forEach(([sym,name,z,row,col])=>{
+  bySym[sym]={name,z,row,col};
+  const has=!!SHANNON[sym];
+  const el=document.createElement(has?"button":"div");
+  el.className="cell"+(has?"":" nodata");
+  el.style.gridRow=row; el.style.gridColumn=col;
+  el.innerHTML=`<span class="z">${z}</span><span class="sym">${sym}</span>`+
+    (has?`<span class="n">${COUNTS[sym]}</span>`:"");
+  if(has){
+    el.style.background=cellBg(sym);
+    el.dataset.sym=sym;
+    el.addEventListener("click",()=>selectElement(sym));
+    el.addEventListener("mousemove",e=>showTip(e,sym));
+    el.addEventListener("mouseleave",()=>tip.style.opacity=0);
+  }
+  pt.appendChild(el);
+});
+// f-block markers + gap row
+const mk=(row,col,txt)=>{const m=document.createElement("div");m.className="cell marker";
+  m.style.gridRow=row;m.style.gridColumn=col;m.textContent=txt;pt.appendChild(m);};
+mk(6,3,"57â€“71"); mk(7,3,"89â€“103");
+const gap=document.createElement("div");gap.className="fgap";gap.style.gridRow=8;pt.appendChild(gap);
+
+function showTip(e,sym){
+  const oxs=Object.keys(SHANNON[sym]).sort(oxSort).map(o=>oxLabel(o,sym)).join("  ");
+  tip.innerHTML=`<b>${sym}</b> â€” ${bySym[sym].name}<br><span class="mono">${oxs}</span><br>${COUNTS[sym]} tabulated ${COUNTS[sym]===1?"entry":"entries"}`;
+  tip.style.opacity=1;
+  const w=tip.offsetWidth,h=tip.offsetHeight;
+  let x=e.clientX+14,y=e.clientY+14;
+  if(x+w>innerWidth-8)x=e.clientX-w-10;
+  if(y+h>innerHeight-8)y=e.clientY-h-10;
+  tip.style.left=x+"px";tip.style.top=y+"px";
+}
+
+/* legend swatches */
+const setSw=(id,hue,a)=>document.getElementById(id).style.background=`rgba(${hue},${a})`;
+setSw("sw-c1","38,74,117",.12);setSw("sw-c2","38,74,117",.28);setSw("sw-c3","38,74,117",.49);
+setSw("sw-a1","158,74,44",.15);setSw("sw-a2","158,74,44",.42);
+
+/* ---------- selection ---------- */
+function selectElement(sym,ox){
+  selEl=sym;
+  document.querySelectorAll(".cell.sel").forEach(c=>c.classList.remove("sel"));
+  const cell=document.querySelector(`.cell[data-sym="${sym}"]`);
+  if(cell)cell.classList.add("sel");
+  const oxs=Object.keys(SHANNON[sym]).sort(oxSort);
+  selOx=(ox&&oxs.includes(ox))?ox:oxs.reduce((a,b)=>
+    (SHANNON[sym][b].length>SHANNON[sym][a].length?b:a),oxs[0]);
+  renderPanel();
+  document.getElementById("panel").classList.add("open");
+  document.getElementById("panel").scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+
+function renderPanel(){
+  const sym=selEl,info=bySym[sym];
+  document.getElementById("p-sym").textContent=sym;
+  document.getElementById("p-name").textContent=info.name;
+  document.getElementById("p-z").textContent="Z = "+info.z;
+  // chips
+  const chips=document.getElementById("chips");chips.innerHTML="";
+  Object.keys(SHANNON[sym]).sort(oxSort).forEach(ox=>{
+    const b=document.createElement("button");
+    b.className="chip"+(ox.startsWith("-")?" an":"");
+    b.textContent=oxLabel(ox,sym);
+    b.setAttribute("aria-pressed",ox===selOx);
+    b.addEventListener("click",()=>{selOx=ox;renderPanel();});
+    chips.appendChild(b);
+  });
+  renderIonTable(); renderLadder(); renderAllTable();
+}
+
+const fmt=v=>v.toFixed(v*1000%10===0?2:3);
+function spinBadge(sp){
+  return sp?`<span class="badge ${sp.toLowerCase()}">${sp}</span>`:"â€”";
+}
+function renderIonTable(){
+  const rows=SHANNON[selEl][selOx];
+  document.getElementById("ion-caption").innerHTML=
+    `<b>${oxLabel(selOx,selEl)}</b> â€” ${rows.length} tabulated ${rows.length===1?"entry":"entries"}, radii in Ã…`;
+  const tb=document.querySelector("#ion-table tbody");tb.innerHTML="";
+  rows.forEach(([cn,sp,rc,ri])=>{
+    const tr=document.createElement("tr");
+    const iCls=mode==="ionic"?"primary-col":"dim", cCls=mode==="crystal"?"primary-col":"dim";
+    tr.innerHTML=`<td>${romanOf(cn)} <span class="geo">(${CNNUM[cn]})</span></td>
+      <td>${geoOf(cn)||"â€”"}</td><td>${spinBadge(sp)}</td>
+      <td class="num ${iCls}">${fmt(ri)}</td><td class="num ${cCls}">${fmt(rc)}</td>`;
+    tb.appendChild(tr);
+  });
+}
+
+function renderAllTable(){
+  const tb=document.querySelector("#all-table tbody");tb.innerHTML="";
+  Object.keys(SHANNON[selEl]).sort(oxSort).forEach(ox=>{
+    SHANNON[selEl][ox].forEach(([cn,sp,rc,ri],i)=>{
+      const tr=document.createElement("tr");
+      tr.innerHTML=`<td>${i===0?oxLabel(ox,selEl):""}</td>
+        <td>${romanOf(cn)} <span class="geo">(${CNNUM[cn]})</span></td>
+        <td>${geoOf(cn)||"â€”"}</td><td>${spinBadge(sp)}</td>
+        <td class="num">${fmt(ri)}</td><td class="num">${fmt(rc)}</td>`;
+      tb.appendChild(tr);
+    });
+  });
+}
+
+/* ---------- coordination ladder (to scale) ---------- */
+const PX_PER_A=46; // global scale, shared across all ions
+function renderLadder(){
+  const rows=SHANNON[selEl][selOx];
+  const idx=mode==="ionic"?3:2;
+  const pos=rows.filter(r=>r[idx]>0);
+  const neg=rows.filter(r=>r[idx]<=0);
+  document.getElementById("ladder-sub").textContent=
+    `${oxLabel(selOx,selEl)}, drawn to a fixed scale shared by every ion (${mode==="ionic"?"effective ionic":"crystal"} radii)`;
+  const box=document.getElementById("ladder-svg");
+  const note=document.getElementById("neg-note");
+  if(!pos.length){
+    box.innerHTML="";
+    note.hidden=false;
+    note.textContent="All tabulated radii for this ion are â‰¤ 0 Ã… on this scale â€” the cation sits within the coordinating anionâ€™s electron density â€” so there is nothing meaningful to draw.";
+    return;
+  }
+  note.hidden=neg.length===0;
+  if(neg.length)note.textContent="Entries with negative radii are listed in the table but omitted from the drawing.";
+  const gapX=26,padL=8,padT=26,labelH=44;
+  const maxR=Math.max(...pos.map(r=>r[idx]))*PX_PER_A;
+  let x=padL,centers=[];
+  pos.forEach(r=>{const rp=r[idx]*PX_PER_A;centers.push(x+rp);x+=2*rp+gapX;});
+  const W=Math.max(x-gapX+padL,260),base=padT+2*maxR;
+  const H=base+labelH+30;
+  let svg=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Ion size versus coordination number, drawn to scale">`;
+  svg+=`<line x1="0" y1="${base}" x2="${W}" y2="${base}" stroke="#d3d9e0" stroke-width="1"/>`;
+  pos.forEach((r,i)=>{
+    const rp=r[idx]*PX_PER_A,cx=centers[i],cy=base-rp;
+    const hue=parseInt(selOx,10)<0?"158,74,44":"38,74,117";
+    svg+=`<circle cx="${cx}" cy="${cy}" r="${rp}" fill="rgba(${hue},.16)" stroke="rgb(${hue})" stroke-width="1.4"/>`;
+    const lab=romanOf(r[0])+(r[1]?"Â·"+r[1]:"")+(geoOf(r[0])?"*":"");
+    svg+=`<text x="${cx}" y="${base+16}" text-anchor="middle" font-size="11" fill="#182430">${lab}</text>`;
+    svg+=`<text x="${cx}" y="${base+31}" text-anchor="middle" font-size="11" fill="#66707c">${fmt(r[idx])}</text>`;
+  });
+  // 1 Ã… scale bar
+  const sb=PX_PER_A,sy=H-8;
+  svg+=`<line x1="${padL}" y1="${sy}" x2="${padL+sb}" y2="${sy}" stroke="#182430" stroke-width="1.6"/>`;
+  svg+=`<line x1="${padL}" y1="${sy-4}" x2="${padL}" y2="${sy+4}" stroke="#182430" stroke-width="1.6"/>`;
+  svg+=`<line x1="${padL+sb}" y1="${sy-4}" x2="${padL+sb}" y2="${sy+4}" stroke="#182430" stroke-width="1.6"/>`;
+  svg+=`<text x="${padL+sb+8}" y="${sy+4}" font-size="11" fill="#66707c">1 Ã…</text>`;
+  if(pos.some(r=>geoOf(r[0])))
+    svg+=`<text x="${W-4}" y="${sy+4}" text-anchor="end" font-size="10.5" fill="#66707c">* non-standard geometry</text>`;
+  svg+="</svg>";
+  box.innerHTML=svg;
+}
+
+/* ---------- mode toggle ---------- */
+const mI=document.getElementById("mode-ion"),mC=document.getElementById("mode-cry");
+function setMode(m){mode=m;
+  mI.setAttribute("aria-pressed",m==="ionic");mC.setAttribute("aria-pressed",m==="crystal");
+  if(selEl){renderIonTable();renderLadder();}
+}
+mI.addEventListener("click",()=>setMode("ionic"));
+mC.addEventListener("click",()=>setMode("crystal"));
+
+/* ---------- search ---------- */
+document.getElementById("q").addEventListener("keydown",e=>{
+  if(e.key!=="Enter")return;
+  const v=e.target.value.trim();if(!v)return;
+  const m=v.match(/^([A-Za-z]{1,2})\s*(\d*)\s*([+\-âˆ’]?)$/);
+  if(!m)return;
+  const sym=m[1][0].toUpperCase()+m[1].slice(1).toLowerCase();
+  if(!SHANNON[sym])return;
+  let ox=null;
+  if(m[2]){const n=(m[3]==="-"||m[3]==="âˆ’"?-1:1)*parseInt(m[2],10);
+    if(SHANNON[sym][String(n)])ox=String(n);}
+  selectElement(sym,ox);
+});
+</script>
+</body>
+</html>
