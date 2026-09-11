@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /resources/
-title: external resources
+title: External resources
 description: A collection of databases, software, tutorials and other links I find useful.
 nav: false
 nav_order: 4
