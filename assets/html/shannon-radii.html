@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shannonâ€“Prewitt Ionic Radii</title>
+<title>Shannon–Prewitt Ionic Radii</title>
 <style>
   :root{
     --paper:#ffffff; --ink:#182430; --muted:#66707c; --hair:#e4e8ed; --hair2:#d3d9e0;
@@ -131,10 +131,10 @@
 
 <header>
   <div>
-    <h1>Shannonâ€“Prewitt Ionic Radii</h1>
+    <h1>Shannon–Prewitt Ionic Radii</h1>
     <p class="cite">Effective ionic and crystal radii for all ions, coordination numbers, and spin
-    states from R.&thinsp;D. Shannon, <i>Acta Crystallogr.</i> <b>A32</b>, 751â€“767 (1976),
-    revising Shannon &amp; Prewitt (1969). All radii in Ã….</p>
+    states from R.&thinsp;D. Shannon, <i>Acta Crystallogr.</i> <b>A32</b>, 751–767 (1976),
+    revising Shannon &amp; Prewitt (1969). All radii in Å….</p>
   </div>
   <div class="mast-right">
     <div class="search">
@@ -199,8 +199,8 @@
 
 <footer>
   <p><b>Conventions.</b> Effective ionic radii are referenced to
-  <span class="mono">r(OÂ²â», CN VI) = 1.40 Ã…</span>; crystal radii to
-  <span class="mono">1.26 Ã…</span> â€” the two scales differ by a uniform 0.14 Ã…
+  <span class="mono">r(OÂ²â», CN VI) = 1.40 Å…</span>; crystal radii to
+  <span class="mono">1.26 Å…</span> â€” the two scales differ by a uniform 0.14 Å…
   (cations larger, anions smaller on the crystal scale). Coordination geometry flags:
   <span class="mono">SQ</span> square-planar, <span class="mono">PY</span> pyramidal.
   <span class="mono">HS</span>/<span class="mono">LS</span> denote high- and low-spin
@@ -267,7 +267,7 @@ ELEMENTS.forEach(([sym,name,z,row,col])=>{
 // f-block markers + gap row
 const mk=(row,col,txt)=>{const m=document.createElement("div");m.className="cell marker";
   m.style.gridRow=row;m.style.gridColumn=col;m.textContent=txt;pt.appendChild(m);};
-mk(6,3,"57â€“71"); mk(7,3,"89â€“103");
+mk(6,3,"57–71"); mk(7,3,"89–103");
 const gap=document.createElement("div");gap.className="fgap";gap.style.gridRow=8;pt.appendChild(gap);
 
 function showTip(e,sym){
@@ -325,7 +325,7 @@ function spinBadge(sp){
 function renderIonTable(){
   const rows=SHANNON[selEl][selOx];
   document.getElementById("ion-caption").innerHTML=
-    `<b>${oxLabel(selOx,selEl)}</b> â€” ${rows.length} tabulated ${rows.length===1?"entry":"entries"}, radii in Ã…`;
+    `<b>${oxLabel(selOx,selEl)}</b> â€” ${rows.length} tabulated ${rows.length===1?"entry":"entries"}, radii in Å…`;
   const tb=document.querySelector("#ion-table tbody");tb.innerHTML="";
   rows.forEach(([cn,sp,rc,ri])=>{
     const tr=document.createElement("tr");
@@ -365,7 +365,7 @@ function renderLadder(){
   if(!pos.length){
     box.innerHTML="";
     note.hidden=false;
-    note.textContent="All tabulated radii for this ion are â‰¤ 0 Ã… on this scale â€” the cation sits within the coordinating anionâ€™s electron density â€” so there is nothing meaningful to draw.";
+    note.textContent="All tabulated radii for this ion are â‰¤ 0 Å… on this scale â€” the cation sits within the coordinating anionâ€™s electron density â€” so there is nothing meaningful to draw.";
     return;
   }
   note.hidden=neg.length===0;
@@ -386,12 +386,12 @@ function renderLadder(){
     svg+=`<text x="${cx}" y="${base+16}" text-anchor="middle" font-size="11" fill="#182430">${lab}</text>`;
     svg+=`<text x="${cx}" y="${base+31}" text-anchor="middle" font-size="11" fill="#66707c">${fmt(r[idx])}</text>`;
   });
-  // 1 Ã… scale bar
+  // 1 Å… scale bar
   const sb=PX_PER_A,sy=H-8;
   svg+=`<line x1="${padL}" y1="${sy}" x2="${padL+sb}" y2="${sy}" stroke="#182430" stroke-width="1.6"/>`;
   svg+=`<line x1="${padL}" y1="${sy-4}" x2="${padL}" y2="${sy+4}" stroke="#182430" stroke-width="1.6"/>`;
   svg+=`<line x1="${padL+sb}" y1="${sy-4}" x2="${padL+sb}" y2="${sy+4}" stroke="#182430" stroke-width="1.6"/>`;
-  svg+=`<text x="${padL+sb+8}" y="${sy+4}" font-size="11" fill="#66707c">1 Ã…</text>`;
+  svg+=`<text x="${padL+sb+8}" y="${sy+4}" font-size="11" fill="#66707c">1 Å…</text>`;
   if(pos.some(r=>geoOf(r[0])))
     svg+=`<text x="${W-4}" y="${sy+4}" text-anchor="end" font-size="10.5" fill="#66707c">* non-standard geometry</text>`;
   svg+="</svg>";
