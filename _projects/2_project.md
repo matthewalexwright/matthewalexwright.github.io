@@ -8,7 +8,7 @@ giscus_comments: false
 ---
 Bismuth is a beautiful metal to crystallize, producing distinctive stepped, hopper-like crystals with a striking geometric appearance. I have included a picture of a crystal I have grown myself. The process is simple: melt high-purity bismuth, cool it slowly, and carefully separate the crystals from the remaining melt. With a little patience, you can grow large, well-defined crystals using only a few basic pieces of equipment.
 
-{% include figure.liquid loading="eager" path="assets/img/project/Bi.jpg" title="Bi crystal" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid loading="eager" path="assets/img/projects/Bi.jpg" title="Bi crystal" class="img-fluid rounded z-depth-1" %}
 A hopper-like Bi crystal grown in Liverpool, UK. 
 
 1. Get high-purity Bi metal — ideally 99.99%+.
