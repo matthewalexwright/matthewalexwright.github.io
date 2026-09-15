@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Accessing Mg-Ion Storage in V<sub>2</sub>PS<sub>10</sub> via Combined Cationic-Anionic Redox with Selective Bond Cleavage
+title: Fast Mg-ion insertion kinetics in V<sub>2</sub>Se<sub>9</sub>
 img: assets/img/projects/V2Se9_poster-1.png
 importance: 3
 category: research
