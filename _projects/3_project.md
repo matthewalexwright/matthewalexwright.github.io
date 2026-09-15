@@ -2,8 +2,7 @@
 layout: page
 title: DOE STORE Centre for Na batteries
 description: $4.5 million award establishes new Center for Strain Optimization for Renewable Energy (STORE) at UCLA
-img: assets/img/7.jpg
-redirect: https://www.wikipedia.org/
+img: assets/img/projects/Poster_DOE_STORE_Science-1.png
 importance: 2
 category: research
 ---
@@ -13,7 +12,7 @@ category: research
         {% include figure.liquid path="assets/img/projects/Poster_DOE_STORE_Overview-1.png" title="STORE Overview" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/projects/Poster_DOE_STORE_Science-1.png.png" title="Science" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/projects/Poster_DOE_STORE_Science-1.png" title="Science" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 
