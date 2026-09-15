@@ -1,10 +1,10 @@
 ---
 layout: page
-title: growing
-img: assets/img/3.jpg
+title: growing hopper-like bismuth (Bi) single crystals
+img: assets/img/projects/Bi.jpg
 importance: 2
 category: fun
-giscus_comments: true
+giscus_comments: false
 ---
 
 Every project has a beautiful feature showcase page.
