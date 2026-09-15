@@ -5,6 +5,7 @@ description: Electrochemical alkali-ion (de)insertion provides dynamic, room-tem
 tags: batteries quantum
 categories: research
 giscus_comments: false
+thumbnail: assets/img/2025-11-26-battery-quantum/licoo2-electrochemical-states.png
 date: 2025-11-26
 featured: true
 
