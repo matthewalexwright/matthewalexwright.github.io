@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Anisotropic Displacement Parameters
+title: Anisotropic displacement parameters
 img: assets/img/projects/aniso.png
 importance: 3
 category: research
