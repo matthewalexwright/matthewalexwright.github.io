@@ -1,6 +1,6 @@
 ---
 layout: page
-title: the Bayeux Tapestry comes to Britain
+title: The Bayeux Tapestry comes to Britain
 img: assets/img/projects/Harold.png
 importance: 2
 category: fun
