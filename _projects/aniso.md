@@ -162,4 +162,4 @@ Some refinement programs fail to impose site-symmetry constraints on ADPs, so al
 - Wright, M. A. et al. (2025). Strong, yet split hydrogen bonding with ice rules in delafossite (H/D)RhO₂. *Angew. Chem.* e15471.
 - Tian, H. et al. Structural propensities in Cs₂MBiX₆ (M = Na, Ag; X = Cl, Br) bismuth halide double perovskites. Submitted (2025).
 
-*Image credits:* ellipsoid renderings, structure images and screenshots are from the original lecture slides, "Anisotropic Displacement Parameters: Probing Atomic Motion in Crystals" (M. A. Wright, 2025). Case-study figures are reproduced from the publications cited on each slide.
+*Image credits:* ellipsoid renderings, structure images and screenshots are from the original lecture slides, "Anisotropic Displacement Parameters: Probing Atomic Motion in Crystals" (M. A. Wright, 2025). Case-study figures are reproduced from the publications cited on each slide. Title image is adapted from George Sheldricks [*Methods in Chemistry III*](https://www.ccdc.cam.ac.uk/media/resources/mc3_10_10e.pdf). 
