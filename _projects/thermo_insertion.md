@@ -1,6 +1,6 @@
 ---
 layout: page
-title: thermodynamics of electrochemical insertion reactions
+title: Thermodynamics of electrochemical insertion reactions
 img: assets/img/projects/thermo1.png
 importance: 2
 category: research
