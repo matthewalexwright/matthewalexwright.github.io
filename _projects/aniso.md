@@ -7,21 +7,9 @@ category: research
 giscus_comments: false
 ---
 
-
-# Anisotropic Displacement Parameters: Probing Atomic Motion in Crystals
-
 This guide explains what anisotropic displacement parameters (ADPs) are, how to read the ellipsoids they describe, what they have revealed in real materials, and how to refine and check them in TOPAS and VESTA. It is written for students who are comfortable with a basic Rietveld refinement and want to go beyond a single isotropic B value.
 
-The guide is organised around four themes.
-
-1. Fundamentals: what ADPs are and how they appear in diffraction data
-2. Reading ellipsoids: diagonal terms, off-diagonal terms and site symmetry
-3. Case studies: what anisotropic motion has taught us about materials
-4. In practice: refining, exporting, viewing and troubleshooting ADPs
-
-## 1. Fundamentals
-
-### What are atomic displacement parameters?
+# What are atomic displacement parameters?
 
 <div class="l-body" style="max-width: 100%; margin: auto;">
   {% include figure.liquid loading="eager" path="assets/img/projects/aniso1.png" class="img-fluid rounded z-depth-1" zoomable=true %}
