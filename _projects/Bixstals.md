@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Growing hopper-like bismuth (Bi) single crystals
+title: Growing hopper-like bismuth single crystals
 img: assets/img/projects/Bi.jpg
 importance: 2
 category: fun
