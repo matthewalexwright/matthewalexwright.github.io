@@ -3,7 +3,7 @@ layout: page
 title: Thermodynamics of electrochemical insertion reactions
 img: assets/img/projects/thermo1.png
 importance: 2
-category: research
+category: slides & talks
 giscus_comments: false
 ---
 
