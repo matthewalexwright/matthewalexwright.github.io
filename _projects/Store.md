@@ -2,7 +2,7 @@
 layout: page
 title: STORE - a DOE centre for low strain Na-ion batteries
 img: assets/img/projects/Poster_DOE_STORE_Science-1.png
-importance: 2
+importance: 3
 category: research
 ---
 
