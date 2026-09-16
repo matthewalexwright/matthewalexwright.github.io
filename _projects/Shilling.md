@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Tilly Shilling and the Spitfire carburetor
-img: assets/img/projects/Shilling0.png
+img: assets/img/projects/Shilling0.jpg
 importance: 3
 category: fun
 giscus_comments: false
