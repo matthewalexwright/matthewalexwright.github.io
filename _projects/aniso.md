@@ -3,7 +3,7 @@ layout: page
 title: Anisotropic displacement parameters
 img: assets/img/projects/aniso.png
 importance: 3
-category: research
+category: slides & talks
 giscus_comments: false
 ---
 
