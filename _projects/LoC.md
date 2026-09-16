@@ -1,6 +1,6 @@
 ---
 layout: page
-title: preservation at the US Library of Congress
+title: Preservation at the US Library of Congress
 img: assets/img/projects/slide0.jpg
 importance: 2
 category: fun
