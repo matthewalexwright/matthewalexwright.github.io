@@ -2,7 +2,7 @@
 layout: page
 title: Strong, Yet Split Hydrogen Bonding with Ice Rules in Delafossite (H/D)RhO<sub>2</sub>
 img: assets/img/projects/MROP_HRhO2_Wright_V2-1.png
-importance: 1
+importance: 2
 category: research
 related_publications: false
 ---
