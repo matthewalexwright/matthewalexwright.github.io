@@ -28,7 +28,7 @@ The size, shape and orientation of that ellipsoid are not just cosmetic. Directi
 
 The ellipsoid is described by a symmetric 3×3 tensor *U*, in units of Å². The diagonal terms U₁₁, U₂₂ and U₃₃ are mean-square displacements along the three axes. The off-diagonal terms U₁₂, U₁₃ and U₂₃ describe correlated motion along two axes, which tilts the ellipsoid. (Strictly, the Uij are referred to the reciprocal-axis directions; for orthogonal cells these coincide with a, b and c.)
 
-Different programs use different parameters. *U* is used by SHELX, Olex2 and the TOPAS `adps` keyword. *B* = 8π²U is the familiar isotropic value (`beq` in TOPAS). *B*ij = 2π² ai* aj* Uij is dimensionless and appears in older literature and software. As a rough guide to sensible Beq values: about 0.5 Å² for tightly bonded metal–oxygen frameworks, 1–2 Å² as a starting value for most inorganic sites, and 3–5 Å² for organic molecules or loosely bound atoms.
+Different programs use different parameters. *U* is used by SHELX, Olex2 and the TOPAS `adps` keyword. *B* = 8π²U is the familiar isotropic value (`beq` in TOPAS). *β*<sub>ij</sub> = 2π² a<sub>i</sub>* a<sub>j</sub>* U<sub>ij</sub> is dimensionless and appears in older literature and software. As a rough guide to sensible Beq values: about 0.5 Å² for tightly bonded metal–oxygen frameworks, 1–2 Å² as a starting value for most inorganic sites, and 3–5 Å² for organic molecules or loosely bound atoms.
 
 # How ADPs show up in diffraction data
 
