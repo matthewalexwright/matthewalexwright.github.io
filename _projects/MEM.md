@@ -7,9 +7,6 @@ category: research
 giscus_comments: false
 ---
 
-
-# The Maximum Entropy Method with Jana, BayMEM and VESTA
-
 This guide is for students who already have a Rietveld refinement and want to look *beyond* the model at the actual electron density in their material. It is built on three sources: the BayMEM user manual (Palatinus & van Smaalen, 2005), and Chapter 4.8 of *International Tables for Crystallography* Vol. H (Magdysyuk, van Smaalen & Dinnebier, 2019), and the Jana2006/BayMEM screenshot tutorial by T. Wesley Surta (2020). 
 
 The guide is organised around four questions. 
