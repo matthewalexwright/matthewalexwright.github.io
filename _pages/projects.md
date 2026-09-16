@@ -5,7 +5,7 @@ permalink: /projects/
 description: A  collection of recent projects.
 nav: true
 nav_order: 3
-display_categories: [research, fun]
+display_categories: [research, slides & talks, fun]
 horizontal: false
 ---
 
