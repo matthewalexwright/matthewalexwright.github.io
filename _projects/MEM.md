@@ -3,7 +3,7 @@ layout: page
 title: The Maximum Entropy Method with Jana, BayMEM and VESTA
 img: assets/img/projects/MEM.png
 importance: 2
-category: research
+category: slides & talks
 giscus_comments: false
 ---
 
