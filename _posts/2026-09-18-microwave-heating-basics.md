@@ -1,13 +1,13 @@
 ---
 layout: post
-title: microwave heating of materials
+title: understanding microwave heating for materials synthesis
 date: 2026-09-18 10:00:00
 description: the dielectric terms, why they change with temperature, and how deep the wave gets
-tags: energy crystallography
-categories: research
+tags: energy
+categories: research, tools
 ---
 
-Why some materials couple to microwaves and others do not, and what that means for solid-state synthesis. The figures are live: drag the sliders in section 2 and watch the loss peak sweep past 2.45 GHz. Values are approximate, for teaching.
+Why some materials couple to microwaves and others do not, and what that means for solid-state synthesis. The figures are live: drag the sliders in section 2 and watch the loss peak sweep past 2.45 GHz. Values are approximate, for demonstration.
 
 <div class="mwx">
 <style>
