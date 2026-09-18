@@ -21,7 +21,7 @@ featured: true
 
 Anyone who has gone looking for a compound in an unfamiliar corner of the periodic table knows the drill. Open the Materials Project, type in a ternary, scroll the results, note the space groups, check for an ICSD entry, repeat. With five rare earths, six transition metals and three anions, that is ninety systems and an afternoon you will not get back.
 
-**[Anya S. Mulligan](https://github.com/seshadri-group/MP-query-ternaries), a graduate student in our group at UC Santa Barbara, has built a tool that does the entire sweep in one go** — complete with a GUI and a one-click installer. Get it here: [seshadri-group/MP-query-ternaries](https://github.com/seshadri-group/MP-query-ternaries).
+**[Anya S. Mulligan](https://scholar.google.com/citations?user=jgw7vRAAAAAJ&hl=en), a graduate student in our group at UC Santa Barbara, has built a tool that does the entire sweep in one go** — complete with a GUI and a one-click installer. Get it here: [seshadri-group/MP-query-ternaries](https://github.com/seshadri-group/MP-query-ternaries).
 
 ## What it does
 
