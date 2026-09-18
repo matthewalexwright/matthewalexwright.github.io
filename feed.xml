@@ -1,4 +1,396 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://matthewalexwright.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://matthewalexwright.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2026-09-18T16:26:54+00:00</updated><id>https://matthewalexwright.github.io/feed.xml</id><title type="html">blank</title><subtitle>Dr Matthew A. Wright. A Quantum Foundry Postdoctoral Associate at the University of California Santa Barbara. </subtitle><entry><title type="html">MP-query-ternaries: A ternary phase diagram explorer by Anya S. Mulligan</title><link href="https://matthewalexwright.github.io/blog/2026/anya-mulligan-ternary-phase-diagram-explorer/" rel="alternate" type="text/html" title="MP-query-ternaries: A ternary phase diagram explorer by Anya S. Mulligan"/><published>2026-09-02T16:00:00+00:00</published><updated>2026-09-02T16:00:00+00:00</updated><id>https://matthewalexwright.github.io/blog/2026/anya-mulligan-ternary-phase-diagram-explorer</id><content type="html" xml:base="https://matthewalexwright.github.io/blog/2026/anya-mulligan-ternary-phase-diagram-explorer/"><![CDATA[<div style="max-width: 130px; margin: 0 auto 2rem;"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/2026-09-02-mp-query-ternaries/icon-480.webp 480w,/assets/img/2026-09-02-mp-query-ternaries/icon-800.webp 800w,/assets/img/2026-09-02-mp-query-ternaries/icon-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/2026-09-02-mp-query-ternaries/icon.png" class="img-fluid rounded" width="100%" height="auto" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"/> </picture> </figure> </div> <p>Anyone who has gone looking for a compound in an unfamiliar corner of the periodic table knows the drill. Open the Materials Project, type in a ternary, scroll the results, note the space groups, check for an ICSD entry, repeat. With five rare earths, six transition metals and three anions, that is ninety systems and an afternoon you will not get back.</p> <p><strong><a href="https://github.com/seshadri-group/MP-query-ternaries">Anya S. Mulligan</a>, a graduate student in our group at UC Santa Barbara, has built a tool that does the entire sweep in one go</strong> — complete with a GUI and a one-click installer. Get it here: <a href="https://github.com/seshadri-group/MP-query-ternaries">seshadri-group/MP-query-ternaries</a>.</p> <h2 id="what-it-does">What it does</h2> <p>You define three element <em>groups</em>: for instance, a set of alkali metals, a set of transition metals, and a set of anions. Anya’s workflow takes the full combinatorial product, queries the Materials Project for every resulting ternary, and pulls the bounding binaries along each edge.</p> <p>Out come CSVs with one row per Materials Project entry, polymorphs included, carrying space group, ICSD IDs, stability, and formation and decomposition energies — plus a ternary composition diagram for each system, a summary grid of all of them, and a key figure. Crucially, experimentally known compounds are separated from predicted ones at the file level, which is the distinction between a literature search and a research project.</p> <p>Taking the halide perovskite space as an example, with group 1 = Cs, group 2 = Sn, Pb, group 3 = Cl, Br, I:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>output_Cs_Sn-Pb_Cl-Br-I/
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://matthewalexwright.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://matthewalexwright.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2026-09-18T18:07:12+00:00</updated><id>https://matthewalexwright.github.io/feed.xml</id><title type="html">blank</title><subtitle>Dr Matthew A. Wright. A Quantum Foundry Postdoctoral Associate at the University of California Santa Barbara. </subtitle><entry><title type="html">microwave heating of materials</title><link href="https://matthewalexwright.github.io/blog/2026/microwave-heating-basics/" rel="alternate" type="text/html" title="microwave heating of materials"/><published>2026-09-18T10:00:00+00:00</published><updated>2026-09-18T10:00:00+00:00</updated><id>https://matthewalexwright.github.io/blog/2026/microwave-heating-basics</id><content type="html" xml:base="https://matthewalexwright.github.io/blog/2026/microwave-heating-basics/"><![CDATA[<p>Why some materials couple to microwaves and others do not, and what that means for solid-state synthesis. The figures are live: drag the sliders in section 2 and watch the loss peak sweep past 2.45 GHz. Values are approximate, for teaching.</p> <div class="mwx"> <style>
+.mwx{
+  --bg:#fbfaf7; --panel:#ffffff; --ink:#1d2330; --muted:#5d6675; --line:#e2e0da; --grid:#ecebe6; --code:#f2f0ea;
+  --c1:#0072B2; --c2:#D55E00; --c4:#009E73; --c5:#6b7280; --accent:#0072B2;
+  --shade:rgba(0,114,178,.09); --shade2:rgba(213,94,0,.11);
+  background:var(--bg); color:var(--ink);
+  font:15px/1.58 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  border-radius:10px; padding:6px 16px 18px; margin:20px 0;
+}
+@media (prefers-color-scheme: dark){
+  html:not([data-theme="light"]) .mwx{
+    --bg:#15171c; --panel:#1d2027; --ink:#e7e9ee; --muted:#9aa2b1; --line:#2d313a; --grid:#262a32; --code:#252932;
+    --c1:#007ED1; --c2:#EB6202; --c4:#02A573; --c5:#8b94a3; --accent:#4da3e0;
+    --shade:rgba(0,126,209,.14); --shade2:rgba(235,98,2,.14);
+  }
+}
+html[data-theme="dark"] .mwx{
+  --bg:#15171c; --panel:#1d2027; --ink:#e7e9ee; --muted:#9aa2b1; --line:#2d313a; --grid:#262a32; --code:#252932;
+  --c1:#007ED1; --c2:#EB6202; --c4:#02A573; --c5:#8b94a3; --accent:#4da3e0;
+  --shade:rgba(0,126,209,.14); --shade2:rgba(235,98,2,.14);
+}
+.mwx *{box-sizing:border-box}
+.mwx .mwhead{padding:10px 0 4px}
+.mwx h2{font-size:1.2rem;margin:0 0 10px;color:var(--ink)}
+.mwx h3{font-size:1rem;margin:18px 0 6px;color:var(--ink)}
+.mwx p{margin:6px 0 10px;color:var(--ink)}
+.mwx i{font-style:italic}
+.mwx .mwnav{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 0}
+.mwx .mwnav a{font-size:.85rem;color:var(--accent);text-decoration:none;border:1px solid var(--line);background:var(--panel);padding:3px 10px;border-radius:999px}
+.mwx .mwnav a:hover{border-color:var(--accent)}
+.mwx section{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 18px 16px;margin:18px 0;scroll-margin-top:80px}
+.mwx .eq{background:var(--code);border-radius:6px;padding:9px 13px;margin:9px 0;font-family:"Cambria Math","STIX Two Math",Georgia,serif;font-size:1.03rem;overflow-x:auto;white-space:nowrap;color:var(--ink)}
+.mwx .eq div{margin:3px 0}
+.mwx ul{margin:6px 0 10px;padding-left:20px}
+.mwx li{margin:4px 0;color:var(--ink)}
+.mwx dl{margin:6px 0}
+.mwx dt{font-weight:600;margin-top:9px;color:var(--ink)}
+.mwx dd{margin:2px 0 0 0;color:var(--ink)}
+.mwx .controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:2px 22px;margin:14px 0 6px}
+.mwx .ctrl{display:grid;grid-template-columns:1fr auto;align-items:center;gap:0 8px;align-content:start}
+.mwx .ctrl label{font-size:.87rem;color:var(--muted);margin:0;font-weight:400;display:block}
+.mwx .ctrl .val{font-size:.87rem;font-variant-numeric:tabular-nums;text-align:right;min-width:76px;color:var(--ink)}
+.mwx .ctrl input[type=range]{grid-column:1 / -1;width:100%;accent-color:var(--accent);margin:2px 0 8px}
+.mwx select{font:inherit;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:4px 7px;max-width:100%}
+.mwx .selrow{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:.9rem;color:var(--muted);margin:2px 0 0}
+.mwx .selrow label{margin:0;font-weight:400;display:inline}
+.mwx .readouts{display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));gap:8px;margin:10px 0 2px}
+.mwx .ro{background:var(--code);border-radius:6px;padding:6px 10px}
+.mwx .ro .k{font-size:.77rem;color:var(--muted)}
+.mwx .ro .v{font-size:1.02rem;font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}
+.mwx canvas{width:100%;height:270px;display:block}
+.mwx .fig{margin:12px 0 4px}
+.mwx .legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.82rem;color:var(--muted);margin:5px 0 0 54px}
+.mwx .legend span{display:inline-flex;align-items:center;gap:5px}
+.mwx .legend i[style]{display:inline-block;width:20px;height:0;border-top:2.5px solid;font-style:normal;vertical-align:.25em}
+.mwx .legend i.d{border-top-style:dashed}
+.mwx .legend i.dt{border-top-style:dotted;border-top-width:3px}
+.mwx .cap{font-size:.84rem;color:var(--muted);margin:5px 0 0}
+.mwx .note{border-left:3px solid var(--c1);padding:5px 11px;margin:11px 0;font-size:.92rem;background:var(--code);border-radius:0 6px 6px 0;color:var(--ink)}
+.mwx table{border-collapse:collapse;width:100%;font-size:.87rem;margin:8px 0;display:table;background:transparent;box-shadow:none;border:0}
+.mwx thead,.mwx tbody,.mwx tr{background:transparent}
+.mwx th,.mwx td{border:0;border-bottom:1px solid var(--line);padding:5px 6px;text-align:left;vertical-align:top;color:var(--ink);background:transparent;font-family:inherit}
+.mwx th{color:var(--muted);font-weight:600;text-transform:none;letter-spacing:normal}
+.mwx td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+.mwx .tscroll{overflow-x:auto}
+.mwx .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:12px;margin-top:8px}
+.mwx .card{border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.mwx .card h3{margin:0 0 4px}
+.mwx .card p{font-size:.92rem;margin:0}
+.mwx .tag{display:inline-block;font-size:.72rem;padding:1px 7px;border-radius:999px;background:var(--code);color:var(--muted);margin-left:6px;vertical-align:1px}
+.mwx .mwsrc{color:var(--muted);font-size:.82rem;margin-top:20px}
+@media (max-width:600px){
+  .mwx{padding:6px 10px 14px}
+  .mwx section{padding:14px 12px}
+  .mwx canvas{height:240px}
+  .mwx .legend{margin-left:0}
+}
+</style> <div class="mwhead"> <div class="mwnav"> <a href="#basics">1 Dielectric terms</a><a href="#relax">2 Relaxation</a><a href="#temp">3 Temperature</a> <a href="#pen">4 Penetration depth</a><a href="#vol">5 Volumetric heating</a> <a href="#other">6 Other mechanisms</a><a href="#eqs">7 Summary</a> </div> </div> <section id="basics"> <h2>1. The dielectric terms</h2> <p>A material in an alternating electric field polarises. The response is one complex number:</p> <div class="eq"><div><i>ε</i>* = <i>ε</i>′ − j<i>ε</i>″ &nbsp;&nbsp;&nbsp;&nbsp; tan <i>δ</i> = <i>ε</i>″ / <i>ε</i>′</div></div> <dl> <dt><i>ε</i>′ — dielectric constant (real part)</dt> <dd>Polarisation in phase with the field. Energy stored and returned each cycle. Sets surface reflection and the wavelength inside the material.</dd> <dt><i>ε</i>″ — loss factor (imaginary part)</dt> <dd>Polarisation lagging the field by 90°. Energy dissipated as heat: <b><i>P</i><sub>v</sub> = <i>ωε</i><sub>0</sub><i>ε</i>″<i>E</i><sub>rms</sub>²</b>. This, not tan <i>δ</i>, sets the heating rate for a given internal field.</dd> <dt>tan <i>δ</i> — loss tangent</dt> <dd>Energy lost per cycle relative to energy stored. A convenient dimensionless ranking, but it is a ratio: a material can have a high tan <i>δ</i> and still heat slowly if <i>ε</i>″ is small.</dd> <dt><i>ε</i>″<sub>eff</sub> — effective loss factor</dt> <dd>At one frequency you cannot separate conduction loss from polarisation loss, so they are lumped: <i>ε</i>″<sub>eff</sub> = <i>ε</i>″<sub>d</sub> + <i>σ</i>/(<i>ωε</i><sub>0</sub>). Tabulated "<i>ε</i>″" almost always means this.</dd> </dl> <h3>Lossy insulator</h3> <p>An insulator has few free charges, so it carries little DC current; its bound charges polarise instead. If that polarisation cannot follow the oscillating field exactly, it lags, and part of the field energy is dissipated each cycle. A dielectric with significant <i>ε</i>″ is a lossy insulator. At microwave frequencies materials fall into three groups:</p> <div class="tscroll"><table> <tr><th>Behaviour</th><th>tan <i>δ</i></th><th>Examples</th><th>What happens</th></tr> <tr><td>Transparent</td><td class="n">&lt; 10⁻³</td><td>Fused quartz, PTFE, Al<sub>2</sub>O<sub>3</sub>, La<sub>2</sub>O<sub>3</sub>, most oxides cold</td><td>Passes through. Used for vessels and windows.</td></tr> <tr><td>Absorber (lossy dielectric)</td><td class="n">10⁻² – 1</td><td>Water, alcohols, SiC, charcoal, BaTiO<sub>3</sub>, Fe<sub>2</sub>O<sub>3</sub>, hot oxides</td><td>Attenuates inside the material, depositing heat over a depth <i>D</i><sub>p</sub>.</td></tr> <tr><td>Reflector (conductor)</td><td class="n">≫ 1</td><td>Bulk metals</td><td>Reflects; field penetrates only a skin depth (~µm).</td></tr> </table></div> <h3>Where the polarisation comes from</h3> <ul> <li><b>Electronic</b> — electron cloud shifts. Follows the field to UV. Lossless at GHz.</li> <li><b>Ionic</b> — cations and anions displace. Resonates in the far-IR. Contributes to <i>ε</i>′ of ceramics; its tail is the small intrinsic loss of good ceramics.</li> <li><b>Dipolar</b> — permanent dipoles rotate. Relaxes at GHz in small-molecule liquids. The main loss route for polar solvents, and for polar domains in ferroelectrics.</li> <li><b>Interfacial (Maxwell–Wagner)</b> — charge piles up at boundaries between regions of different conductivity: grains, pores, phases. Important in powders and compacts.</li> </ul> <p>Each mechanism adds to <i>ε</i>′ below its characteristic frequency and drops out above it. <i>ε</i>″ peaks where it is lagging — around that frequency.</p> <div class="fig"><canvas id="cvSpec"></canvas> <div class="legend"><span><i style="border-color:var(--c1)"></i><i>ε</i>′</span><span><i style="border-color:var(--c2)"></i><i>ε</i>″</span></div> <p class="cap">Schematic spectrum of a solid with all four mechanisms. Shaded: the microwave band, 0.3–300 GHz.</p></div> </section> <section id="relax"> <h2>2. Relaxation and conduction</h2> <p>Dipolar loss follows the Debye relaxation, with one relaxation time <i>τ</i> — the time a dipole takes to reorient. Add a conduction term for mobile charge:</p> <div class="eq"> <div><i>ε</i>′ = <i>ε</i><sub>∞</sub> + Δ<i>ε</i> / (1 + <i>ω</i>²<i>τ</i>²)</div> <div><i>ε</i>″ = Δ<i>ε</i>·<i>ωτ</i> / (1 + <i>ω</i>²<i>τ</i>²) &nbsp;+&nbsp; <i>σ</i> / (<i>ωε</i><sub>0</sub>)</div> <div>Δ<i>ε</i> = <i>ε</i><sub>s</sub> − <i>ε</i><sub>∞</sub> &nbsp;&nbsp;&nbsp; <i>ω</i> = 2π<i>f</i></div> </div> <ul> <li>Dipolar <i>ε</i>″ peaks at <b><i>ωτ</i> = 1</b>, with height Δ<i>ε</i>/2. <i>ε</i>′ falls through the same region, from <i>ε</i><sub>s</sub> to <i>ε</i><sub>∞</sub>.</li> <li>Conduction loss scales as 1/<i>f</i> — it dominates at low frequency, and in anything with mobile ions or carriers.</li> <li><b>Why a large <i>ε</i>′ does not mean a large tan <i>δ</i>.</b> A big <i>ε</i>′ means a big Δ<i>ε</i>, so a big <i>possible</i> <i>ε</i>″ — at most Δ<i>ε</i>/2. Whether you get it depends on <i>τ</i>. Water has the larger <i>ε</i>′ but relaxes at 19 GHz, far above 2.45 GHz, so it sits low on the rising flank. Ethanol has a third of the <i>ε</i>′ but relaxes at ~1 GHz, right next door, so it couples better.</li> </ul> <div class="selrow"> <label>Preset <select id="preset"></select></label> <span id="barinfo"></span> </div> <div class="controls" id="ctrls"></div> <div class="readouts" id="ro"></div> <div class="fig"><canvas id="cvFreq"></canvas> <div class="legend"> <span><i style="border-color:var(--c1)"></i><i>ε</i>′</span> <span><i style="border-color:var(--c2)"></i><i>ε</i>″ total</span> <span><i class="d" style="border-color:var(--c2)"></i><i>ε</i>″ dipolar</span> <span><i class="dt" style="border-color:var(--c2)"></i><i>ε</i>″ conduction</span> <span><i style="border-color:var(--c4)"></i>tan <i>δ</i></span> </div> <p class="cap">The two dashed curves sum to <i>ε</i>″, so they share its colour. Vertical line: the selected frequency. Both axes logarithmic.</p></div> <p class="cap">Drag <i>τ</i> and watch the peak sweep past 2.45 GHz — that is the whole story of why materials couple or do not. Drag <i>σ</i> up and the 1/<i>f</i> conduction tail takes over from the left.</p> </section> <section id="temp"> <h2>3. Why the properties change with temperature</h2> <p>Three quantities in those equations are temperature dependent:</p> <ul> <li><b><i>τ</i> falls as <i>T</i> rises.</b> Lower viscosity and weaker hydrogen bonding let dipoles turn faster, roughly Arrhenius. The loss peak moves to higher frequency.</li> <li><b>Δ<i>ε</i> falls as <i>T</i> rises.</b> Thermal agitation fights alignment, so <i>ε</i><sub>s</sub> drops, roughly as 1/<i>T</i>. Ferroelectrics are the exception — <i>ε</i><sub>s</sub> spikes at the Curie point.</li> <li><b><i>σ</i> rises as <i>T</i> rises</b>, exponentially: <i>σ</i> = <i>σ</i><sub>0</sub> exp(−<i>E</i><sub>a</sub>/<i>kT</i>). Ionic mobility and carrier count both increase.</li> </ul> <p>At a fixed 2.45 GHz, which way <i>ε</i>″ moves depends on where the material sits relative to its own loss peak. There are three characteristic behaviours, and every material is one of them:</p> <div class="fig"><canvas id="cvTemp"></canvas> <div class="legend"> <span><i style="border-color:var(--c1)"></i>Water — <i>ωτ</i> &lt; 1, falls</span> <span><i style="border-color:var(--c4)"></i>Glycerol — sweeps through <i>ωτ</i> = 1</span> <span><i style="border-color:var(--c2)"></i>Fe<sub>2</sub>O<sub>3</sub> — conduction, rises</span> </div> <p class="cap"><i>ε</i>″ at 2.45 GHz against temperature. Log <i>y</i>. Each curve is drawn over the material's own usable range.</p></div> <ul> <li><b><i>ωτ</i> &lt; 1 → self-limiting.</b> Water's peak is at 19 GHz, well above 2.45 GHz. Heating pushes it further away, so <i>ε</i>″ drops — by a factor of 11 from 0 to 95 °C. Hot water absorbs far less than cold water, which is why a microwave heats a mug unevenly and why runaway is not a problem in aqueous work.</li> <li><b><i>ωτ</i> &gt; 1 → rises, then falls.</b> Glycerol starts viscous with its peak below 2.45 GHz. Heating sweeps the peak <i>up through</i> the operating frequency, so <i>ε</i>″ rises to a maximum and then falls away. Ice behaves the same way on melting, which is why frozen food heats erratically.</li> <li><b>Conduction-dominated → runaway.</b> Fe<sub>2</sub>O<sub>3</sub>, and oxide ceramics generally, gain conductivity exponentially with temperature. <i>ε</i>″ climbs by three orders of magnitude between 25 and 1000 °C. Hotter means more absorbing means hotter: local hot spots, cracking, and melting at the centre of a nominally uniform pellet.</li> </ul> <p>In most solids <i>ε</i>′ creeps up slowly with <i>T</i> through lattice expansion. The dramatic changes are all in <i>ε</i>″.</p> </section> <section id="pen"> <h2>4. Penetration depth</h2> <p>A wave entering a lossy material decays as it travels. Field amplitude falls as e<sup>−<i>αz</i></sup>, power as e<sup>−2<i>αz</i></sup>:</p> <div class="eq"> <div><i>α</i> = (<i>ω</i>/<i>c</i>)·√( (<i>ε</i>′/2)·[ √(1 + tan²<i>δ</i>) − 1 ] )</div> <div><i>D</i><sub>p</sub> = 1 / (2<i>α</i>) &nbsp;&nbsp;&nbsp;(depth where power falls to 1/e ≈ 37%)</div> <div><i>D</i><sub>p</sub> ≈ <i>λ</i><sub>0</sub>√<i>ε</i>′ / (2π<i>ε</i>″) &nbsp;&nbsp;&nbsp;(when tan <i>δ</i> ≪ 1)</div> </div> <div class="fig"><canvas id="cvDepth"></canvas> <div class="legend"> <span><i style="border-color:var(--c2)"></i>SiC, <i>D</i><sub>p</sub> ≈ 2.9 cm</span> <span><i style="border-color:var(--c1)"></i>Water, <i>D</i><sub>p</sub> ≈ 1.9 cm</span> <span><i style="border-color:var(--c4)"></i>Alumina cold, <i>D</i><sub>p</sub> ≈ 61 m</span> <span><i class="dt" style="border-color:var(--c5)"></i>1/e level</span> </div> <p class="cap">Remaining power against depth at 2.45 GHz. Alumina is flat on this scale — the wave passes straight through a cold ceramic.</p></div> <ul> <li><b><i>D</i><sub>p</sub> ∝ 1/<i>f</i>.</b> Higher frequency heats a thinner surface layer. At 24 GHz water's <i>D</i><sub>p</sub> is about 1 mm rather than 2 cm.</li> <li><b><i>d</i> ≫ <i>D</i><sub>p</sub></b> — heat lands near the front face and the interior waits on conduction. <b><i>d</i> ≪ <i>D</i><sub>p</sub></b> — heating is nearly uniform, but most of the power goes straight through (in a closed cavity it comes back round for another pass).</li> <li><b>It collapses on heating.</b> Alumina's <i>D</i><sub>p</sub> is 61 m at 25 °C and a few centimetres by 1200 °C. This is why a cold ceramic will not couple at all and then, once a susceptor has got it hot, suddenly absorbs strongly. The switch can be abrupt enough to crack the piece.</li> <li><b>High <i>ε</i>′ costs you at the surface.</b> Reflection <i>R</i> = |(1−√<i>ε</i>*)/(1+√<i>ε</i>*)|² is about 63% for water. In a cavity that power is not lost, but it does reshape the field.</li> </ul> </section> <section id="vol"> <h2>5. Volumetric heating, and why the gradient inverts</h2> <p>This is the practical difference between a microwave and a furnace, and it matters most for solid-state synthesis.</p> <div class="fig"><canvas id="cvVol"></canvas> <div class="legend"> <span><i style="border-color:var(--c2)"></i>Microwave — heat generated throughout</span> <span><i class="d" style="border-color:var(--c1)"></i>Furnace — heat enters at the faces</span> </div> <p class="cap">Deviation from the mean, through a 20 mm zirconia slab (<i>k</i> = 2 W/m·K), from the heat equation with identical surface losses. Both faces are exposed; <i>z</i> = 0 and <i>z</i> = 20 mm are the surfaces.</p></div> <div class="note" id="volNote"></div> <ul> <li><b>Furnace:</b> heat enters through the surfaces and flows inward. The surface is always hottest, the core always lags. How fast you can ramp is limited by thermal conductivity and by the stress a gradient puts on the piece.</li> <li><b>Microwave:</b> heat is generated everywhere at once, and the surfaces are the only places it can escape — by convection, and above ~600 °C dominantly by radiation. So the <b>core runs hotter than the surface</b>, the exact reverse of the furnace case.</li> <li><b>Consequences.</b> Good: no thermal lag, so ramp rates of hundreds of K/min, and densification without the usual gradient stress. Bad: the hottest point is the one you cannot see. A surface pyrometer under-reads, sometimes by hundreds of degrees, and interior melting in an apparently intact pellet is a normal failure mode.</li> <li><b>Insulation flattens it.</b> The fibreboard casket around almost every microwave sintering rig is there to cut the surface loss. Less loss at the faces means less gradient, at the cost of hiding the sample even more thoroughly.</li> <li><b>It only holds while <i>d</i> ≲ <i>D</i><sub>p</sub>.</b> If the sample is much thicker than the penetration depth, the source term is itself concentrated near the front face and the profile starts to look conventional again.</li> </ul> <div class="note">The inversion scales inversely with thermal conductivity. Dense alumina (<i>k</i> ≈ 20 W/m·K) flattens a gradient almost as fast as it forms, giving only a few K of difference. Zirconia (<i>k</i> ≈ 2) holds about 100 K, and a porous compact or charcoal bed (<i>k</i> ≈ 0.1) can sustain many hundreds.</div> </section> <section id="other"> <h2>6. The other heating mechanisms</h2> <p>Total absorbed power density, electric and magnetic:</p> <div class="eq"><div><i>P</i><sub>v</sub> = <i>ω</i> ( <i>ε</i><sub>0</sub><i>ε</i>″<sub>eff</sub> <i>E</i><sub>rms</sub>² + <i>μ</i><sub>0</sub><i>μ</i>″ <i>H</i><sub>rms</sub>² )</div></div> <div class="cards"> <div class="card"><h3>Dipolar polarisation<span class="tag">E</span></h3> <p>Permanent dipoles rotating out of phase with the field. Dominant for polar liquids. Weak in crystalline solids, where dipoles cannot turn — except in ferroelectrics such as BaTiO<sub>3</sub>, whose polar domains and soft mode respond in the GHz range.</p></div> <div class="card"><h3>Ionic conduction<span class="tag">E</span></h3> <p>Ions drift in the field and collide, converting kinetic energy to heat (<i>σE</i>²). Salt solutions, ionic liquids, fast-ion conductors such as YSZ, and defect conduction in oxides at high <i>T</i>. Rises steeply with temperature — the usual cause of runaway.</p></div> <div class="card"><h3>Electronic conduction<span class="tag">E</span></h3> <p>Free or hopping carriers driven by the field. SiC, carbon and charcoal, and most transition-metal oxides — Fe<sub>3</sub>O<sub>4</sub>, Fe<sub>2</sub>O<sub>3</sub>, NiO, CuO, and perovskites such as LaFeO<sub>3</sub>, where conduction is small-polaron hopping. These are the workhorse absorbers of microwave solid-state chemistry.</p></div> <div class="card"><h3>Interfacial (Maxwell–Wagner)<span class="tag">E</span></h3> <p>Charge accumulating at boundaries between phases of different <i>σ</i> or <i>ε</i>′ — grain boundaries, pores, conductive particles in an insulating matrix. A mixture can be far lossier than either component, and the coupling drifts as a reaction proceeds.</p></div> <div class="card"><h3>Resistive and eddy-current<span class="tag">E, H</span></h3> <p>Fields reach only a skin depth <i>δ</i><sub>s</sub> = √(2/<i>ωμσ</i>) into a metal — about 1 µm at 2.45 GHz. Bulk metal reflects and heats only in that skin, but particles, films and wires of that size heat efficiently. Sharp edges concentrate the field and cause arcing.</p></div> <div class="card"><h3>Magnetic loss<span class="tag">H</span></h3> <p>For magnetic materials <i>μ</i>* = <i>μ</i>′ − j<i>μ</i>″: ferromagnetic resonance, domain-wall motion, eddy currents. Ferrites, magnetite, Fe/Co/Ni powders. It disappears above the Curie temperature, which self-limits. In a single-mode cavity, <i>E</i> and <i>H</i> maxima are in different places, so you can choose which one the sample sits in.</p></div> </div> <h3>Susceptors</h3> <p>Most interesting synthesis targets are transparent cold and absorbing hot — the gap is bridged with a susceptor packed around the charge. <b>Charcoal, graphite and carbon black</b> absorb from room temperature and reach 1000 °C in minutes, though they buffer oxygen. <b>SiC</b> is the standard reusable choice, stable in air to ~1500 °C. Once the charge is hot enough that its own <i>ε</i>″ has risen, it takes over and heats volumetrically; that handover is what "hybrid heating" means.</p> <p>For La<sub>2</sub>O<sub>3</sub> + Fe<sub>2</sub>O<sub>3</sub> → LaFeO<sub>3</sub>, the two reagents could hardly be more different — compare their rows in the tables below at 25 °C and at 800 °C. The lanthana is transparent throughout; the mixture couples through the iron oxide and through interfacial loss at particle contacts, and the coupling shifts again as the perovskite forms.</p> <h3>Skin depth at 2.45 GHz</h3> <div class="tscroll"><table id="skinTable"></table></div> </section> <section id="eqs"> <h2>7. Summary</h2> <div class="eq"> <div><i>ε</i>* = <i>ε</i>′ − j<i>ε</i>″ &nbsp;&nbsp; tan <i>δ</i> = <i>ε</i>″/<i>ε</i>′ &nbsp;&nbsp; <i>ε</i>″<sub>eff</sub> = <i>ε</i>″<sub>d</sub> + <i>σ</i>/(<i>ωε</i><sub>0</sub>)</div> <div>Debye: <i>ε</i>′ = <i>ε</i><sub>∞</sub> + Δ<i>ε</i>/(1+<i>ω</i>²<i>τ</i>²), &nbsp; <i>ε</i>″<sub>d</sub> = Δ<i>ε ωτ</i>/(1+<i>ω</i>²<i>τ</i>²), &nbsp; peak at <i>ωτ</i> = 1, height Δ<i>ε</i>/2</div> <div><i>P</i><sub>v</sub> = <i>ωε</i><sub>0</sub><i>ε</i>″<i>E</i><sub>rms</sub>² &nbsp;&nbsp;&nbsp; d<i>T</i>/d<i>t</i> = <i>P</i><sub>v</sub>/(<i>ρc</i><sub>p</sub>) &nbsp; (adiabatic)</div> <div><i>D</i><sub>p</sub> = 1/(2<i>α</i>) ≈ <i>λ</i><sub>0</sub>√<i>ε</i>′/(2π<i>ε</i>″) &nbsp;&nbsp; <i>δ</i><sub>s</sub> = √(2/<i>ωμσ</i>)</div> </div> <ul> <li>Heating rate follows <i>ε</i>″ and field strength — not <i>ε</i>′, and not tan <i>δ</i> on its own.</li> <li>A high <i>ε</i>′ means strong polarisability, so a large <i>possible</i> loss. You only collect it if <i>τ</i> puts the relaxation near your frequency.</li> <li>Temperature acts through <i>τ</i>, Δ<i>ε</i> and <i>σ</i>. Falling <i>ε</i>″ is self-limiting; rising <i>ε</i>″ is runaway.</li> <li><i>D</i><sub>p</sub> says where the heat lands; conductivity and surface loss then decide the gradient.</li> </ul> <h3>At 25 °C, 2.45 GHz</h3> <div class="tscroll"><table id="tCold"></table></div> <h3>At 800 °C, 2.45 GHz</h3> <div class="tscroll"><table id="tHot"></table></div> <p class="cap">Solids taken as fully dense. A pressed powder compact is mostly air: at 60% packing, <i>ε</i>′ and <i>ε</i>″ both drop by roughly half (Landau–Lifshitz–Looyenga mixing), and <i>D</i><sub>p</sub> doubles.</p> <div class="mwsrc">Typical values from: water relaxation (Kaatze; Malmberg &amp; Maryott); solvent loss tangents (Kappe and co-workers); ceramic and susceptor behaviour (Metaxas &amp; Meredith, <i>Industrial Microwave Heating</i>; Sutton, <i>Am. Ceram. Soc. Bull.</i> 1989). The temperature models are simplified Debye / Curie–Weiss / Arrhenius fits — they show the <i>shape</i> of the behaviour, not design data. High-temperature conductivities of oxides vary by orders of magnitude with purity, stoichiometry, atmosphere and density.</div> </section> <script>
+(function(){
+"use strict";
+const ROOT=document.querySelector(".mwx");
+if(!ROOT)return;
+const C0=299792458, E0=8.8541878128e-12, MU0=4e-7*Math.PI, KB=8.617333e-5, SB=5.670374e-8, TAMB=25, F0=2.45e9;
+const Kel=T=>T+273.15;
+const tauArr=(r,EaR,T,Tr)=>r*Math.exp(EaR*(1/Kel(T)-1/Kel(Tr)));
+const sigArr=(r,Ea,T,Tr)=>r*Math.exp(-(Ea/KB)*(1/Kel(T)-1/Kel(Tr)));
+const $=id=>ROOT.querySelector("#"+id);
+
+/* ---- materials ---- */
+const waterP=T=>({es:87.74-0.40008*T+9.398e-4*T*T-1.41e-6*T*T*T,einf:5.2,tau:tauArr(8.27e-12,2149,T,25),sigma:0,e0:0});
+const M={
+ water:{label:"Water",Tmin:0,Tmax:100,p:waterP},
+ salt:{label:"Salt water (~0.1 M NaCl)",Tmin:0,Tmax:100,p:T=>{const w=waterP(T);w.es-=2;w.sigma=1.0*(1+0.021*(T-25));return w;}},
+ ethanol:{label:"Ethanol",Tmin:0,Tmax:78,p:T=>({es:24.3-0.12*(T-25),einf:4.2,tau:tauArr(163e-12,2405,T,25),sigma:0,e0:0})},
+ glycerol:{label:"Glycerol",Tmin:20,Tmax:290,p:T=>({es:42.5-0.095*(T-25),einf:4.0,tau:tauArr(1.0e-9,5412,T,25),beta:0.7,sigma:0,e0:0})},
+ hexane:{label:"Hexane (non-polar)",Tmin:0,Tmax:69,p:T=>({es:1.89,einf:1.89,tau:1e-12,sigma:0,e0:3e-4})},
+ silica:{label:"Fused silica",Tmin:25,Tmax:1600,p:T=>{const e=3.8*(1+2e-5*(T-25));return{es:e,einf:e,tau:1e-12,sigma:sigArr(1e-4,1.3,T,1000),e0:4e-4};}},
+ alumina:{label:"Alumina (Al₂O₃)",Tmin:25,Tmax:1800,p:T=>{const e=9.8*(1+1.1e-4*(T-25));return{es:e,einf:e,tau:1e-12,sigma:sigArr(2.7e-3,1.2,T,1000),e0:1e-3};}},
+ la2o3:{label:"Lanthana (La₂O₃)",Tmin:25,Tmax:1800,p:T=>{const e=21*(1+1.2e-4*(T-25));return{es:e,einf:e,tau:1e-12,sigma:sigArr(3e-3,1.1,T,1000),e0:2e-3};}},
+ ysz:{label:"Zirconia (8YSZ)",Tmin:25,Tmax:2000,p:T=>{const e=27*(1+1e-4*(T-25));return{es:e,einf:e,tau:1e-12,sigma:sigArr(2.0,1.0,T,800),e0:0.01};}},
+ hematite:{label:"Hematite (Fe₂O₃)",Tmin:25,Tmax:1500,p:T=>{const e=12*(1+1.4e-4*(T-25));return{es:e,einf:e,tau:1e-12,sigma:sigArr(0.5,0.75,T,800),e0:0.25};}},
+ lafeo3:{label:"Perovskite (LaFeO₃)",Tmin:25,Tmax:1600,p:T=>{const e=22*(1+1.3e-4*(T-25));return{es:e,einf:e,tau:1e-12,sigma:sigArr(1.0,0.6,T,800),e0:0.15};}},
+ batio3:{label:"Barium titanate (BaTiO₃)",Tmin:25,Tmax:1400,p:T=>({es:6.0e4/(Math.abs(T-120)+25)+60,einf:50,tau:14e-12,sigma:sigArr(1e-3,1.4,T,1000),e0:0.02})},
+ sic:{label:"Silicon carbide (susceptor)",Tmin:25,Tmax:2000,p:T=>{const e=10*(1+1e-4*(T-25));return{es:e,einf:e,tau:1e-12,sigma:sigArr(0.25,0.08,T,25),e0:0.3};}},
+ charcoal:{label:"Charcoal / carbon (susceptor)",Tmin:25,Tmax:1500,p:T=>{const e=6*(1+8e-5*(T-25));return{es:e,einf:e,tau:1e-12,sigma:sigArr(0.5,0.05,T,25),e0:0.2};}}
+};
+function eps(f,p){
+  const w=2*Math.PI*f, wt=w*p.tau, de=Math.max(0,p.es-p.einf), b=p.beta==null?1:p.beta;
+  const phi=Math.atan(wt), cb=Math.cos(phi)**b;
+  const ep=p.einf+de*Math.cos(b*phi)*cb, ed=de*Math.sin(b*phi)*cb;
+  const ec=p.sigma/(w*E0), eb=p.e0||0;
+  return {ep,ed,ec,eb,e2:ed+ec+eb,tan:(ed+ec+eb)/ep,frel:1/(2*Math.PI*p.tau),wt};
+}
+function optics(f,e){
+  const m=Math.hypot(e.ep,e.e2), n=Math.sqrt((m+e.ep)/2), k=Math.sqrt(Math.max(0,(m-e.ep)/2));
+  const a=2*Math.PI*f/C0*k;
+  return {n,k,alpha:a,Dp:a>0?1/(2*a):Infinity,R:((1-n)**2+k*k)/((1+n)**2+k*k)};
+}
+const atT=(key,T)=>{const m=M[key];return m.p(Math.min(m.Tmax,Math.max(m.Tmin,T)));};
+
+/* ---- formatting ---- */
+const SUP={"-":"⁻","0":"⁰","1":"¹","2":"²","3":"³","4":"⁴","5":"⁵","6":"⁶","7":"⁷","8":"⁸","9":"⁹"};
+const supify=s=>String(s).split("").map(c=>SUP[c]||c).join("");
+function fmt(v,sig=3){
+  if(v===0)return "0"; if(!isFinite(v))return "∞";
+  const a=Math.abs(v);
+  if(a>=1e5||a<1e-3){const ex=Math.floor(Math.log10(a));return (+(v/10**ex).toPrecision(sig))+"×10"+supify(ex);}
+  return String(+v.toPrecision(sig));
+}
+const fmtF=f=>f>=1e12?fmt(f/1e12)+" THz":f>=1e9?fmt(f/1e9)+" GHz":f>=1e6?fmt(f/1e6)+" MHz":fmt(f/1e3)+" kHz";
+const fmtL=m=>!isFinite(m)?"∞":Math.abs(m)>=1000?fmt(m/1000)+" km":Math.abs(m)>=1?fmt(m)+" m":
+  Math.abs(m)>=0.01?fmt(m*100)+" cm":Math.abs(m)>=1e-3?fmt(m*1000)+" mm":Math.abs(m)>=1e-6?fmt(m*1e6)+" µm":fmt(m*1e9)+" nm";
+const fmtTau=s=>s>=1e-9?fmt(s*1e9)+" ns":fmt(s*1e12)+" ps";
+
+/* ---- plotting ---- */
+const cssv=n=>getComputedStyle(ROOT).getPropertyValue(n).trim();
+const FAM='system-ui,-apple-system,"Segoe UI",Roboto,sans-serif';
+const runs=t=>String(t).split(/(\*[^*]+\*)/).filter(Boolean).map(s=>s[0]==="*"?{t:s.slice(1,-1),i:1}:{t:s,i:0});
+function measure(ctx,t,sz){let w=0;for(const r of runs(t)){ctx.font=(r.i?"italic ":"")+sz+"px "+FAM;w+=ctx.measureText(r.t).width;}return w;}
+function drawText(ctx,t,x,y,align,sz){
+  const w=measure(ctx,t,sz); let cx=align==="center"?x-w/2:align==="right"?x-w:x;
+  const prev=ctx.textAlign; ctx.textAlign="left";
+  for(const r of runs(t)){ctx.font=(r.i?"italic ":"")+sz+"px "+FAM;ctx.fillText(r.t,cx,y);cx+=ctx.measureText(r.t).width;}
+  ctx.textAlign=prev; return w;
+}
+const DASH={solid:[],dash:[6,4],dot:[2,3]};
+const niceStep=r=>{const e=Math.floor(Math.log10(r)),b=r/10**e;return (b<1.5?1:b<3?2:b<7?5:10)*10**e;};
+function ticks(a,b,log){
+  const t=[];
+  if(log){const d0=Math.ceil(Math.log10(a)-1e-9),d1=Math.floor(Math.log10(b)+1e-9);
+    let st=1;const n=d1-d0+1; if(n>8)st=2; if(n>14)st=3;
+    for(let d=d0;d<=d1;d+=st)t.push(10**d);}
+  else{const s=niceStep((b-a)/5);for(let v=Math.ceil(a/s)*s;v<=b+s*1e-9;v+=s)t.push(Math.abs(v)<s*1e-9?0:v);}
+  return t;
+}
+const logTick=v=>{const d=Math.round(Math.log10(v));return (d>=-2&&d<=3)?String(+v.toPrecision(3)):"10"+supify(d);};
+const linTick=v=>String(+v.toPrecision(4));
+function logRange(vals,minRatio=1e-7){
+  const v=vals.filter(x=>isFinite(x)&&x>0); if(!v.length)return[0.1,10];
+  const mx=Math.max(...v), mn=Math.max(Math.min(...v),mx*minRatio);
+  let a=10**Math.floor(Math.log10(mn)), b=10**Math.ceil(Math.log10(mx));
+  if(b/a<10)b=a*10; return[a,b];
+}
+function plot(cv,o){
+  if(!cv)return;
+  const ctx=cv.getContext("2d"),dpr=devicePixelRatio||1,W=cv.clientWidth,H=cv.clientHeight; if(!W)return;
+  cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,W,H);
+  const muted=cssv("--muted"),grid=cssv("--grid"),line=cssv("--line"),ink=cssv("--ink");
+  const m={l:56,r:12,t:14,b:38},pw=W-m.l-m.r,ph=H-m.t-m.b;
+  const fx=o.xlog?Math.log10:v=>v, fy=o.ylog?Math.log10:v=>v;
+  const x0=fx(o.xmin),x1=fx(o.xmax),y0=fy(o.ymin),y1=fy(o.ymax);
+  const X=v=>m.l+(fx(v)-x0)/(x1-x0)*pw, Y=v=>m.t+ph-(fy(v)-y0)/(y1-y0)*ph;
+  ctx.textBaseline="middle";ctx.font="11px "+FAM;
+  (o.shades||[]).forEach(s=>{const a=X(Math.max(s.x0,o.xmin)),b=X(Math.min(s.x1,o.xmax));
+    if(b>a){ctx.fillStyle=cssv(s.color);ctx.fillRect(a,m.t,b-a,ph);
+      if(s.label){ctx.fillStyle=muted;drawText(ctx,s.label,(a+b)/2,m.t+ph-9,"center",11);}}});
+  const xf=o.xfmt||(o.xlog?logTick:linTick), yf=o.yfmt||(o.ylog?logTick:linTick);
+  let last=-1e9;
+  ticks(o.xmin,o.xmax,o.xlog).forEach(v=>{const x=X(v);
+    ctx.strokeStyle=grid;ctx.beginPath();ctx.moveTo(x,m.t);ctx.lineTo(x,m.t+ph);ctx.stroke();
+    const s=xf(v),w=measure(ctx,s,11);let cx=x;
+    if(cx-w/2<2)cx=w/2+2; if(cx+w/2>W-2)cx=W-2-w/2;
+    if(cx-w/2>last+4){ctx.fillStyle=muted;drawText(ctx,s,cx,m.t+ph+12,"center",11);last=cx+w/2;}});
+  ticks(o.ymin,o.ymax,o.ylog).forEach(v=>{const y=Y(v);
+    ctx.strokeStyle=grid;ctx.beginPath();ctx.moveTo(m.l,y);ctx.lineTo(m.l+pw,y);ctx.stroke();
+    ctx.fillStyle=muted;drawText(ctx,yf(v),m.l-5,y,"right",11);});
+  ctx.strokeStyle=line;ctx.strokeRect(m.l+.5,m.t+.5,pw,ph);
+  ctx.save();ctx.beginPath();ctx.rect(m.l,m.t,pw,ph);ctx.clip();
+  (o.series||[]).forEach(s=>{
+    ctx.strokeStyle=cssv(s.color);ctx.lineWidth=s.width||2;ctx.setLineDash(DASH[s.style||"solid"]);
+    ctx.lineJoin="round";ctx.lineCap="round";ctx.beginPath();let pen=false;
+    for(let i=0;i<s.x.length;i++){const xv=s.x[i],yv=s.y[i];
+      if(!isFinite(xv)||!isFinite(yv)||(o.ylog&&yv<=0)||(o.xlog&&xv<=0)){pen=false;continue;}
+      const xx=X(xv),yy=Math.max(-5000,Math.min(5000,Y(yv)));pen?ctx.lineTo(xx,yy):ctx.moveTo(xx,yy);pen=true;}
+    ctx.stroke();});
+  ctx.lineWidth=1.3;
+  (o.vlines||[]).forEach(v=>{if(!isFinite(v.x)||v.x<o.xmin||v.x>o.xmax)return;const x=X(v.x);
+    ctx.setLineDash(DASH[v.style||"dot"]);ctx.strokeStyle=cssv(v.color||"--c5");
+    ctx.beginPath();ctx.moveTo(x,m.t);ctx.lineTo(x,m.t+ph);ctx.stroke();
+    if(v.label){ctx.fillStyle=cssv(v.color||"--c5");const w=measure(ctx,v.label,11);
+      const r=x+w+6>m.l+pw;drawText(ctx,v.label,x+(r?-4:4),m.t+10+(v.dy||0),r?"right":"left",11);}});
+  (o.hlines||[]).forEach(h=>{if(!isFinite(h.y)||h.y<o.ymin||h.y>o.ymax)return;const y=Y(h.y);
+    ctx.setLineDash(DASH[h.style||"dot"]);ctx.strokeStyle=cssv(h.color||"--c5");
+    ctx.beginPath();ctx.moveTo(m.l,y);ctx.lineTo(m.l+pw,y);ctx.stroke();
+    if(h.label){ctx.fillStyle=cssv(h.color||"--c5");drawText(ctx,h.label,m.l+6,y-8,"left",11);}});
+  ctx.setLineDash([]);
+  (o.points||[]).forEach(p=>{if(!isFinite(p.x)||!isFinite(p.y)||(o.ylog&&p.y<=0))return;
+    const x=X(p.x),y=Y(p.y); if(y<m.t-6||y>m.t+ph+6)return;
+    ctx.lineWidth=2;ctx.strokeStyle=cssv("--panel");ctx.fillStyle=cssv(p.color);
+    ctx.beginPath();ctx.arc(x,y,4.5,0,7);ctx.fill();ctx.stroke();});
+  (o.labels||[]).forEach(l=>{ctx.fillStyle=l.color?cssv(l.color):ink;drawText(ctx,l.text,X(l.x),Y(l.y),l.align||"center",11);});
+  ctx.restore();
+  ctx.fillStyle=muted;
+  drawText(ctx,o.xlabel||"",m.l+pw/2,H-9,"center",11);
+  ctx.save();ctx.translate(13,m.t+ph/2);ctx.rotate(-Math.PI/2);drawText(ctx,o.ylabel||"",0,0,"center",11);ctx.restore();
+}
+const logspace=(a,b,n)=>Array.from({length:n},(_,i)=>10**(Math.log10(a)+(Math.log10(b)-Math.log10(a))*i/(n-1)));
+const linspace=(a,b,n)=>Array.from({length:n},(_,i)=>a+(b-a)*i/(n-1));
+const fFmt=v=>v>=1e15?fmt(v):v>=1e12?fmt(v/1e12)+"T":v>=1e9?fmt(v/1e9)+"G":v>=1e6?fmt(v/1e6)+"M":v>=1e3?fmt(v/1e3)+"k":fmt(v);
+
+/* ================= figure 1: schematic spectrum ================= */
+function figSpectrum(){
+  const f=logspace(1e2,1e17,700),ep=[],e2=[];
+  f.forEach(v=>{let a=1,b=0;
+    const deb=(d,fr)=>{const x=v/fr;a+=d/(1+x*x);b+=d*x/(1+x*x);};
+    const lor=(d,f0,g)=>{const D=f0*f0-v*v,den=D*D+(g*v)**2;a+=d*f0*f0*D/den;b+=d*f0*f0*g*v/den;};
+    deb(40,1e4);deb(20,1e10);lor(3,1e13,0.25e13);lor(1.2,1.5e15,0.15e15);ep.push(a);e2.push(b);});
+  plot($("cvSpec"),{xlog:1,ylog:1,xmin:1e2,xmax:1e17,ymin:0.01,ymax:200,xfmt:fFmt,
+    xlabel:"frequency (Hz)",ylabel:"*ε*′, *ε*″",shades:[{x0:3e8,x1:3e11,color:"--shade2",label:"microwaves"}],
+    series:[{x:f,y:ep,color:"--c1"},{x:f,y:e2,color:"--c2"}],
+    labels:[{x:1e4,y:120,text:"interfacial"},{x:1e10,y:70,text:"dipolar"},{x:1e13,y:0.03,text:"ionic"},{x:1.3e15,y:0.03,text:"electronic"}]});
+}
+
+/* ================= section 2: interactive ================= */
+const S={key:"water",es:77.7,einf:5.2,tau:8.27e-12,sigma:0,e0:0,beta:1,f:F0};
+const CTRL={};
+function addCtrl(c){
+  const d=document.createElement("div");d.className="ctrl";
+  d.innerHTML='<label for="i_'+c.id+'">'+c.label+'</label><span class="val" id="v_'+c.id+'"></span>'+
+    '<input type="range" id="i_'+c.id+'" min="'+c.min+'" max="'+c.max+'" step="'+c.step+'">';
+  $("ctrls").appendChild(d);
+  c.el=d.querySelector("input");CTRL[c.id]=c;
+  c.el.addEventListener("input",()=>{c.set(c.log?10**(+c.el.value):+c.el.value);draw2();});
+}
+function setCtrl(id,v){
+  const c=CTRL[id]; const raw=c.log?Math.log10(Math.max(v,10**c.min)):v;
+  c.el.value=Math.min(c.max,Math.max(c.min,raw));
+  $("v_"+id).innerHTML=c.fmt(v);
+}
+function loadPreset(k){
+  S.key=k; const p=atT(k,25);
+  S.es=p.es;S.einf=p.einf;S.tau=p.tau;S.sigma=p.sigma||0;S.e0=p.e0||0;S.beta=p.beta==null?1:p.beta;
+}
+function build2(){
+  const sel=$("preset");
+  Object.entries(M).forEach(([k,m])=>{const o=document.createElement("option");o.value=k;o.textContent=m.label;sel.appendChild(o);});
+  const cu=document.createElement("option");cu.value="custom";cu.textContent="Custom (from sliders)";sel.appendChild(cu);
+  sel.value=S.key;
+  sel.addEventListener("change",()=>{if(sel.value!=="custom"){loadPreset(sel.value);draw2();}});
+  const mark=()=>{$("preset").value="custom";};
+  addCtrl({id:"es",label:"<i>ε</i><sub>s</sub> static permittivity",min:0,max:3.4,step:.005,log:1,fmt:fmt,
+    set:v=>{S.es=v;if(S.einf>S.es)S.einf=S.es;mark();}});
+  addCtrl({id:"einf",label:"<i>ε</i><sub>∞</sub> high-frequency permittivity",min:0,max:2.4,step:.005,log:1,fmt:fmt,
+    set:v=>{S.einf=v;if(S.einf>S.es)S.es=S.einf;mark();}});
+  addCtrl({id:"tau",label:"<i>τ</i> relaxation time",min:-13,max:-7,step:.01,log:1,fmt:fmtTau,set:v=>{S.tau=v;mark();}});
+  addCtrl({id:"sigma",label:"<i>σ</i> conductivity (S/m)",min:-6,max:2,step:.01,log:1,
+    fmt:v=>v<=1e-6*1.0001?"≈ 0":fmt(v),set:v=>{S.sigma=Math.log10(v)<=-6+1e-9?0:v;mark();}});
+  addCtrl({id:"f",label:"<i>f</i> frequency",min:8,max:11.5,step:.005,log:1,
+    fmt:v=>fmtF(v)+" · <i>λ</i><sub>0</sub> "+fmtL(C0/v),set:v=>{S.f=v;}});
+  loadPreset("water");
+}
+function draw2(){
+  const p={es:S.es,einf:S.einf,tau:S.tau,sigma:S.sigma,e0:S.e0,beta:S.beta};
+  ["es","einf","tau","f"].forEach(k=>setCtrl(k,S[k]));
+  setCtrl("sigma",Math.max(S.sigma,1e-6)); if(!S.sigma)$("v_sigma").textContent="≈ 0";
+  const e=eps(S.f,p),o=optics(S.f,e),hasDip=p.es-p.einf>1e-6;
+  $("barinfo").innerHTML=
+    "<i>ε</i>′ "+fmt(e.ep)+" · <i>ε</i>″ "+fmt(e.e2)+" · tan <i>δ</i> "+fmt(e.tan);
+  $("ro").innerHTML=[
+    ["<i>ε</i>′",fmt(e.ep)],["<i>ε</i>″",fmt(e.e2)],["tan <i>δ</i>",fmt(e.tan)],
+    ["<i>ωτ</i>",hasDip?fmt(e.wt):"—"],["peak at 1/2π<i>τ</i>",hasDip?fmtF(e.frel):"none"],
+    ["max <i>ε</i>″ (Δ<i>ε</i>/2)",fmt(Math.max(0,p.es-p.einf)/2)],["<i>D</i><sub>p</sub>",fmtL(o.Dp)]
+  ].map(kv=>'<div class="ro"><div class="k">'+kv[0]+'</div><div class="v">'+kv[1]+'</div></div>').join("");
+  const fs=logspace(1e8,1e12,300),A={ep:[],e2:[],ed:[],ec:[],tan:[]};
+  fs.forEach(f=>{const x=eps(f,p);A.ep.push(x.ep);A.e2.push(x.e2);A.ed.push(x.ed);A.ec.push(x.ec);A.tan.push(x.tan);});
+  const rg=logRange([...A.ep,...A.e2,...A.tan],1e-6);
+  plot($("cvFreq"),{xlog:1,ylog:1,xmin:1e8,xmax:1e12,ymin:rg[0],ymax:rg[1],
+    xfmt:v=>fmtF(v).replace(" ",""),xlabel:"frequency",ylabel:"*ε*′, *ε*″, tan *δ*",
+    series:[{x:fs,y:A.ed,color:"--c2",style:"dash",width:1.6},{x:fs,y:A.ec,color:"--c2",style:"dot",width:1.6},
+            {x:fs,y:A.ep,color:"--c1"},{x:fs,y:A.e2,color:"--c2"},{x:fs,y:A.tan,color:"--c4"}],
+    vlines:[{x:S.f,label:fmtF(S.f),color:"--ink"}].concat(hasDip?[{x:e.frel,label:"*ωτ* = 1",color:"--c2",dy:14}]:[]),
+    points:[{x:S.f,y:e.ep,color:"--c1"},{x:S.f,y:e.e2,color:"--c2"},{x:S.f,y:e.tan,color:"--c4"}]});
+}
+
+/* ================= figure 3: eps'' vs T ================= */
+function figTemp(){
+  const pick=[["water","--c1"],["glycerol","--c4"],["hematite","--c2"]];
+  const series=[],all=[];
+  pick.forEach(kc=>{
+    const m=M[kc[0]],Ts=linspace(m.Tmin,m.Tmax,240),y=Ts.map(T=>eps(F0,m.p(T)).e2);
+    series.push({x:Ts,y:y,color:kc[1]}); all.push(...y);
+  });
+  const rg=logRange(all,1e-5);
+  plot($("cvTemp"),{xlog:0,ylog:1,xmin:0,xmax:1100,ymin:rg[0],ymax:rg[1],
+    xlabel:"temperature (°C)",ylabel:"*ε*″ at 2.45 GHz",series:series,
+    labels:[{x:60,y:rg[1]*0.45,text:"water",color:"--c1"},
+            {x:235,y:rg[1]*0.45,text:"glycerol",color:"--c4"},
+            {x:830,y:eps(F0,M.hematite.p(900)).e2*0.28,text:"Fe₂O₃",color:"--c2"}]});
+}
+
+/* ================= figure 4: decay with depth ================= */
+function figDepth(){
+  const list=[["sic","--c2",25],["water","--c1",25],["alumina","--c4",25]];
+  const z=linspace(0,10,300),series=[];
+  list.forEach(r=>{
+    const o=optics(F0,eps(F0,atT(r[0],r[2])));
+    series.push({x:z,y:z.map(zz=>Math.exp(-zz/100/o.Dp)),color:r[1]});
+  });
+  plot($("cvDepth"),{xlog:0,ylog:0,xmin:0,xmax:10,ymin:0,ymax:1.04,
+    xlabel:"depth *z* (cm)",ylabel:"remaining power *P*/*P*₀",series:series,
+    hlines:[{y:1/Math.E,color:"--c5",label:"1/e = 37%"}],
+    yfmt:v=>String(+v.toFixed(2))});
+}
+
+/* ================= figure 5: volumetric vs surface ================= */
+function solveSlab(mode,qv,dur){
+  const d=0.020,N=61,dz=d/(N-1),rho=5900,cp=550,k=2,em=0.6,h=10;
+  const T=new Array(N).fill(25), Ta=mode==="mw"?TAMB:1200;
+  const surf=Ts=>h*(Ts-Ta)+em*SB*(Kel(Ts)**4-Kel(Ta)**4);
+  const dt=0.3*dz*dz*rho*cp/k;
+  for(let t=0;t<dur;t+=dt){
+    const Tn=T.slice();
+    for(let i=0;i<N;i++){
+      let lap;
+      if(i===0)lap=(2*(T[1]-T[0])/dz-2*surf(T[0])/k)/dz;
+      else if(i===N-1)lap=(2*(T[N-2]-T[N-1])/dz-2*surf(T[N-1])/k)/dz;
+      else lap=(T[i-1]-2*T[i]+T[i+1])/(dz*dz);
+      Tn[i]=T[i]+dt*(k*lap+(mode==="mw"?qv:0))/(rho*cp);
+    }
+    for(let i=0;i<N;i++)T[i]=Tn[i];
+  }
+  const mean=T.reduce((a,b)=>a+b,0)/N;
+  return {z:Array.from({length:N},(_,i)=>i*dz*1000),T:T,mean:mean};
+}
+function figVol(){
+  const dur=300;
+  const fur=solveSlab("furn",0,dur);
+  let loQ=0,hiQ=4e7,mw=null;
+  for(let it=0;it<26;it++){const q=(loQ+hiQ)/2;mw=solveSlab("mw",q,dur);
+    if(mw.mean<fur.mean)loQ=q;else hiQ=q;}
+  const dev=r=>r.T.map(t=>t-r.mean);
+  const a=dev(mw),b=dev(fur),all=[...a,...b];
+  const lo=Math.min(...all),hi=Math.max(...all),sp=Math.max(hi-lo,1);
+  plot($("cvVol"),{xlog:0,ylog:0,xmin:0,xmax:20,ymin:lo-sp*0.22,ymax:hi+sp*0.22,
+    xlabel:"depth through the slab *z* (mm)",ylabel:"*T* − *T*mean  (K)",
+    series:[{x:fur.z,y:b,color:"--c1",style:"dash"},{x:mw.z,y:a,color:"--c2"}],
+    hlines:[{y:0,color:"--c5"}],
+    labels:[{x:10,y:a[30]+sp*0.11,text:"microwave: core hottest",color:"--c2"},
+            {x:10,y:b[30]-sp*0.11,text:"furnace: surfaces hottest",color:"--c1"}]});
+  $("volNote").innerHTML=
+    "Both slabs are at the same mean temperature, "+fmt(fur.mean)+" °C, so only the shape of the gradient differs. "+
+    "Microwave: core "+fmt(mw.T[30]-(mw.T[0]+mw.T[60])/2)+" K above the surfaces. "+
+    "Furnace: core "+fmt((fur.T[0]+fur.T[60])/2-fur.T[30])+" K below them.";
+}
+
+/* ================= tables ================= */
+function tables(){
+  const rows=T=>Object.entries(M).map(([k,m])=>{
+    const dim=T>m.Tmax?' style="opacity:.42"':"";
+    const e=eps(F0,atT(k,T)),o=optics(F0,e);
+    return "<tr"+dim+"><td>"+m.label+'</td><td class="n">'+fmt(e.ep)+'</td><td class="n">'+fmt(e.e2)+"</td>"+
+           '<td class="n">'+fmt(e.tan)+'</td><td class="n">'+fmtL(o.Dp)+'</td><td class="n">'+fmt(o.R*100,2)+"%</td></tr>";}).join("");
+  const head="<tr><th>Material</th><th><i>ε</i>′</th><th><i>ε</i>″</th><th>tan <i>δ</i></th><th><i>D</i><sub>p</sub></th><th><i>R</i></th></tr>";
+  $("tCold").innerHTML=head+rows(25);
+  $("tHot").innerHTML=head+rows(800);
+  const mets=[["Copper",5.8e7],["Aluminium",3.5e7],["Stainless steel",1.4e6],["Graphite",7e4],["Magnetite Fe₃O₄",2e4]];
+  const w=2*Math.PI*F0;
+  $("skinTable").innerHTML=
+    "<tr><th>Material</th><th><i>σ</i> (S/m)</th><th><i>δ</i><sub>s</sub></th></tr>"+
+    mets.map(ns=>"<tr><td>"+ns[0]+'</td><td class="n">'+fmt(ns[1])+'</td><td class="n">'+fmtL(Math.sqrt(2/(w*MU0*ns[1])))+"</td></tr>").join("");
+}
+
+/* ---- boot ---- */
+function drawAll(){figSpectrum();draw2();figTemp();figDepth();figVol();}
+build2();drawAll();tables();
+requestAnimationFrame(drawAll);
+addEventListener("load",drawAll);
+let rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(drawAll,140);});
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change",drawAll);
+new MutationObserver(()=>{clearTimeout(rt);rt=setTimeout(drawAll,60);})
+  .observe(document.documentElement,{attributes:true,attributeFilter:["data-theme","class"]});
+})();
+</script> </div>]]></content><author><name></name></author><category term="research"/><category term="energy"/><category term="crystallography"/><summary type="html"><![CDATA[the dielectric terms, why they change with temperature, and how deep the wave gets]]></summary></entry><entry><title type="html">MP-query-ternaries: A ternary phase diagram explorer by Anya S. Mulligan</title><link href="https://matthewalexwright.github.io/blog/2026/anya-mulligan-ternary-phase-diagram-explorer/" rel="alternate" type="text/html" title="MP-query-ternaries: A ternary phase diagram explorer by Anya S. Mulligan"/><published>2026-09-02T16:00:00+00:00</published><updated>2026-09-02T16:00:00+00:00</updated><id>https://matthewalexwright.github.io/blog/2026/anya-mulligan-ternary-phase-diagram-explorer</id><content type="html" xml:base="https://matthewalexwright.github.io/blog/2026/anya-mulligan-ternary-phase-diagram-explorer/"><![CDATA[<div style="max-width: 130px; margin: 0 auto 2rem;"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/2026-09-02-mp-query-ternaries/icon-480.webp 480w,/assets/img/2026-09-02-mp-query-ternaries/icon-800.webp 800w,/assets/img/2026-09-02-mp-query-ternaries/icon-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/2026-09-02-mp-query-ternaries/icon.png" class="img-fluid rounded" width="100%" height="auto" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"/> </picture> </figure> </div> <p>Anyone who has gone looking for a compound in an unfamiliar corner of the periodic table knows the drill. Open the Materials Project, type in a ternary, scroll the results, note the space groups, check for an ICSD entry, repeat. With five rare earths, six transition metals and three anions, that is ninety systems and an afternoon you will not get back.</p> <p><strong><a href="https://github.com/seshadri-group/MP-query-ternaries">Anya S. Mulligan</a>, a graduate student in our group at UC Santa Barbara, has built a tool that does the entire sweep in one go</strong> — complete with a GUI and a one-click installer. Get it here: <a href="https://github.com/seshadri-group/MP-query-ternaries">seshadri-group/MP-query-ternaries</a>.</p> <h2 id="what-it-does">What it does</h2> <p>You define three element <em>groups</em>: for instance, a set of alkali metals, a set of transition metals, and a set of anions. Anya’s workflow takes the full combinatorial product, queries the Materials Project for every resulting ternary, and pulls the bounding binaries along each edge.</p> <p>Out come CSVs with one row per Materials Project entry, polymorphs included, carrying space group, ICSD IDs, stability, and formation and decomposition energies — plus a ternary composition diagram for each system, a summary grid of all of them, and a key figure. Crucially, experimentally known compounds are separated from predicted ones at the file level, which is the distinction between a literature search and a research project.</p> <p>Taking the halide perovskite space as an example, with group 1 = Cs, group 2 = Sn, Pb, group 3 = Cl, Br, I:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>output_Cs_Sn-Pb_Cl-Br-I/
 ├── compounds_ternary_exp.csv    # experimentally known ternaries
 ├── compounds_ternary_all.csv    # + predicted
 ├── compounds_binary_exp.csv     # bounding binaries
