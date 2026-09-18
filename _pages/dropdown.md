@@ -11,6 +11,9 @@ children:
   - title: text books
     permalink: /books/
   - title: divider
+  - title: microwave-heating
+  - permalink: /microwave-heating/
+  - title: divider
   - title: external resources
     permalink: /resources/
 ---
