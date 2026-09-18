@@ -1,6 +1,6 @@
 ---
 layout: post
-title: understanding microwave heating for materials synthesis
+title: Understanding microwave heating for materials synthesis
 date: 2026-09-18 10:00:00
 description: the dielectric terms, why they change with temperature, and how deep the wave gets
 tags: energy
