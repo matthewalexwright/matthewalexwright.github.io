@@ -5,6 +5,8 @@ github_users:
 repo_description_lines_max: 2
 
 github_repos:
+  - matthewalexwright/monte-carlo-pi
+  - matthewalexwright/ab-initio-MD
   - matthewalexwright/plot_magnetic_data
   - matthewalexwright/plot_rietveld_ticks
   - matthewalexwright/plot_blood_pressure
