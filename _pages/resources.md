@@ -7,6 +7,11 @@ nav: false
 nav_order: 4
 ---
 
+## Tools developed by Matt
+*Tools developed mostly for fun, with the assistance of Claude Opus 5.5 (Anthropic), so use at your own peril.* 
+- [Monte Carlo & RMC Visualizer: Approximating Pi with Darts](https://matthewalexwright.github.io/monte-carlo-pi/)
+- [*Ab Initio* Molecular Dynamics Visualizer](https://matthewalexwright.github.io/ab-initio-MD/))
+
 ## Materials databases
 
 - [The Materials Project](https://next-gen.materialsproject.org/)
