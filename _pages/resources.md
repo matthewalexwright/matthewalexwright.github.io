@@ -9,6 +9,7 @@ nav_order: 4
 
 ## Tools developed by Matt
 *Tools developed mostly for fun, with the assistance of Claude Opus 5.5 (Anthropic), so use at your own peril.* 
+- [Ligand Field Lab: An interactive introduction to ligand-field theory](https://matthewalexwright.github.io/LigandFieldLab/)
 - [Monte Carlo & RMC Visualizer: Approximating Pi with Darts](https://matthewalexwright.github.io/monte-carlo-pi/)
 - [*Ab Initio* Molecular Dynamics Visualizer](https://matthewalexwright.github.io/ab-initio-MD/)
 - [Band Structure and Density of States Visualizer](https://matthewalexwright.github.io/band-structure-DOS/)
